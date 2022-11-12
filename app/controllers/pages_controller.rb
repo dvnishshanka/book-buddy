@@ -3,7 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @books = Book.all.sample(2)
-    @renting = Renting.all
   end
 
   def dashboard
