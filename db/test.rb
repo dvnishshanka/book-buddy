@@ -6,7 +6,7 @@ require 'openssl'
 puts "Here we go!!!"
 
 
-uri = URI("https://www.googleapis.com/books/v1/volumes?q=The Girl Who Kicked the Hornet's Nest&Stieg Larsson&langRestrict=en&key=AIzaSyB0fBuVdMBemt9qqtw4U9uDwzGUptI-SOk")
+uri = URI("https://www.googleapis.com/books/v1/volumes?q=1984&orwell&langRestrict=en&key=AIzaSyB0fBuVdMBemt9qqtw4U9uDwzGUptI-SOk")
 # response = Net::HTTP.get(uri)
 # books = JSON.parse(response)
 
