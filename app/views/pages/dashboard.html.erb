@@ -1,0 +1,30 @@
+<div class="" style="">
+  <div class="">
+    <br>
+      <h3>Dashboard <%= current_user.first_name.capitalize %> !</h3>
+    <hr>
+
+      <h4 class="">Books rented</h4>
+
+       <% if @books.length >0 %>
+        <%= render 'shared/bookmark' %>
+          <% else %>
+          <h6>You don't have any books rented yet!.</h6>
+          <h6>Rent your first book here</h6>
+          <%# add a link to rent a book %>
+      <% end %>
+
+      <h5>My Books
+        <%= link_to new_book_path do%>
+          <button class=""><i class="fa-solid fa-circle-plus add_circle_outline green-color"></i>Book Time</button>
+        <% end %>
+      </h5>
+
+      <% if @pets.length >0 %>
+        <%# <%= render 'shared/rented_books_card' %> %>
+        <% else %>
+        <h6>No books added yet 👀.</h6>
+      <% end %>
+
+  </div>
+</div>
