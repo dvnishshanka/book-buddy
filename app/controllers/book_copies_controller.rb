@@ -7,7 +7,6 @@ class BookCopiesController < ApplicationController
     @book_copy = BookCopy.new(book_copy_params)
     @book_copy.user_id = current_user
     @book_copy.save
-
   end
 
   private
