@@ -1,2 +1,16 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+
+ <div class="container">
+    <% @books.each do |book| %>
+      <div class="book-container">
+       <%= image_tag book.photo_url, crop: "fill" %>
+        <h4><%= book.title %></h4>
+        <p><%= book.author %></p>
+        <p>Isbn:<%= book.isbn %></p>
+        <p>Category:<%= book.category %></p>
+
+      </div>
+       <% end %>
+</div>
