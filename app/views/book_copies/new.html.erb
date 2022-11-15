@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Add a new book</h2>
+
+  <%= simple_form_for(@book_copy) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :book_id,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "book_id" }%>
+      <%= f.input :availability_status,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "availability_status" }%>
+      <%= f.input :comments,
+                autofocus: true,
+                input_html: { autocomplete: "comments" }%>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Add", class: "btn-primary" %>
+    </div>
+  <% end %>
+</div>
