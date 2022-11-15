@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
+  resources :books
   resources :book_copies, only: [:new, :create, :index, :show]
 
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard

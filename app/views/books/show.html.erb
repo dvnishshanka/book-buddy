@@ -1,0 +1,25 @@
+<div class="container">
+<div class="book-card">
+
+<%= image_tag @book.photo_url, crop: "fill" %>
+
+<h3><%= @book.title %></h3>
+<p><%= @book.description %></p>
+  <p><%= @book.author %></p>
+        <p>Isbn:<%= @book.isbn %></p>
+        <p>Category:<%= @book.category %></p>
+</div>
+
+
+
+<h5>Copies of this book</h5>
+<div class="book-copy-card">
+  <% @book.book_copies.each do |book_copy| %>
+    <p><%= book_copy.availability_status %></p>
+    <p>What <%= book_copy.user.display_name %> said about this book:"<%= book_copy.comments %>"</p>
+    <p>Get in touch with <%= book_copy.user.display_name %></p>
+
+  <% end %>
+</div>
+
+</div>
