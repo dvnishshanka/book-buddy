@@ -9,7 +9,7 @@ require 'json'
 require 'open-uri'
 require 'net/http'
 require 'openssl'
-puts "Deleting old records"
+puts "Getting rid of old books"
 Book.destroy_all
 puts "Here we go!!!"
 # user1 = User.create!(email: "andy@twitter.com", password: "123456", first_name: "Andrew", last_name: "Grant", display_name: "Andy")
@@ -34,8 +34,7 @@ def new_book(search)
         isbn: book["volumeInfo"]["industryIdentifiers"].nil? ? nil : book["volumeInfo"]["industryIdentifiers"][0]["identifier"], #tenery operater
         category: book["volumeInfo"]["categories"].nil? ? nil : book["volumeInfo"]["categories"][0],
         language: book["volumeInfo"]["language"],
-        image: book["volumeInfo"]["imageLinks"][0]
-      )
+        photo_url: "https://books.google.com/books/content?id=#{book['id']}&printsec=frontcover&img=1&zoom=1&source=gbs_api")
 end
 
 new_book("If+on+a+Winter's+Night+a+Traveller")
