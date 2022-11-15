@@ -10,6 +10,7 @@
  <div class="container">
     <% @books.each do |book| %>
       <div class="book-container">
+      <%= link_to  book_path(book) do%>
        <%= image_tag book.photo_url, crop: "fill" %>
         <h4><%= book.title %></h4>
         <p><%= book.author %></p>
@@ -17,5 +18,6 @@
         <p>Category:<%= book.category %></p>
 
       </div>
+       <% end %>
        <% end %>
 </div>

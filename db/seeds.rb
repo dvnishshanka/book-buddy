@@ -12,7 +12,8 @@ require 'openssl'
 puts "Getting rid of old books"
 Book.destroy_all
 puts "Here we go!!!"
-# user1 = User.create!(email: "andy@twitter.com", password: "123456", first_name: "Andrew", last_name: "Grant", display_name: "Andy")
+
+User.create!(email: "andy@hotmail.com", password: "123456", first_name: "Andrew", last_name: "Grant", display_name: "Andy")
 
 def new_book(search)
   uri = URI("https://www.googleapis.com/books/v1/volumes?q=#{search}&langRestrict=en&key=AIzaSyB0fBuVdMBemt9qqtw4U9uDwzGUptI-SOk")
