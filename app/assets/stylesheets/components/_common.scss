@@ -6,20 +6,3 @@
 .normal-link {
 color: $app-light-navyblue;
 }
-
-.book-container {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  width:300px;
-  background: white;
-  margin-bottom: 20px;
-  margin-top: 25px;
-  border-radius: 10px;
-}
-
-.book-category-label {
-padding: 3px 10px;
-background-color: green;
-border-radius: 20px;
-}

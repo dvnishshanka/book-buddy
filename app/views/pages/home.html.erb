@@ -1,21 +1,24 @@
-
-<div class="book-category-container">
-  <div class="book-category-label">Horror</div>
-  <div class="book-category-label">Horror</div>
-  <div class="book-category-label">Horror</div>
-  <div class="book-category-label">Crime</div>
-</div>
-
 <div class="container">
-  <% @books.each do |book| %>
-    <div class="book-container">
-    <%= link_to  book_path(book) do%>
-      <%= image_tag book.photo_url, crop: "fill" %>
-      <h4><%= book.title %></h4>
-      <p><%= book.author %></p>
-      <p>Isbn:<%= book.isbn %></p>
-      <p>Category:<%= book.category %></p>
+  <div class="book-category-container">
+    <div class="book-category-label">Horror</div>
+    <div class="book-category-label">Horror</div>
+    <div class="book-category-label">Horror</div>
+    <div class="book-category-label">Crime</div>
+  </div>
+  <div class="book-container">
+    <% @books.each do |book| %>
+      <div class= "book-container-card">
+        <%= link_to book_path(book) do%>
+          <%= image_tag book.photo_url, crop: "fill" %>
+          <div class="container pt-1">
+            <h6><strong><%= book.title %></strong></h6>
+            <p><%= book.author %></p>
+            <p>Isbn:<%= book.isbn %></p>
+            <p>Category:<%= book.category %></p>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
+  </div>
+  <%= link_to "test create", new_book_copy_path, class: "btn-primary"%>
 </div>
-<%= link_to "test create", new_book_copy_path, class: "btn-primary"%>
