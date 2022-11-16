@@ -1,5 +1,4 @@
 
-<h1>Pages#home</h1>
 <div class="book-category-container">
   <div class="book-category-label">Horror</div>
   <div class="book-category-label">Horror</div>
@@ -7,17 +6,16 @@
   <div class="book-category-label">Crime</div>
 </div>
 
- <div class="container">
-    <% @books.each do |book| %>
-      <div class="book-container">
-      <%= link_to  book_path(book) do%>
-       <%= image_tag book.photo_url, crop: "fill" %>
-        <h4><%= book.title %></h4>
-        <p><%= book.author %></p>
-        <p>Isbn:<%= book.isbn %></p>
-        <p>Category:<%= book.category %></p>
-
-      </div>
-       <% end %>
-       <% end %>
+<div class="container">
+  <% @books.each do |book| %>
+    <div class="book-container">
+    <%= link_to  book_path(book) do%>
+      <%= image_tag book.photo_url, crop: "fill" %>
+      <h4><%= book.title %></h4>
+      <p><%= book.author %></p>
+      <p>Isbn:<%= book.isbn %></p>
+      <p>Category:<%= book.category %></p>
+    <% end %>
+  <% end %>
 </div>
+<%= link_to "test create", new_book_copy_path, class: "btn-primary"%>
