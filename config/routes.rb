@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :book_copies, only: [:new, :create, :index, :show]
 
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard
+  get "user_profile", to: "pages#user_profile", as: :user_profile
 
 end
