@@ -1,26 +1,34 @@
 <div class="nav sticky-md-bottom bg-success bg-opacity-75 nav-bottom">
 
-  <div class="container-fluid d-flex nav-bottom-item">
-        <a href="/" >
-          <span class="">
-            <i class="fa fa-home nav-icon"></i>
-          </span>
-        </a>
-        <a href="/" >
-          <span class="">
-            <i class="fa fa-search nav-icon"></i>
-          </span>
-        </a>
-        <a href="/" >
-          <span class="">
-            <i class="fa fa-envelope nav-icon"></i>
-          </span>
-        </a>
-        <a href="/" >
-          <span class="">
-            <i class="fa fa-user nav-icon"></i>
-          </span>
-        </a>
+  <div class="container-fluid d-flex nav-bottom-item-container">
+    <%= link_to root_path, class: "nav-bottom-item" do %>
+      <div class="nav-bottom-item">
+        <i class="fa fa-home nav-icon"></i>
+        <p class="nav-bottom-text">Home</p>
+      </div>
+    <% end %>
+    <%= link_to root_path, class: "nav-bottom-item" do %>
+      <div class="nav-bottom-item">
+        <i class="fa fa-search nav-icon"></i>
+        <p class="nav-bottom-text">Explore</p>
+      </div>
+    <% end %>
+    <%= link_to root_path, class: "nav-bottom-item" do %>
+      <div class="nav-bottom-item">
+        <i class="fa fa-envelope nav-icon"></i>
+        <p class="nav-bottom-text">inbox</p>
+      </div>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to root_path, class: "nav-bottom-item" do %>
+        <i class="fa fa-user nav-icon"></i>
+        <p class="nav-bottom-text">Profile</p>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path, class: "nav-bottom-item" do %>
+        <i class="fa fa-user nav-icon"></i>
+        <p class="nav-bottom-text">Login</p>
+      <% end %>
+    <% end %>
   </div>
-
 </div>

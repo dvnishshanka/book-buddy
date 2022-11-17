@@ -108,3 +108,56 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.book-category-label {
+  padding: 3px 10px;
+  background-color: $app-blue;
+  border-radius: 20px;
+  }
+
+.book-container {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.book-container-card {
+  width: 150px;
+  min-height: 300px;
+  border-radius: 10px;
+  background-color: $white;
+  margin-bottom: 20px;
+  text-decoration: none;
+
+  img {
+    height: 220px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  p  {
+    font-size: 12px;
+  }
+
+  h6 {
+    font-size: 16px;
+
+    // Limit the heading for several lines
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    display: -moz-box;
+    -moz-box-orient: vertical;
+
+    overflow: hidden;
+  }
+
+}

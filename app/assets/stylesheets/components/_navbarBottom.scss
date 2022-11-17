@@ -1,6 +1,6 @@
 .nav-icon {
-  color: white;
-  padding: 1.5rem;
+  color: $app-white;
+  padding-bottom: 0.2rem ;
 }
 
 .nav-bottom {
@@ -10,6 +10,23 @@
   padding: 0.1rem;
 }
 
+.nav-bottom-item-container {
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  a {
+  text-decoration: none;
+  }
+}
+
 .nav-bottom-item {
-  justify-content: space-between;;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center ;
+}
+.nav-bottom-text {
+  font-size: 10px;
+  padding: 0px;
+  margin: 0px;
 }

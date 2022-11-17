@@ -1,18 +1,21 @@
 class BookCopiesController < ApplicationController
   before_action :set_book_copy, only: %i[show]
+  before_action :set_book_copy, only: %i[show]
+
   def index
     @book_copies = BookCopy.all
   end
 
   def new
     @book_copy = BookCopy.new
+    @books = Book.all
   end
 
   def create
     @book_copy = BookCopy.new(book_copy_params)
-    @book_copy.user_id = current_user
+    @book_copy.user = current_user
     if @book_copy.save
-      redirect_to root_path
+      redirect_to book_path(@book_copy.book)
     else
       render :new, status: :unprocessable_entity
     end
