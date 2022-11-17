@@ -11,9 +11,13 @@ require 'net/http'
 require 'openssl'
 puts "Getting rid of old books"
 Book.destroy_all
+User.destroy_all
 puts "Here we go!!!"
 
-User.create!(email: "andy@hotmail.com", password: "123456", first_name: "Andrew", last_name: "Grant", display_name: "Andy")
+User.create!(email: "andy@gmail.com", password: "123456", first_name: "Andrew", last_name: "Grant", display_name: "Andy")
+User.create!(email: "Katya@gmail.com", password: "123456", first_name: "katya", last_name: "Sitko", display_name: "Kat")
+User.create!(email: "philly@gmail.com", password: "123456", first_name: "Phillip", last_name: "York", display_name: "Philly")
+
 
 def new_book(search)
   uri = URI("https://www.googleapis.com/books/v1/volumes?q=#{search}&langRestrict=en&key=AIzaSyB0fBuVdMBemt9qqtw4U9uDwzGUptI-SOk")
@@ -46,8 +50,10 @@ new_book("Nineteen+Eighty+Four")
 new_book("The+Third+Policeman")
 new_book("Raise+High+the+Roof+Beam,+Carpenters+and+Seymour")
 new_book("Leaves+of+Grass")
-new_book("The+Stranger")
+new_book("The+Man+in+the+High+Castle")
 new_book("The+Lion,+The+Witch+and+the+Wardrobe")
+new_book("catch+22")
+new_book("Cosmicomics")
 
 # book ["volumeInfo"]["averageRating"]
 # response = Net::HTTP.get(uri)
