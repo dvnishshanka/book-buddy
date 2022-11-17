@@ -32,4 +32,27 @@ class BookCopiesController < ApplicationController
   def book_copy_params
     params.require(:book_copy).permit(:comments, :availability_status, :book_id)
   end
+
+  def search_book(book_name)
+    uri = URI("https://www.googleapis.com/books/v1/volumes?q=#{book_name}&langRestrict=en&key=AIzaSyB0fBuVdMBemt9qqtw4U9uDwzGUptI-SOk")
+    results = URI.open(uri).read
+    user = JSON.parse(results)
+
+    # response = Net::HTTP.get(uri)
+    # book = JSON.parse(response)
+    book = user["items"][0]
+    # 1.times do |i|
+      # books["items"].each do |book|
+        Book.create!(
+          title: book["volumeInfo"]["title"],
+          author: book["volumeInfo"]["authors"].nil? ? nil : book["volumeInfo"]["authors"][0],
+          description: book["volumeInfo"]["description"],
+          pages: book["volumeInfo"]["pageCount"],
+          year: book["volumeInfo"]["publishedDate"],
+          publisher: book["volumeInfo"]["publisher"],
+          isbn: book["volumeInfo"]["industryIdentifiers"].nil? ? nil : book["volumeInfo"]["industryIdentifiers"][0]["identifier"], #tenery operater
+          category: book["volumeInfo"]["categories"].nil? ? nil : book["volumeInfo"]["categories"][0],
+          language: book["volumeInfo"]["language"],
+          photo_url: "https://books.google.com/books/content?id=#{book['id']}&printsec=frontcover&img=1&zoom=1&source=gbs_api")
+  end
 end

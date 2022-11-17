@@ -5,6 +5,7 @@
     <%= f.error_notification %>
     <div class="form-inputs">
       <%= f.collection_select(:book_id, @books, :id, :title, include_blank: "Please select a book...") %>
+      <%= f.input :book_id %>
       <%= f.input :availability_status, :collection => ['Swap','Rent','Sell'] %>
       <%= f.input :price,
                 autofocus: true,
