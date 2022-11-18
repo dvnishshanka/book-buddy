@@ -11,9 +11,13 @@ require 'net/http'
 require 'openssl'
 puts "Getting rid of old books"
 Book.destroy_all
+# User.destroy_all
 puts "Here we go!!!"
 
-User.create!(email: "andy@hotmail.com", password: "123456", first_name: "Andrew", last_name: "Grant", display_name: "Andy")
+# User.create!(email: "andy@gmail.com", password: "123456", first_name: "Andrew", last_name: "Grant", display_name: "Andy")
+# User.create!(email: "Katya@gmail.com", password: "123456", first_name: "katya", last_name: "Sitko", display_name: "Kat")
+# User.create!(email: "philly@gmail.com", password: "123456", first_name: "Phillip", last_name: "York", display_name: "Philly")
+
 
 def new_book(search)
   uri = URI("https://www.googleapis.com/books/v1/volumes?q=#{search}&langRestrict=en&key=AIzaSyB0fBuVdMBemt9qqtw4U9uDwzGUptI-SOk")
@@ -40,14 +44,31 @@ end
 
 new_book("If+on+a+Winter's+Night+a+Traveller")
 new_book("In+The+End,+It+Was+All+About+Love")
-new_book("brave+new+world")
+new_book("brave+new+world+huxley")
 new_book("ubik")
+new_book("The+Silence+of+the+Girls")
 new_book("Nineteen+Eighty+Four")
 new_book("The+Third+Policeman")
 new_book("Raise+High+the+Roof+Beam,+Carpenters+and+Seymour")
 new_book("Leaves+of+Grass")
-new_book("The+Stranger")
+new_book("The+Man+in+the+High+Castle")
 new_book("The+Lion,+The+Witch+and+the+Wardrobe")
+new_book("catch+22")
+new_book("Cosmicomics")
+new_book("All+Souls+day")
+
+new_book("In+Cold+Blood")
+new_book("The+Great+Gatsby")
+new_book("Stories+of+Your+Life+and+Others")
+new_book("Island+of+a+Thousand+Mirrors")
+new_book("Pet+Sematary")
+new_book("The+Years+with+Laura+Diaz")
+new_book("For+Esme+with+Love+and+Squalor")
+new_book("invisible+cities")
+new_book("The+English+Patient")
+new_book("The+Green+mile")
+new_book("The+Death+of+Artemio+Cruz")
+new_book("Origins+How+Earth's+History+Shaped+Human+History")
 
 # book ["volumeInfo"]["averageRating"]
 # response = Net::HTTP.get(uri)

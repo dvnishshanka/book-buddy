@@ -1,5 +1,6 @@
 class BookCopiesController < ApplicationController
   before_action :set_book_copy, only: %i[show]
+  before_action :set_book_copy, only: %i[show]
 
   def index
     @book_copies = BookCopy.all
