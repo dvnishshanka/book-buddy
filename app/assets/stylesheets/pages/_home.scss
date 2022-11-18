@@ -59,105 +59,34 @@
 
  }
 
- #search {
-  display: block;
-  border: 1px solid var(--light-border);
-  font-size: 16px;
-  padding: 10px 10px;
-  width: 60%;
-  padding-left: 40px;
-  border-radius: 20px;
-  outline: none !important;
-  box-sizing: border-box;
+ .book-category-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+ }
+
+.genre {
+
+  position: absolute;
+  transform:scale(0);
+}
+
+.genre + label {
+cursor: pointer;
+display: inline-block;
+font-size: 0.8rem;
+border-radius: 50rem;
+padding: 0.5rem 0.8rem;
+background-color: #75C9B7;
+color: #16123F;
+border: 1px solid #16123F;
+margin-right: 0.6rem;
+margin-bottom: 0.4rem;
 
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+.genre:checked + label {
 
-/* Modal Content */
-.modal-content {
-  background-color: #220909;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.book-category-label {
-  padding: 3px 10px;
-  background-color: $app-blue;
-  border-radius: 20px;
-  }
-
-.book-container {
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
-  margin-bottom: 20px;
-  margin-top: 25px;
-}
-
-.book-container-card {
-  width: 150px;
-  min-height: 300px;
-  border-radius: 10px;
-  background-color: $white;
-  margin-bottom: 20px;
-  text-decoration: none;
-
-  img {
-    height: 220px;
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  p  {
-    font-size: 12px;
-  }
-
-  h6 {
-    font-size: 16px;
-
-    // Limit the heading for several lines
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-
-    display: -moz-box;
-    -moz-box-orient: vertical;
-
-    overflow: hidden;
-  }
-
+  background-color: #ABD699;
+  color: white !important;
 }

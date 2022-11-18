@@ -1,10 +1,15 @@
 class BooksController < ApplicationController
-  def new
-    @book = Book.new
+  def index
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR author ILIKE :query OR description ILIKE :query"
+      @books = Book.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @books = Book.all
+    end
   end
 
-  def index
-    @books = Book.all
+  def new
+    @book = Book.new
   end
 
   def create

@@ -1,9 +1,51 @@
 <div class="container">
   <div class="book-category-container">
-    <div class="book-category-label">Horror</div>
-    <div class="book-category-label">Horror</div>
-    <div class="book-category-label">Horror</div>
-    <div class="book-category-label">Crime</div>
+  <div>
+      <input class="genre" type="checkbox" id="fiction" name="fiction">
+      <label for="fiction">Fiction</label>
+    </div>
+
+    <div>
+      <input class="genre" type="checkbox" id="sci-fi" name="sci-fi">
+      <label for="sci-fi">Sci-fi</label>
+    </div>
+
+      <div>
+      <input class="genre" type="checkbox" id="fantasy" name="fantasy">
+      <label for="fantasy">Fantasy</label>
+    </div>
+
+      <div>
+      <input class="genre" type="checkbox" id="romance" name="romance">
+      <label for="romance">Romance</label>
+    </div>
+
+    <div>
+      <input class="genre" type="checkbox" id="non-fiction" name="non-fiction">
+      <label for="non-fiction">Non ficton</label>
+    </div>
+
+    <div>
+      <input class="genre" type="checkbox" id="crime" name="crime">
+      <label for="crime">Crime</label>
+    </div>
+
+
+<div class="container">
+    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a book"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+</div>
+
+
+
+
+
   </div>
   <div class="book-container">
     <% @books.each do |book| %>
