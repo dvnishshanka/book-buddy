@@ -8,6 +8,10 @@ class PagesController < ApplicationController
     else
       @books = Book.all
     end
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "books/list", locals: {books: @books}, formats: [:html] }
+    end
   end
 
   def dashboard

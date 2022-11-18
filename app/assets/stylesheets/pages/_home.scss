@@ -1,4 +1,11 @@
 // Specific CSS for your home-page
+.main-header {
+  position:-webkit-sticky;
+   position:sticky;
+    top:0;
+}
+
+
 .book-category-container {
   display: flex;
   justify-content: space-between;
@@ -56,6 +63,17 @@
 
      overflow: hidden;
    }
+
+ }
+
+ .search-bar {
+position: absolute;
+
+height: 40px;
+border-radius: 40px;
+padding: 10px;
+background: #75C9B7;
+
 
  }
 

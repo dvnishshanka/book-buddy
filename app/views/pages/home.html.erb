@@ -1,66 +1,58 @@
 <div class="container">
-  <div class="book-category-container">
-  <div>
-      <input class="genre" type="checkbox" id="fiction" name="fiction">
-      <label for="fiction">Fiction</label>
+<div data-controller="search-books">
+    <div class="main-header">
+            <%# <div class="book-category-container">
+              <div>
+                <input class="genre" type="checkbox" id="fiction" name="fiction">
+                  <label for="fiction">Fiction</label>
+                </div>
+
+              <div>
+                  <input class="genre" type="checkbox" id="sci-fi" name="sci-fi">
+                  <label for="sci-fi">Sci-fi</label>
+                  </div>
+
+                      <div>
+                      <input class="genre" type="checkbox" id="fantasy" name="fantasy">
+                      <label for="fantasy">Fantasy</label>
+                    </div>
+
+                      <div>
+                      <input class="genre" type="checkbox" id="romance" name="romance">
+                      <label for="romance">Romance</label>
+                    </div>
+
+                    <div>
+                      <input class="genre" type="checkbox" id="non-fiction" name="non-fiction">
+                      <label for="non-fiction">Non ficton</label>
+                    </div>
+
+                    <div>
+                      <input class="genre" type="checkbox" id="crime" name="crime">
+                      <label for="crime">Crime</label>
+                    </div>
+
+
+              </div> %>
+
+
+
+              <div class="search">
+                <%= form_with url: root_path, method: :get, html: { data: { search_books_target: "form"}} do |f| %>
+                    <%= f.text_field :query,
+                                  value: params[:query],
+                                  class: "search-bar",
+                                  placeholder: "Find a book",
+                                  data: {
+                                    search_books_target: "input",
+                                    action: "keyup->search-books#update" }
+                                  %>
+                      <% end %>
+              </div>
     </div>
-
-    <div>
-      <input class="genre" type="checkbox" id="sci-fi" name="sci-fi">
-      <label for="sci-fi">Sci-fi</label>
-    </div>
-
-      <div>
-      <input class="genre" type="checkbox" id="fantasy" name="fantasy">
-      <label for="fantasy">Fantasy</label>
-    </div>
-
-      <div>
-      <input class="genre" type="checkbox" id="romance" name="romance">
-      <label for="romance">Romance</label>
-    </div>
-
-    <div>
-      <input class="genre" type="checkbox" id="non-fiction" name="non-fiction">
-      <label for="non-fiction">Non ficton</label>
-    </div>
-
-    <div>
-      <input class="genre" type="checkbox" id="crime" name="crime">
-      <label for="crime">Crime</label>
-    </div>
-
-
-<div class="container">
-    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a book"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-</div>
+                <%= render "books/list", books: @books %>
 
 
 
-
-
-  </div>
-  <div class="book-container">
-    <% @books.each do |book| %>
-      <div class= "book-container-card">
-        <%= link_to book_path(book) do%>
-          <%= image_tag book.photo_url, crop: "fill" %>
-          <div class="container pt-1">
-            <h6><strong><%= book.title %></strong></h6>
-            <p><%= book.author %></p>
-            <p>Isbn:<%= book.isbn %></p>
-            <p>Category:<%= book.category %></p>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-  <%= link_to "test create", new_book_copy_path, class: "btn-primary"%>
+  <%= link_to "test create", new_book_copy_path, class: "btn btn-primary"%>
 </div>
