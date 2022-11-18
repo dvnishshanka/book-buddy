@@ -1,0 +1,30 @@
+<div class="container">
+
+  <%= form_with url: books_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a book"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+  <p>Cannot find your book details below.</p>
+  <%= link_to "Please add your book details here", new_book_path  %>
+  <div class="book-container">
+    <% if @books != nil %>
+      <% @books.each do |book| %>
+        <div class= "book-container-card">
+          <%= link_to new_book_path (book) do %>
+            <%= image_tag "https://books.google.com/books/content?id=#{book['id']}&printsec=frontcover&img=1&zoom=1&source=gbs_api", crop: "fill" %>
+            <div class="container pt-1">
+              <h6><strong><%=  book["volumeInfo"]["title"]%></strong></h6>
+              <p><%= book["volumeInfo"]["authors"].nil? ? nil : book["volumeInfo"]["authors"][0] %></p>
+              <p>ISBN:<%=book["volumeInfo"]["industryIdentifiers"].nil? ? nil : book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %></p>
+              <p>Category:<%= book["volumeInfo"]["categories"].nil? ? nil : book["volumeInfo"]["categories"][0] %></p>
+            </div>
+          <% end%>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

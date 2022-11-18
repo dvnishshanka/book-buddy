@@ -1,0 +1,56 @@
+<div class="container">
+  <h2>Add a new book</h2>
+
+  <%= simple_form_for(@book) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :title,
+                autofocus: true,
+                input_html: { autocomplete: "title" }%>
+      <%= f.input :author,
+                autofocus: true,
+                input_html: { autocomplete: "author" }%>
+      <%= f.input :description,
+                autofocus: true,
+                input_html: { autocomplete: "description" }%>
+      <%= f.input :pages,
+                autofocus: true,
+                input_html: { autocomplete: "pages" }%>
+      <%= f.input :year,
+                autofocus: true,
+                input_html: { autocomplete: "year" }%>
+      <%= f.input :publisher,
+                autofocus: true,
+                input_html: { autocomplete: "publisher" }%>
+      <%= f.input :isbn,
+                autofocus: true,
+                input_html: { autocomplete: "isbn" }%>
+      <%= f.input :category,
+                autofocus: true,
+                input_html: { autocomplete: "category" }%>
+      <%= f.input :language,
+                autofocus: true,
+                input_html: { autocomplete: "language" }%>
+      <%= f.input :photo_url,
+                autofocus: true,
+                input_html: { autocomplete: "photo_url" }%>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Add", class: "btn-primary" %>
+    </div>
+  <% end %>
+
+
+</div>
+
+
+        <%# title: book["volumeInfo"]["title"],
+        author: book["volumeInfo"]["authors"].nil? ? nil : book["volumeInfo"]["authors"][0],
+        description: book["volumeInfo"]["description"],
+        pages: book["volumeInfo"]["pageCount"],
+        year: book["volumeInfo"]["publishedDate"],
+        publisher: book["volumeInfo"]["publisher"],
+        isbn: book["volumeInfo"]["industryIdentifiers"].nil? ? nil : book["volumeInfo"]["industryIdentifiers"][0]["identifier"], #tenery operater
+        category: book["volumeInfo"]["categories"].nil? ? nil : book["volumeInfo"]["categories"][0],
+        language: book["volumeInfo"]["language"],
+        photo_url: "https://books.google.com/books/content?id=#{book['id']}&printsec=frontcover&img=1&zoom=1&source=gbs_api") %>
