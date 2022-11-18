@@ -49,6 +49,15 @@ new_book("Leaves+of+Grass")
 new_book("The+Stranger")
 new_book("The+Lion,+The+Witch+and+the+Wardrobe")
 
+def user_profile
+  user_2 = User.create!(email: "sara@hotmail.com", password: "123456", first_name: "Sara", last_name: "Pulido", display_name: "Sara Pulido")
+  photo2 = URI.open('app/assets/images/logo-s.png')
+  user_2.photo.attach(io: photo2, filename: 'logo-s', content_type: 'image/jpg')
+  user_2.save!
+end
+
+puts "Users created"
+
 # book ["volumeInfo"]["averageRating"]
 # response = Net::HTTP.get(uri)
 # books = JSON.parse(response)

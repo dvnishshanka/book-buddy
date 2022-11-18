@@ -3,6 +3,11 @@
 
   <div class="userProfile-header">
     <h2>My info</h2>
+          <% if @user.photo.attached?%>
+            <%= cl_image_tag user.photo.key, class:"avatar-large" %>
+          <% else %>
+            <%= image_tag("logo-s.png", class: 'avatar-large' )%>
+          <%end%>
     <div class= "user-info">
       <h2><%= @user.display_name %></h2>
       <p><%= @user.email%></p>
