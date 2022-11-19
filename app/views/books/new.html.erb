@@ -1,44 +1,53 @@
 <div class="container">
-  <h2>Add a new book</h2>
+  <div class="row justify-content-center">
+    <div class="col-11 col-sm-8 col-md-8 form-login">
+    <h2>Add a new book</h2>
+    <%= simple_form_for(@book) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :title,
+                  autofocus: true,
+                  input_html: { autocomplete: "title" }%>
+        <%= f.input :author,
+                  autofocus: true,
+                  input_html: { autocomplete: "author" }%>
+        <%= f.input :description,
+                  autofocus: true,
+                  input_html: { autocomplete: "description" }%>
+        <%= f.input :pages,
+                  autofocus: true,
+                  input_html: { autocomplete: "pages" }%>
+        <%= f.input :year,
+                  autofocus: true,
+                  input_html: { autocomplete: "year" }%>
+        <%= f.input :publisher,
+                  autofocus: true,
+                  input_html: { autocomplete: "publisher" }%>
+        <%= f.input :isbn,
+                  autofocus: true,
+                  input_html: { autocomplete: "isbn" }%>
+        <%= f.input :category,
+                  autofocus: true,
+                  input_html: { autocomplete: "category" }%>
+        <%= f.input :language,
+                  autofocus: true,
+                  input_html: { autocomplete: "language" }%>
+        <%= f.input :photo_url,
+                  autofocus: true,
+                  input_html: { autocomplete: "photo_url" }%>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Add", class: "btn-primary" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
 
-  <%= simple_form_for(@book) do |f| %>
-    <%= f.error_notification %>
-    <div class="form-inputs">
-      <%= f.input :title,
-                autofocus: true,
-                input_html: { autocomplete: "title" }%>
-      <%= f.input :author,
-                autofocus: true,
-                input_html: { autocomplete: "author" }%>
-      <%= f.input :description,
-                autofocus: true,
-                input_html: { autocomplete: "description" }%>
-      <%= f.input :pages,
-                autofocus: true,
-                input_html: { autocomplete: "pages" }%>
-      <%= f.input :year,
-                autofocus: true,
-                input_html: { autocomplete: "year" }%>
-      <%= f.input :publisher,
-                autofocus: true,
-                input_html: { autocomplete: "publisher" }%>
-      <%= f.input :isbn,
-                autofocus: true,
-                input_html: { autocomplete: "isbn" }%>
-      <%= f.input :category,
-                autofocus: true,
-                input_html: { autocomplete: "category" }%>
-      <%= f.input :language,
-                autofocus: true,
-                input_html: { autocomplete: "language" }%>
-      <%= f.input :photo_url,
-                autofocus: true,
-                input_html: { autocomplete: "photo_url" }%>
-    </div>
-    <div class="form-actions">
-      <%= f.button :submit, "Add", class: "btn-primary" %>
-    </div>
-  <% end %>
+
+
+<div class="container">
+
 
 
 </div>

@@ -7,7 +7,6 @@ require 'nokogiri'
 class BooksController < ApplicationController
   def new
     @book = Book.new
-    # raise
     set_details_from_api if defined?(params["volumeInfo"]["title"])
   end
 
@@ -16,7 +15,6 @@ class BooksController < ApplicationController
 
     @search = params[:query]
     search_book(@search) if @search
- 
   end
 
   def create
