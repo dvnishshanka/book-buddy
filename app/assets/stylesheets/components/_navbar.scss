@@ -1,16 +1,72 @@
 .navbar {
-  justify-content: space-between;
-  background: $app-gradient;
-  position: sticky;
+  justify-content: space-around;
+  background: $app-light-green;
   position:-webkit-sticky;
+  position: sticky;
   top:0;
+  width: 100%;
+  height: min-content;
+  border-bottom-style: groove;
+
+}
+
+.search {
+  border: none;
+  align-items: center;
+  border-bottom-style: groove;
+
 }
 
 
 .search-bar {
-  position: absolute;
-  height: 40px;
-  border-radius: 40px;
+  height: 30px;
+  width: 200px;
   padding: 10px;
-  background: $app-blue;
+  align-items: center;
+  border: none;
+  background-color: $app-light-green;
+
+
+
   }
+
+
+  .navbar-brand {
+
+    width: 50px;
+
+  }
+
+
+  .book-category-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    }
+
+    .genre {
+
+      position: absolute;
+      transform:scale(0);
+    }
+
+    .genre + label {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.5rem;
+    border-radius: 30rem;
+    padding: 0.3rem 0.6rem;
+    background-color: $app-light-green;
+    color: $app-light-navyblue;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 5px;
+    margin-right: 0.6rem;
+    margin-bottom: 0.4rem;
+
+    }
+
+    .genre:checked + label {
+
+      background-color: $app-light-green;
+      color: $app-white !important;
+    }

@@ -1,41 +1,7 @@
-<div class="container">
 
-    <div data-controller="search-books">
-      <%# <div class="book-category-container">
-        <div>
-          <input class="genre" type="checkbox" id="fiction" name="fiction">
-            <label for="fiction">Fiction</label>
-          </div>
-
-        <div>
-            <input class="genre" type="checkbox" id="sci-fi" name="sci-fi">
-            <label for="sci-fi">Sci-fi</label>
-            </div>
-
-                <div>
-                <input class="genre" type="checkbox" id="fantasy" name="fantasy">
-                <label for="fantasy">Fantasy</label>
-              </div>
-
-                <div>
-                <input class="genre" type="checkbox" id="romance" name="romance">
-                <label for="romance">Romance</label>
-              </div>
-
-              <div>
-                <input class="genre" type="checkbox" id="non-fiction" name="non-fiction">
-                <label for="non-fiction">Non ficton</label>
-              </div>
-
-              <div>
-                <input class="genre" type="checkbox" id="crime" name="crime">
-                <label for="crime">Crime</label>
-              </div>
-
-
-        </div> %>
-
-      <%= render "shared/navbar" %>
+<div data-controller="search-books" >
+  <%= render "shared/navbar" %>
+  <div class="container">
     <%= render "books/list", books: @books %>
     <%= link_to "test add book page", books_path, class: "btn-primary"%>
   </div>

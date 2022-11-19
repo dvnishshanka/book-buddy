@@ -1,11 +1,5 @@
 <div data-search-books-target="list">
- <p class="mt-5">
-    <% if params[:query].blank? %>
-      <%= pluralize books.count, "book" %> available
-    <% else %>
-      <%= pluralize books.count, "result" %> for <code><%= params[:query] %></code>
-    <% end %>
-  </p>
+ 
   <div class="book-container">
     <% @books.each do |book| %>
       <div class= "book-container-card">

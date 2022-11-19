@@ -1,5 +1,9 @@
 // Specific CSS for your home-page
 
+.results-text {
+  margin-top: 4rem !important;
+}
+
 .book-category-container {
   display: flex;
   justify-content: space-between;
@@ -56,37 +60,4 @@
     overflow: hidden;
   }
 
-}
-
-
-.book-category-container {
-overflow-x: scroll;
-overflow-y: hidden;
-white-space: nowrap;
-}
-
-.genre {
-
-  position: absolute;
-  transform:scale(0);
-}
-
-.genre + label {
-cursor: pointer;
-display: inline-block;
-font-size: 0.8rem;
-border-radius: 50rem;
-padding: 0.5rem 0.8rem;
-background-color: $app-blue;
-color: $app-light-navyblue;
-border: 1px solid $app-light-navyblue;
-margin-right: 0.6rem;
-margin-bottom: 0.4rem;
-
-}
-
-.genre:checked + label {
-
-  background-color: $app-light-green;
-  color: $app-white !important;
 }
