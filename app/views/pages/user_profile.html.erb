@@ -1,0 +1,48 @@
+<div class="userProfile-container">
+   <h1>User Profile</h1>
+
+  <div class="userProfile-header">
+    <h2>My info</h2>
+          <% if @user.photo.attached?%>
+            <%= cl_image_tag user.photo.key, class:"avatar-large" %>
+          <% else %>
+            <%= image_tag("logo-s.png", class: 'avatar-large' )%>
+          <%end%>
+    <div class= "user-info">
+      <h2><%= @user.display_name %></h2>
+      <p><%= @user.email%></p>
+      <p>🗺<%= @user.city%></p>
+    </div>
+  </div>
+
+   <div class="userProfile-paragraph">
+    <div class="create-new-book">
+      <h2>Ready to create a new Book?</h2>
+      <%= link_to "Add a Book", root_path, class: "btn-btn-succes" %>
+    </div>
+  </div>
+
+  <div class="parent">
+    <div class="child">
+      <h2>All books 28</h2>
+      <%# show the first 4 books %>
+    </div>
+  </div>
+
+  <div class="parent">
+    <div class="child">
+      <h2>All reviews 87</h2>
+      <%# add card with last review %>
+        <div class="review-card-container">
+            <span class="review-card">
+              <p></p>
+              <p>Rating</p>
+              <p>image</p>
+            </span>
+        </div>
+    </div>
+  </div>
+
+
+
+</div>

@@ -18,4 +18,9 @@ class PagesController < ApplicationController
     current_user_books
     current_user_orders
   end
+
+  def user_profile
+    @user = ["sara"]
+    @user = current_user
+  end
 end
