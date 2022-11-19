@@ -1,8 +1,8 @@
 // Specific CSS for your home-page
 .main-header {
   position:-webkit-sticky;
-   position:sticky;
-    top:0;
+  position:sticky;
+  top:0;
 }
 
 
@@ -18,70 +18,65 @@
    }
 
  .book-container {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   justify-content: space-between;
-   flex-flow: row wrap;
-   margin-bottom: 20px;
-   margin-top: 25px;
-   overflow: scroll;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 25px;
+  flex-wrap: wrap;
  }
 
- .book-container-card {
-   width: 150px;
-   min-height: 300px;
-   border-radius: 10px;
-   background-color: $white;
-   margin-bottom: 20px;
-   text-decoration: none;
+.book-container-card {
+  width: 150px;
+  min-height: 300px;
+  border-radius: 10px;
+  background-color: $app-white;
+  margin-bottom: 20px;
+  text-decoration: none;
 
-   img {
-     height: 220px;
-     width: 100%;
-     border-top-left-radius: 10px;
-     border-top-right-radius: 10px;
-   }
+  img {
+    height: 220px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
 
-   a {
-     text-decoration: none;
-   }
+  a {
+    text-decoration: none;
+  }
 
-   p  {
-     font-size: 12px;
-   }
+  p  {
+    font-size: 12px;
+  }
 
-   h6 {
-     font-size: 16px;
+  h6 {
+    font-size: 16px;
 
-     // Limit the heading for several lines
-     display: -webkit-box;
-     -webkit-line-clamp: 3;
-     -webkit-box-orient: vertical;
+    // Limit the heading for several lines
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 
-     display: -moz-box;
-     -moz-box-orient: vertical;
+    display: -moz-box;
+    -moz-box-orient: vertical;
 
-     overflow: hidden;
-   }
+    overflow: hidden;
+  }
 
- }
+}
 
- .search-bar {
+.search-bar {
 position: absolute;
-
 height: 40px;
 border-radius: 40px;
 padding: 10px;
-background: #75C9B7;
+background: $app-blue;
+}
 
-
- }
-
- .book-category-container {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
- }
+.book-category-container {
+overflow-x: scroll;
+overflow-y: hidden;
+white-space: nowrap;
+}
 
 .genre {
 
@@ -95,9 +90,9 @@ display: inline-block;
 font-size: 0.8rem;
 border-radius: 50rem;
 padding: 0.5rem 0.8rem;
-background-color: #75C9B7;
-color: #16123F;
-border: 1px solid #16123F;
+background-color: $app-blue;
+color: $app-light-navyblue;
+border: 1px solid $app-light-navyblue;
 margin-right: 0.6rem;
 margin-bottom: 0.4rem;
 
@@ -105,6 +100,6 @@ margin-bottom: 0.4rem;
 
 .genre:checked + label {
 
-  background-color: #ABD699;
-  color: white !important;
+  background-color: $app-light-green;
+  color: $app-white !important;
 }
