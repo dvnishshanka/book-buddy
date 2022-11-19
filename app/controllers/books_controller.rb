@@ -8,11 +8,11 @@ class BooksController < ApplicationController
   def new
     @book = Book.new
     set_details_from_api if defined?(params["volumeInfo"]["title"])
+    # book_available_on_database?
   end
 
   def index
-    # @books = Book.all
-
+    # @db_books = Book.all
     @search = params[:query]
     search_book(@search) if @search
   end
@@ -39,6 +39,10 @@ class BooksController < ApplicationController
 
   def search_params
     params.require(:book).permit(:query)
+  end
+
+  def book_available_on_database?(isbn)
+    Book.find_by isbn: isbn
   end
 
   def search_book(search)
