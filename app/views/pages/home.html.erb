@@ -36,18 +36,7 @@
 
         </div> %>
 
-      <div class="search">
-        <%= form_with url: root_path, method: :get, html: { data: { search_books_target: "form"}} do |f| %>
-          <%= f.text_field :query,
-                        value: params[:query],
-                        class: "search-bar",
-                        placeholder: "Find a book",
-                        data: {
-                          search_books_target: "input",
-                          action: "keyup->search-books#update" }
-                        %>
-        <% end %>
-      </div>
+      <%= render "shared/navbar" %>
     </div>
     <%= render "books/list", books: @books %>
     <%= link_to "test add book page", books_path, class: "btn-primary"%>
