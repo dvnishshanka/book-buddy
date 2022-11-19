@@ -1,7 +1,6 @@
 <div class="container">
 
     <div data-controller="search-books">
-    <div class="main-header">
       <%# <div class="book-category-container">
         <div>
           <input class="genre" type="checkbox" id="fiction" name="fiction">
@@ -37,7 +36,6 @@
         </div> %>
 
       <%= render "shared/navbar" %>
-    </div>
     <%= render "books/list", books: @books %>
     <%= link_to "test add book page", books_path, class: "btn-primary"%>
   </div>

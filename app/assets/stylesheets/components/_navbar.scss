@@ -1,7 +1,9 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
   background: $app-gradient;
   position: sticky;
+  position:-webkit-sticky;
+  top:0;
 }
 
 
@@ -11,10 +13,4 @@
   border-radius: 40px;
   padding: 10px;
   background: $app-blue;
-  }
-
-  .main-header {
-    position:-webkit-sticky;
-    position:sticky;
-    top:0;
   }
