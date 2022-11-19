@@ -5,10 +5,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
   resources :books do
     resources :book_copies, only: [:new, :create]
   end
   resources :book_copies, only: [:index, :show]
+
 
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard
 

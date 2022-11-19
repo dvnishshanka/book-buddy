@@ -16,6 +16,7 @@ class BooksController < ApplicationController
 
     @search = params[:query]
     search_book(@search) if @search
+ 
   end
 
   def create
