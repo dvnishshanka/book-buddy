@@ -1,20 +1,24 @@
 <div class="container">
-  <h2>Add a new book</h2>
+  <div class="row justify-content-center">
+    <div class="col-11 col-sm-8 col-md-8 form-login">
+    <h2>Add a new book</h2>
 
-  <%= simple_form_for [@book, @book_copy] do |f| %>
-    <%= f.error_notification %>
-    <div class="form-inputs">
-      <%# <%= f.collection_select(:book_id, @books, :id, :title, include_blank: "Please select a book...") %> %>
-      <%= f.input :availability_status, :collection => ['Swap','Rent','Sell'] %>
-      <%= f.input :price,
-                autofocus: true,
-                input_html: { autocomplete: "price" }%>
-      <%= f.input :comments,
-                autofocus: true,
-                input_html: { autocomplete: "comments" }%>
+    <%= simple_form_for [@book, @book_copy] do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%# <%= f.collection_select(:book_id, @books, :id, :title, include_blank: "Please select a book...") %>
+        <%= f.input :availability_status, :collection => ['Swap','Rent','Sell'] %>
+        <%= f.input :price,
+                  autofocus: true,
+                  input_html: { autocomplete: "price" }%>
+        <%= f.input :comments,
+                  autofocus: true,
+                  input_html: { autocomplete: "comments" }%>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Add", class: "btn-primary" %>
+      </div>
+    <% end %>
     </div>
-    <div class="form-actions">
-      <%= f.button :submit, "Add", class: "btn-primary" %>
-    </div>
-  <% end %>
+  </div>
 </div>
