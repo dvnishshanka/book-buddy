@@ -11,7 +11,7 @@
 </div>
 
 
-
+  <%= link_to "Add a book", new_book_book_copy_path(@book) %>
 <h5>Copies of this book</h5>
 <div class="book-copy-card">
   <% @book.book_copies.each do |book_copy| %>

@@ -62,16 +62,19 @@
     <% @books.each do |book| %>
       <div class= "book-container-card">
         <%= link_to book_path(book) do%>
-          <%= image_tag book.photo_url, crop: "fill" %>
+          <%= image_tag book.photo_url, crop: "fill" if book.photo_url != nil %>
           <div class="container pt-1">
             <h6><strong><%= book.title %></strong></h6>
             <p><%= book.author %></p>
-            <p>Isbn:<%= book.isbn %></p>
+            <p>ISBN:<%= book.isbn %></p>
             <p>Category:<%= book.category %></p>
           </div>
         <% end %>
       </div>
     <% end %>
   </div>
+
+  <%# <%= link_to "test create", new_book_copy_path, class: "btn-primary"%> %>
+  <%= link_to "test add book page", books_path, class: "btn-primary"%>
 
 </div>
