@@ -1,13 +1,15 @@
 <div class="userProfile-container">
-   <h1>User Profile</h1>
-
-  <div class="userProfile-header">
-    <h2>My info</h2>
-          <% if @user.photo.attached?%>
+  <div class="user-avatar">
+      <% if @user.photo.attached?%>
             <%= cl_image_tag user.photo.key, class:"avatar-large" %>
           <% else %>
             <%= image_tag("logo-s.png", class: 'avatar-large' )%>
           <%end%>
+    </div>
+
+  <div class="userProfile-header">
+
+
     <div class= "user-info">
       <h2><%= @user.display_name %></h2>
       <p><%= @user.email%></p>
@@ -15,12 +17,6 @@
     </div>
   </div>
 
-   <div class="userProfile-paragraph">
-    <div class="create-new-book">
-      <h2>Ready to create a new Book?</h2>
-      <%= link_to "Add a Book", root_path, class: "btn-btn-succes" %>
-    </div>
-  </div>
 
   <div class="parent">
     <div class="child">
@@ -42,3 +38,4 @@
         </div>
     </div>
   </div>
+</div>

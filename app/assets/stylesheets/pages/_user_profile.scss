@@ -1,18 +1,11 @@
 .userProfile-container {
-  background-color: white;
   margin: 1.2rem;
 }
 
 .userProfile-header {
   display: flex;
-  justify-content: right;
   align-items: center;
   margin: 16px auto 8px auto;
-  padding: 24px;
-  padding-left: 100px;
-  h1, p {
-    justify-content: left;
-  }
 }
 
 .userProfile-paragraph {
@@ -53,9 +46,11 @@
 }
 
 .user-info {
-  margin-left: 0 0 0 24px;
-  text-align: center;
-  p {
-    margin: 0 !important;
-  }
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.avatar-large {
+  width: 100px;
+  height: auto;
 }
