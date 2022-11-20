@@ -3,6 +3,7 @@
   background: $app-light-green;
   position:-webkit-sticky;
   position: sticky;
+  z-index: 999;
   top:0;
   width: 100%;
   height: min-content;
@@ -13,7 +14,7 @@
 .search {
   border: none;
   align-items: center;
-  border-bottom-style: groove;
+
 
 }
 
@@ -24,7 +25,6 @@
   padding: 10px;
   align-items: center;
   border: none;
-  background-color: $app-light-green;
 
 
 
