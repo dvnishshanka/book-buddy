@@ -15,7 +15,7 @@
     <% if @books != nil %>
       <% @books.each do |book| %>
         <div class= "book-container-card">
-            <% @database_book = Book.where(isbn: book["volumeInfo"]["industryIdentifiers"][0]["identifier"]).take %>
+            <% @database_book = Book.where(isbn: book["volumeInfo"]["industryIdentifiers"][0]["identifier"]).take || nil %>
           <% if (@database_book == nil) %>
             <%= link_to new_book_path (book) do %>
               <%= image_tag "https://books.google.com/books/content?id=#{book['id']}&printsec=frontcover&img=1&zoom=1&source=gbs_api", crop: "fill" %>
