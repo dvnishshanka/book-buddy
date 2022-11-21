@@ -1,7 +1,5 @@
 class BookCopiesController < ApplicationController
-
   before_action :set_book, only: %i[show new]
-
 
   def index
     @book_copies = BookCopy.all
@@ -14,9 +12,7 @@ class BookCopiesController < ApplicationController
 
   def create
     @book_copy = BookCopy.new(book_copy_params)
-    if @book_copy.book_id.nil?
-      @book_copy.book = set_book
-    end
+    @book_copy.book = set_book if @book_copy.book_id.nil?
     @book_copy.user = current_user
     if @book_copy.save
       redirect_to book_path(@book_copy.book_id)
@@ -32,6 +28,6 @@ class BookCopiesController < ApplicationController
   end
 
   def book_copy_params
-    params.require(:book_copy).permit(:comments, :availability_status, :price, :book_id)
+    params.require(:book_copy).permit(:comments, :availability_status, :price)
   end
 end

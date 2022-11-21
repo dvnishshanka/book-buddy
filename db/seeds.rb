@@ -58,6 +58,7 @@ new_book("Cosmicomics")
 new_book("All+Souls+day")
 
 new_book("In+Cold+Blood")
+new_book("1984")
 new_book("The+Great+Gatsby")
 new_book("Stories+of+Your+Life+and+Others")
 new_book("Island+of+a+Thousand+Mirrors")
