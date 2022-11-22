@@ -1,5 +1,7 @@
 <div class="dashboard-container-chat">
-
+<% @chatroom.each do |chatroom| %>
+<p><%= chatroom.name %></p>
+<% end %>
   <div class="dashboard-header">
     <div class= "user-info">
       <h1><%= @user.display_name %></h1>
