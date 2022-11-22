@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   end
   resources :book_copies, only: [:index, :show]
 
+  resources :chatrooms, only: [:show, :index] do
+    resources :messages, only: :create
+  end
+
 
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard
   get "user_profile", to: "pages#user_profile", as: :user_profile

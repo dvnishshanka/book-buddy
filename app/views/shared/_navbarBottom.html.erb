@@ -12,10 +12,10 @@
         <p class="nav-bottom-text">Explore</p>
       </div>
     <% end %>
-    <%= link_to root_path, class: "nav-bottom-item" do %>
+    <%= link_to chatrooms_path, class: "nav-bottom-item" do %>
       <div class="nav-bottom-item">
         <i class="fa fa-envelope nav-icon"></i>
-        <p class="nav-bottom-text">inbox</p>
+        <p class="nav-bottom-text">Inbox</p>
       </div>
     <% end %>
     <% if user_signed_in? %>
