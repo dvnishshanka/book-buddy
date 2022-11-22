@@ -20,5 +20,5 @@ Rails.application.routes.draw do
 
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard
   get "user_profile", to: "pages#user_profile", as: :user_profile
-
+get "test",to: "pages#test"
 end

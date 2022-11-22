@@ -9,7 +9,7 @@ export default class extends Controller {
     console.log(this.bookTarget)
     console.log(this.buttonTargets)
     console.log(this.allBooksTarget)
-    console.log(target.event)
+    // console.log(target.event)
    }
 
   filter(event) {

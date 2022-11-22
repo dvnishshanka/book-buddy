@@ -5,6 +5,7 @@ require 'openssl'
 require 'nokogiri'
 
 class BooksController < ApplicationController
+
   def new
     @book = Book.new
     set_details_from_api if defined?(params["volumeInfo"]["title"])

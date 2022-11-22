@@ -19,13 +19,12 @@
   </div>
 
   <div class="book-category-container">
-    <div>
-        <button class="filter-button selected" id="all" data-action="click->filter-books#clearFilter" data-filter-books-target="allBooks">All</button>
-        <button class="filter-button" id="fiction" data-action="click->filter-books#filter" data-filter-books-target="button">Fiction</button>
-        <%# <button class="filter-button" id="Crime" data-action="click->filter-books#filter" data-filter-books-target="button">Crime</button>
-        <button class="filter-button" id="Sci-fi" data-action="click->filter-books#filter" data-filter-books-target="button">Sci-fi</button>
-        <button class="filter-button" id="Horror" data-action="click->filter-books#filter" data-filter-books-target="button">Horror</button>
-        <button class="filter-button" id="Poetry" data-action="click->filter-books#filter" data-filter-books-target="button">Poetry</button> %>
-      </div>
+  <%=link_to "fiction", root_path(:category => "fiction"), class: "filter-button" %>
+  <%=link_to "horror", root_path(:category => "horror"), class: "filter-button"  %>
+  <%=link_to "poetry", root_path(:category => "poetry"), class: "filter-button"  %>
+  <%=link_to "sci-fi", root_path(:category => "sci-fi"), class: "filter-button"  %>
+
   </div>
+
+
 </div>
