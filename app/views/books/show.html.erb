@@ -1,62 +1,49 @@
 <div class="container">
-
-            <div class="book-card">
-              <div class="book-image">
-                <%= image_tag @book.photo_url, crop: "fill" %>
-                <%= link_to root_path, class: "float" do %>
-                <i class="fa-solid fa-arrow-left my-float"></i>
-                <% end %>
-                <%= link_to new_book_book_copy_path(@book), class: "book-copy-button" do %>
-                <i class="fa fa-plus my-float"></i>
-                <% end %>
-              </div>
-                    <h3><%= @book.title %></h3>
-                    <p><%= @book.author %></p>
-                    <hr>
-
-
-                    <div data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
-  <p data-read-more-target="content">"<%= @book.description %>"</p>
-
-
-  <button data-action="read-more#toggle">Read more</button>
-
-  <template data-read-more-target="full">
-   "<%= @book.description %>"
-  </template>
-
-  <%= link_to "Add a book", new_book_book_copy_path(@book) %>
-<h5>Copies of this book</h5>
-<div class="book-copy-card">
-  <% @book.book_copies.each do |book_copy| %>
-    <p><%= book_copy.availability_status %></p>
-    <p>What <%= book_copy.user.display_name %> said about this book:"<%= book_copy.comments %>"</p>
-    <%= link_to new_book_copy_order_path(book_copy) do %>
-      <p>Get in touch with <%= book_copy.user.display_name %></p>
-    <% end %>
-  <% end %>
-
-</div>
-                    <hr>
-                    <p>Isbn:<%= @book.isbn %>
-                        <%= @book.category %>
-                    </p>
-            </div>
-            <hr>
-
-
-
-
-                <h5>Available copies of this book</h5>
-                  <div class="book-copy-card">
-                    <% @book.book_copies.each do |book_copy| %>
-                      <div class="book-copies">
-                        <p> Available for <%= book_copy.availability_status %></p>
-                        <p>"<%= book_copy.comments.capitalize %>"-<%= book_copy.user.display_name %></p>
-                        <p>Get in touch with <%= book_copy.user.display_name %></p>
-                      </div>
-                      <% end %>
-                    </div>
-
-
+  <div class="book-card">
+    <div class="book-image">
+      <%= image_tag @book.photo_url, crop: "fill" %>
+      <%= link_to root_path, class: "float" do %>
+       <i class="fa-solid fa-arrow-left my-float"></i>
+      <% end %>
+      <%= link_to new_book_book_copy_path(@book), class: "book-copy-button" do %>
+       <i class="fa fa-plus my-float"></i>
+      <% end %>
+    </div>
+    <h3><%= @book.title %></h3>
+    <p><%= @book.author %></p>
+    <hr>
+    <div data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
+      <p data-read-more-target="content">"<%= @book.description %>"</p>
+      <button data-action="read-more#toggle">Read more</button>
+      <template data-read-more-target="full">
+        "<%= @book.description %>"
+      </template>
+      <%= link_to "Add a book", new_book_book_copy_path(@book) %>
+      <h5>Copies of this book</h5>
+      <div class="book-copy-card">
+        <% @book.book_copies.each do |book_copy| %>
+          <p><%= book_copy.availability_status %></p>
+          <p>What <%= book_copy.user.display_name %> said about this book:"<%= book_copy.comments %>"</p>
+          <%= link_to new_book_copy_order_path(book_copy) do %>
+            <p>Get in touch with <%= book_copy.user.display_name %></p>
+          <% end %>
+        <% end %>
+      </div>
+      <hr>
+      <p>Isbn:<%= @book.isbn %>
+        <%= @book.category %>
+      </p>
+    </div>
+    <hr>
+    <h5>Available copies of this book</h5>
+      <div class="book-copy-card">
+        <% @book.book_copies.each do |book_copy| %>
+          <div class="book-copies">
+            <p> Available for <%= book_copy.availability_status %></p>
+            <p>"<%= book_copy.comments.capitalize %>"-<%= book_copy.user.display_name %></p>
+            <p>Get in touch with <%= book_copy.user.display_name %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
 </div>
