@@ -1,22 +1,27 @@
 <div class="container">
   <div class="book-card">
-    <div class="book-image">
-      <%= image_tag @book.photo_url, crop: "fill" %>
-      <%= link_to root_path, class: "float" do %>
+   <%= link_to root_path, class: "home-button" do %>
        <i class="fa-solid fa-arrow-left my-float"></i>
       <% end %>
       <%= link_to new_book_book_copy_path(@book), class: "book-copy-button" do %>
        <i class="fa fa-plus my-float"></i>
       <% end %>
+      <%= link_to new_book_book_copy_path(@book), class: "bookmark-button" do %>
+       <i class="far fa-bookmark my-float"></i>
+      <% end %>
+
+    <div class="book-image">
+      <%= image_tag @book.photo_url, crop: "fill" %>
+
     </div>
     <h3><%= @book.title %></h3>
     <p><%= @book.author %></p>
     <hr>
     <div data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
-      <p data-read-more-target="content">"<%= @book.description %>"</p>
-      <button data-action="read-more#toggle">Read more</button>
+      <p class="content-1" data-read-more-target="content">"<%= @book.description %>"</p>
+      <button class="read-more" data-action="read-more#toggle">Read more</button>
       <template data-read-more-target="full">
-        "<%= @book.description %>"
+        <p class="content-2">"<%= @book.description %>"</p>
       </template>
       <%= link_to "Add a book", new_book_book_copy_path(@book) %>
       <h5>Copies of this book</h5>

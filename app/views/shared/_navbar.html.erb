@@ -5,7 +5,7 @@
 
   <div class="search">
     <%= form_with url: root_path, method: :get, html: { data: { search_books_target: "form"}} do |f| %>
-        
+
       <%= f.text_field :query,
                     value: params[:query],
                     class: "search-bar",
@@ -19,31 +19,12 @@
   </div>
 
   <div class="book-category-container">
-    <div>
-      <input class="genre" type="checkbox" id="fiction" name="fiction">
-      <label for="fiction">Fiction</label>
-    </div>
-
-    <div>
-      <input class="genre" type="checkbox" id="sci-fi" name="sci-fi">
-      <label for="sci-fi">Sci-fi</label>
-    </div>
-
-    <div>
-      <input class="genre" type="checkbox" id="fantasy" name="fantasy">
-      <label for="fantasy">Fantasy</label>
-    </div>
-
-    <div>
-      <input class="genre" type="checkbox" id="romance" name="romance">
-      <label for="romance">Romance</label>
-    </div>
-
-    <div>
-      <input class="genre" type="checkbox" id="non-fiction" name="non-fiction">
-      <label for="non-fiction">Non ficton</label>
-    </div>
-
+  <%=link_to "fiction", root_path(:category => "fiction"), class: "filter-button" %>
+  <%=link_to "horror", root_path(:category => "horror"), class: "filter-button"  %>
+  <%=link_to "poetry", root_path(:category => "poetry"), class: "filter-button"  %>
+  <%=link_to "sci-fi", root_path(:category => "sci-fi"), class: "filter-button"  %>
 
   </div>
+
+
 </div>

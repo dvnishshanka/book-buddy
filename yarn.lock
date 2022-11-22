@@ -704,16 +704,15 @@ source-map@^0.6.0:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
+stimulus-flatpickr@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/stimulus-flatpickr/-/stimulus-flatpickr-1.4.0.tgz#a41071a3e69cfc50b7eaaacf356fc0ab1ab0543c"
+  integrity sha512-rcC/c9+E+f5W2kOjaaLShtf3i+p95ACqt+oGzSAgeuZh2YeIN8gW4EWO7h0STBLzSVPl6BjIfPWP7upMPavIVQ==
 
 stimulus-read-more@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/stimulus-read-more/-/stimulus-read-more-3.0.0.tgz#fc39394b58ee6981ee5e3236972939a0043cfe36"
   integrity sha512-g2Xxyn6MlxpljhBNsq1aGRnSs/Mc+DtFmJ2hJ2HNuycG8PYfuLojKesfX8Qj+LgYrVu0WwkGC0KAbwgfzmc0PA==
-
-stimulus-flatpickr@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/stimulus-flatpickr/-/stimulus-flatpickr-1.4.0.tgz#a41071a3e69cfc50b7eaaacf356fc0ab1ab0543c"
-  integrity sha512-rcC/c9+E+f5W2kOjaaLShtf3i+p95ACqt+oGzSAgeuZh2YeIN8gW4EWO7h0STBLzSVPl6BjIfPWP7upMPavIVQ==
 
 stimulus@^3.1.1:
   version "3.1.1"
@@ -722,7 +721,6 @@ stimulus@^3.1.1:
   dependencies:
     "@hotwired/stimulus" "^3.1.1"
     "@hotwired/stimulus-webpack-helpers" "^1.0.0"
-
 
 supports-color@^8.0.0:
   version "8.1.1"

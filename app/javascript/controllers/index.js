@@ -3,6 +3,9 @@
 // ./bin/rails generate stimulus controllerName
 import { application } from "./application"
 
+import FilterBooksController from "./filter_books_controller"
+application.register("filter-books", FilterBooksController)
+
 import ChatroomSubscriptionController from "./chatroom_subscription_controller"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
 
@@ -11,10 +14,3 @@ application.register("hello", HelloController)
 
 import SearchBooksController from "./search_books_controller"
 application.register("search-books", SearchBooksController)
-
-import ReadMore from 'stimulus-read-more'
-application.register('read-more', ReadMore)
-
-// import Flatpickr
-import Flatpickr from "stimulus-flatpickr"
-application.register('flatpickr', Flatpickr)

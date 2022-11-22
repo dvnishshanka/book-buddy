@@ -34,34 +34,29 @@
 
 
   .book-category-container {
-  overflow-x: scroll;
-  overflow-y: hidden;
+     overflow-x: scroll;
+     overflow-y: hidden;
      white-space: nowrap;
+  }
 
-     }
-
-    .genre {
-
-      position: absolute;
-      transform:scale(0);
+    .filter-button {
+      background-color: rgba(237, 235, 235, 0.7);
+      border: none;
+      border-radius: 15px;
+      box-shadow: none;
+      font-size: 1rem;
+      padding: 5px 10px;
+      &:hover {
+        background-color: rgba(#EF7B45, 0.8);
+        color: #FCFBF4;
+      }
     }
 
-    .genre + label {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 1rem;
-    border-radius: 30rem;
-    padding: 0.3rem 0.6rem;
-    background-color: #fcfbf4;
-    color: #69A297;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
-    margin-right: 0.6rem;
-    margin-bottom: 0.4rem;
-
+    .selected {
+      color: #FCFBF4;
+      background-color: rgba(#EF7B45, 1);
     }
 
-    .genre:checked + label {
-
-      background-color: $app-light-green;
-      color: $app-white !important;
+    .hide {
+      display: none;
     }

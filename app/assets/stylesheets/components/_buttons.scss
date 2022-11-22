@@ -1,0 +1,45 @@
+
+// Float button on show.html
+.home-button{
+	position:absolute;
+	width:40px;
+	height:40px;
+  right: 282px;
+    top: 43px;
+	background-color: #69A297;
+	color: #28262C;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 1px 1px 2px #999;
+}
+// Float button on show.html
+.my-float{
+	margin-top:11px;
+}
+// Float button on show.html
+.book-copy-button {
+	position:fixed;
+	width:40px;
+	height:40px;
+	right:40px;
+  bottom: 80px;
+	background-color: #FCFBF4;
+	color:#28262C;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 1px 1px 2px #999;
+  justify-content: center;
+}
+// Float button on show.html
+.bookmark-button {
+  position:absolute;
+	width:40px;
+	height:40px;
+	left: 282px;
+    top: 43px;
+	background-color: #69A297;
+	color: #28262C;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 1px 1px 2px #999;
+}
