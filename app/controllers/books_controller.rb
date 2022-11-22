@@ -11,8 +11,6 @@ class BooksController < ApplicationController
   end
 
   def index
-    # @books = Book.all
-
     @search = params[:query]
     search_book(@search) if @search
   end

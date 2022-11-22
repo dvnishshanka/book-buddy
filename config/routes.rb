@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :books do
-    resources :book_copies, only: [:new, :create]
+    resources :book_copies, only: %i[new create]
   end
-  resources :book_copies, only: [:index, :show]
-
+  resources :book_copies, only: %i[index show] do
+    resources :orders, only: %i[new create index]
+  end
 
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard
   get "user_profile", to: "pages#user_profile", as: :user_profile

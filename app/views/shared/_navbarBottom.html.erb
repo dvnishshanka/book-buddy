@@ -19,7 +19,7 @@
       </div>
     <% end %>
     <% if user_signed_in? %>
-      <%= link_to root_path, class: "nav-bottom-item" do %>
+      <%= link_to user_profile_path, class: "nav-bottom-item" do %>
         <i class="fa fa-user nav-icon"></i>
         <p class="nav-bottom-text">Profile</p>
       <% end %>

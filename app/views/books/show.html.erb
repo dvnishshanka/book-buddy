@@ -18,11 +18,24 @@
                     <div data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
   <p data-read-more-target="content">"<%= @book.description %>"</p>
 
+
   <button data-action="read-more#toggle">Read more</button>
 
   <template data-read-more-target="full">
    "<%= @book.description %>"
   </template>
+
+  <%= link_to "Add a book", new_book_book_copy_path(@book) %>
+<h5>Copies of this book</h5>
+<div class="book-copy-card">
+  <% @book.book_copies.each do |book_copy| %>
+    <p><%= book_copy.availability_status %></p>
+    <p>What <%= book_copy.user.display_name %> said about this book:"<%= book_copy.comments %>"</p>
+    <%= link_to new_book_copy_order_path(book_copy) do %>
+      <p>Get in touch with <%= book_copy.user.display_name %></p>
+    <% end %>
+  <% end %>
+
 </div>
                     <hr>
                     <p>Isbn:<%= @book.isbn %>
