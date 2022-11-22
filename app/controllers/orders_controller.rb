@@ -17,7 +17,11 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
+
+    @order = Order.new
+    date = order_params[:start_date].split(" to ")
+    @order.start_date = date[0]
+    @order.end_date = date.length == 1 ? @order.start_date : date[1]
     @order.book_copy_id = set_book_copy.id
     @order.user_id = current_user.id
     @order.status = "ORDER_CREATED"
@@ -35,6 +39,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:start_date, :end_date)
+    params.require(:order).permit(:start_date)
   end
 end

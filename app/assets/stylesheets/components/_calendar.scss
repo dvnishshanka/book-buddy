@@ -1,6 +1,6 @@
 .simple-calendar {
   table {
-    min-height: 80vh;
+    min-height: 50vh;
   }
   .today {
     border: 1.5px solid $app-light-navyblue !important;
@@ -24,3 +24,6 @@
   background: #1BCB7F;
   color: white;
 }
+
+
+// flatpickr
