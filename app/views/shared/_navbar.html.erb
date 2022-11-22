@@ -5,7 +5,7 @@
 
   <div class="search">
     <%= form_with url: root_path, method: :get, html: { data: { search_books_target: "form"}} do |f| %>
-        <i class="fa fa-search nav-icon"></i>
+        
       <%= f.text_field :query,
                     value: params[:query],
                     class: "search-bar",

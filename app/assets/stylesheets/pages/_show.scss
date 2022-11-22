@@ -40,3 +40,16 @@ justify-content: center;
 	box-shadow: 1px 1px 2px #999;
 
 }
+
+
+p {
+
+  display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+
+    display: -moz-box;
+    -moz-box-orient: vertical;
+
+    overflow: hidden;
+}

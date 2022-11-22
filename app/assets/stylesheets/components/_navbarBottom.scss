@@ -1,8 +1,11 @@
 .nav-icon {
-  color: $app-white;
+  color: #FCFBF4;
   padding-bottom: 0.2rem ;
 }
 
+.nav-icon:hover {
+cursor: pointer;
+}
 .nav-bottom {
   display: flex;
   justify-content: space-around;
@@ -10,6 +13,7 @@
   padding: 0.1rem;
   position: sticky;
   bottom:0;
+  z-index: 999;
 
 }
 

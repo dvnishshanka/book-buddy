@@ -1,13 +1,14 @@
 .navbar {
   justify-content: space-around;
-  background: $app-light-green;
+  background: #69A297;
   position:-webkit-sticky;
   position: sticky;
   z-index: 999;
   top:0;
   width: 100%;
   height: min-content;
-  border-bottom-style: groove;
+  border-bottom-style: solid;
+  border-bottom-color: #8C7284;
 
 }
 
@@ -21,10 +22,14 @@
 
 .search-bar {
   height: 30px;
-  width: 200px;
-  padding: 10px;
+  width: 220px;
+  padding: 20px;
   align-items: center;
   border: none;
+  border-radius: 30rem;
+  box-shadow: 1px 1px 2px #999;
+  background-color: #FCFBF4;
+  color: #28262C;
 
 
 
@@ -39,11 +44,11 @@
 
 
   .book-category-container {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+     white-space: nowrap;
 
-    }
+     }
 
     .genre {
 
@@ -54,12 +59,12 @@
     .genre + label {
     cursor: pointer;
     display: inline-block;
-    font-size: 0.5rem;
+    font-size: 1rem;
     border-radius: 30rem;
     padding: 0.3rem 0.6rem;
-    background-color: $app-light-green;
-    color: $app-light-navyblue;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 5px;
+    background-color: #fcfbf4;
+    color: #69A297;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
     margin-right: 0.6rem;
     margin-bottom: 0.4rem;
 
