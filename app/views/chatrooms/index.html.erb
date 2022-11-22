@@ -1,0 +1,19 @@
+<div class="dashboard-container-chat">
+
+  <div class="dashboard-header">
+    <div class= "user-info">
+      <h1><%= @user.display_name %></h1>
+        <p><%= @user.email%></p>
+    </div>
+    <%if @user.photo.attached? %>
+      <%= cl_image_tag(@user.photo.key, class: '') %>
+    <% else %>
+      <%= image_tag("", class: '' ) %>
+    <% end %>
+  </div>
+      <h2 class="chat-index-header">All my chats:</h2>
+  <div class="dashboard-paragraph">
+    <div class="container-chat-card">
+    </div>
+  </div>
+</div>

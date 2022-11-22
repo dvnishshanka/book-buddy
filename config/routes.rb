@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     resources :orders, only: %i[new create index]
   end
 
+  resources :chatrooms, only: [:show, :index] do
+    resources :messages, only: :create
+  end
+
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard
   get "user_profile", to: "pages#user_profile", as: :user_profile
 
