@@ -1,0 +1,29 @@
+.simple-calendar {
+  table {
+    min-height: 50vh;
+  }
+  .today {
+    border: 1.5px solid $app-light-navyblue !important;
+  }
+  th, .day {
+  color: $app-light-navyblue !important;
+  }
+}
+
+.meeting {
+  color: white;
+  padding: 4px 15px;
+  border-radius: 4px;
+  font-size: 12px;
+  background: $app-light-blue;
+  color: $app-light-navyblue !important;
+  transition: background 0.3s ease;
+}
+
+.meeting:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+
+// flatpickr

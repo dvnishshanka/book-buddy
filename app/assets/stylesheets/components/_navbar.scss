@@ -1,14 +1,67 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: $app-light-green;
-  position: sticky;
-  top: 0px;
+.navbar {
+  justify-content: space-around;
+  background: #69A297;
+  position: fixed;
+  z-index: 999;
+  top:0;
+  width: 100%;
+  height: min-content;
+  border-bottom-style: solid;
+  border-bottom-color: #8C7284;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.search {
+  border: none;
+  align-items: center;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+.search-bar {
+  height: 30px;
+  width: 220px;
+  padding: 20px;
+  align-items: center;
+  border: none;
+  border-radius: 30rem;
+  box-shadow: 1px 1px 2px #999;
+  background-color: #FCFBF4;
+  color: #28262C;
+  }
+
+
+  .navbar-brand {
+    width: 50px;
+  }
+
+
+  .book-category-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+     white-space: nowrap;
+
+     }
+
+    .genre {
+
+      position: absolute;
+      transform:scale(0);
+    }
+
+    .genre + label {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 30rem;
+    padding: 0.3rem 0.6rem;
+    background-color: #fcfbf4;
+    color: #69A297;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
+    margin-right: 0.6rem;
+    margin-bottom: 0.4rem;
+
+    }
+
+    .genre:checked + label {
+
+      background-color: $app-light-green;
+      color: $app-white !important;
+    }

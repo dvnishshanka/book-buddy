@@ -39,6 +39,7 @@ def new_book(search)
         isbn: book["volumeInfo"]["industryIdentifiers"].nil? ? nil : book["volumeInfo"]["industryIdentifiers"][0]["identifier"], #tenery operater
         category: book["volumeInfo"]["categories"].nil? ? nil : book["volumeInfo"]["categories"][0],
         language: book["volumeInfo"]["language"],
+        #averagerating: book["volumeInfo"]["averageRating"],
         photo_url: "https://books.google.com/books/content?id=#{book['id']}&printsec=frontcover&img=1&zoom=1&source=gbs_api")
 end
 
@@ -58,6 +59,7 @@ new_book("Cosmicomics")
 new_book("All+Souls+day")
 
 new_book("In+Cold+Blood")
+new_book("1984")
 new_book("The+Great+Gatsby")
 new_book("Stories+of+Your+Life+and+Others")
 new_book("Island+of+a+Thousand+Mirrors")
@@ -79,6 +81,6 @@ end
 
 puts "Users created"
 
-# book ["volumeInfo"]["averageRating"]
+
 # response = Net::HTTP.get(uri)
 # books = JSON.parse(response)

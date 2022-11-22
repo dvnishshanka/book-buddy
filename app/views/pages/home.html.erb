@@ -1,55 +1,6 @@
-<div class="container">
-
-    <div data-controller="search-books">
-    <div class="main-header">
-      <%# <div class="book-category-container">
-        <div>
-          <input class="genre" type="checkbox" id="fiction" name="fiction">
-            <label for="fiction">Fiction</label>
-          </div>
-
-        <div>
-            <input class="genre" type="checkbox" id="sci-fi" name="sci-fi">
-            <label for="sci-fi">Sci-fi</label>
-            </div>
-
-                <div>
-                <input class="genre" type="checkbox" id="fantasy" name="fantasy">
-                <label for="fantasy">Fantasy</label>
-              </div>
-
-                <div>
-                <input class="genre" type="checkbox" id="romance" name="romance">
-                <label for="romance">Romance</label>
-              </div>
-
-              <div>
-                <input class="genre" type="checkbox" id="non-fiction" name="non-fiction">
-                <label for="non-fiction">Non ficton</label>
-              </div>
-
-              <div>
-                <input class="genre" type="checkbox" id="crime" name="crime">
-                <label for="crime">Crime</label>
-              </div>
-
-
-        </div> %>
-
-      <div class="search">
-        <%= form_with url: root_path, method: :get, html: { data: { search_books_target: "form"}} do |f| %>
-          <%= f.text_field :query,
-                        value: params[:query],
-                        class: "search-bar",
-                        placeholder: "Find a book",
-                        data: {
-                          search_books_target: "input",
-                          action: "keyup->search-books#update" }
-                        %>
-        <% end %>
-      </div>
-    </div>
+<div data-controller="search-books" >
+  <%= render "shared/navbar" %>
+  <div class="container" style= "margin-top: 140px;">
     <%= render "books/list", books: @books %>
-    <%= link_to "test add book page", books_path, class: "btn-primary"%>
   </div>
 </div>

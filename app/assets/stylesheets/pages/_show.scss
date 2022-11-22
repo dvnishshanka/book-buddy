@@ -1,0 +1,55 @@
+.book-copies {
+  background: aliceblue;
+
+}
+
+.book-image {
+  display: flex;
+justify-content: center;
+}
+
+
+*{padding:0;margin:0;}
+
+
+.float{
+	position:fixed;
+	width:30px;
+	height:30px;
+	left:40px;
+	background-color: $app-gradient;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 1px 1px 2px #999;
+}
+
+.my-float{
+	margin-top:7px;
+}
+
+.book-copy-button {
+	position:fixed;
+	width:30px;
+	height:30px;
+	right:40px;
+	background-color: $app-gradient;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 1px 1px 2px #999;
+
+}
+
+
+p {
+
+  display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+
+    display: -moz-box;
+    -moz-box-orient: vertical;
+
+    overflow: hidden;
+}

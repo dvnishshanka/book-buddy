@@ -1,22 +1,25 @@
 <div data-search-books-target="list">
- <p class="mt-5">
-    <% if params[:query].blank? %>
-      <%= pluralize books.count, "book" %> available
-    <% else %>
-      <%= pluralize books.count, "result" %> for <code><%= params[:query] %></code>
-    <% end %>
-  </p>
-  <div class="book-container">
-    <% @books.each do |book| %>
-      <div class= "book-container-card">
-        <%= link_to book_path(book) do%>
-          <%= image_tag book.photo_url, crop: "fill" %>
-          <div class="container pt-1">
-            <h6><strong><%= book.title %></strong></h6>
-            <p><%= book.author %></p>
-          </div>
-        <% end %>
+
+      <div class="book-container">
+          <% @books.each do |book| %>
+            <div class= "book-container-card">
+                            <div class="front">
+                              <%= image_tag book.photo_url, crop: "fill" %>
+                            </div>
+
+
+                            <div class="back">
+                        <h6><%= book.title %></h6>
+                        <p><%= book.author %></p>
+                        <%= link_to "more information", book_path(book) %>
+                            </div>
+
+            </div>
+          <% end %>
       </div>
-    <% end %>
-    </div>
-  </div>
+
+
+
+
+
+</div>

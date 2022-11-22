@@ -11,6 +11,18 @@
 @import "components/index";
 @import "pages/index";
 
+@import "simple_calendar";
+
+@import "flatpickr/dist/flatpickr";
+
 body {
   color: $black;
+}
+
+.container {
+  margin-bottom: 70px;
+}
+
+.form-control {
+  color: $app-black
 }

@@ -1,0 +1,11 @@
+<div class="calendar-container container">
+  <%= month_calendar(events: @orders, attribute: :start_date, end_attribute: :end_date) do |date, orders| %>
+    <%= date %>
+
+    <% orders.each do |order| %>
+      <div class="meeting">
+        <small><%= order.status ? "ordered" : nil %></small>
+      </div>
+    <% end %>
+  <% end %>
+</div>
