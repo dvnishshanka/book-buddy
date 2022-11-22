@@ -5,7 +5,8 @@ export default class extends Controller {
   static targets = ["form", "input", "list"]
 
   connect() {
-    // console.log(this.formTarget.action)
+  // console.log(this.formTarget.action)
+  // console.log("hello rom search books")
     // console.log(this.inputTarget.value)
     // console.log(this.listTarget)
   }

@@ -3,15 +3,14 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="filter-books"
 export default class extends Controller {
 
-
   static targets = ["button", "allBooks", "book"];
   connect() {
-    console.log("lets goooooo")
-    console.log(this.bookTargets.filter)
-    console.log(this.classList)
-    // console.log(this.listTarget)
+    console.log("Hellllllooooooooo")
+    console.log(this.bookTarget)
+    console.log(this.buttonTargets)
+    console.log(this.allBooksTarget)
+    console.log(target.event)
    }
-
 
   filter(event) {
     this.buttonTargets.forEach((button) => {

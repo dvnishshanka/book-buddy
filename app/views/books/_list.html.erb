@@ -1,25 +1,18 @@
-<div data-search-books-target="list">
+<div data-search-books-target="list" data-filter-books-target="book">
 
-      <div class="book-container" data-filter-books-target="book">
+      <div class="book-container">
           <% @books.each do |book| %>
             <div class= "book-container-card">
-                            <div class="front">
-                              <%= image_tag book.photo_url, crop: "fill" %>
-                            </div>
+              <div class="front">
+                <%= image_tag book.photo_url, crop: "fill" %>
+              </div>
 
-
-                            <div class="back">
-                        <h6><%= book.title %></h6>
-                        <p><%= book.author %></p>
-                        <%= link_to "more information", book_path(book) %>
-                            </div>
-
+              <div class="back">
+                  <h6><%= book.title %></h6>
+                  <p><%= book.author %></p>
+                    <%= link_to "more information", book_path(book) %>
+              </div>
             </div>
           <% end %>
       </div>
-
-
-
-
-
 </div>
