@@ -14,17 +14,18 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     set_book_copy
+    set_previous_order_dates
   end
 
   def create
-
     @order = Order.new
     date = order_params[:start_date].split(" to ")
     @order.start_date = date[0]
     @order.end_date = date.length == 1 ? @order.start_date : date[1]
     @order.book_copy_id = set_book_copy.id
     @order.user_id = current_user.id
-    @order.status = "ORDER_CREATED"
+    @order.status = "CREATED"
+
     if @order.save
       redirect_to book_copy_orders_path(@order.book_copy_id)
     else
@@ -40,5 +41,13 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:start_date)
+  end
+
+  def set_previous_order_dates
+    previous_orders = Order.where(book_copy_id: params[:book_copy_id]).where(status: "CONFIRMED").all
+    @disable_dates = []
+    previous_orders.each do |order|
+      @disable_dates << { from: order.start_date.strftime("%F"), to: order.end_date.strftime("%F") }
+    end
   end
 end
