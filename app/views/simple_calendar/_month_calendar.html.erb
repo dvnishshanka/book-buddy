@@ -1,11 +1,11 @@
 <div class="simple-calendar">
   <div class="d-flex align-items-center justify-content-between">
     <div class="calendar-heading my-2">
-      <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: 'btn btn-outline-primary' %>
+      <%= link_to t('simple_calendar.previous', default: '<'), calendar.url_for_previous_view, class: 'btn btn-outline-primary' %>
       <span class="calendar-title btn btn-primary"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-      <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: 'btn btn-outline-primary' %>
+      <%= link_to t('simple_calendar.next', default: '>'), calendar.url_for_next_view, class: 'btn btn-outline-primary' %>
     </div>
-      <%= link_to 'Create meeting', new_book_copy_order_path, class: 'btn btn-outline-warning' %>
+      <%= link_to 'Order', new_book_copy_order_path, class: 'btn btn-outline-warning' %>
   </div>
 
   <table class="table table-striped">

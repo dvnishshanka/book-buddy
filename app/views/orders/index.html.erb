@@ -4,8 +4,7 @@
 
     <% orders.each do |order| %>
       <div class="meeting">
-        <p class="m-0 p-0"><%= order.user.display_name %></p>
-        <small><%= order.status %></small>
+        <small><%= order.status ? "ordered" : nil %></small>
       </div>
     <% end %>
   <% end %>

@@ -1,24 +1,19 @@
 .navbar {
   justify-content: space-around;
   background: #69A297;
-  position:-webkit-sticky;
-  position: sticky;
+  position: fixed;
   z-index: 999;
   top:0;
   width: 100%;
   height: min-content;
   border-bottom-style: solid;
   border-bottom-color: #8C7284;
-
 }
 
 .search {
   border: none;
   align-items: center;
-
-
 }
-
 
 .search-bar {
   height: 30px;
@@ -30,16 +25,11 @@
   box-shadow: 1px 1px 2px #999;
   background-color: #FCFBF4;
   color: #28262C;
-
-
-
   }
 
 
   .navbar-brand {
-
     width: 50px;
-
   }
 
 

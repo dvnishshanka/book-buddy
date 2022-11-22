@@ -4,17 +4,14 @@
       <h2>Make a booking</h2>
         <%= simple_form_for [@book_copy, @order] do |f| %>
           <div class="form-inputs">
-            <%= f.text_field :start_date, placeholder: 'Start Date', label:true,
+            <%= f.text_field :start_date, placeholder: 'select dates', class: "mb-3 p-1",
             data: {
               controller: "flatpickr",
               flatpickr_date_format: "d-m-Y",
-              flatpickr_min_date: Time.zone.now # disables past dates
-            } %>
-            <%= f.text_field :end_date, placeholder: 'End Date', label:true,
-            data: {
-              controller: "flatpickr",
-              flatpickr_date_format: "d-m-Y",
-              flatpickr_min_date: Time.zone.now # disables past dates
+              flatpickr_disable: ["01-12-2022"],
+              flatpickr_min_date: Time.zone.now, # disables past dates
+              mode: "range",
+
             }%>
           </div>
           <div class="form-actions">

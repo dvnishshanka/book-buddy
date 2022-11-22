@@ -1,8 +1,6 @@
-
 <div data-controller="search-books" >
   <%= render "shared/navbar" %>
-  <div class="container">
+  <div class="container" style= "margin-top: 140px;">
     <%= render "books/list", books: @books %>
-    <%= link_to "test add book page", books_path, class: "btn-primary"%>
   </div>
 </div>
