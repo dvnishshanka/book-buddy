@@ -9,3 +9,9 @@ application.register("hello", HelloController)
 
 import SearchBooksController from "./search_books_controller"
 application.register("search-books", SearchBooksController)
+
+import { Application } from '@hotwired/stimulus'
+import ReadMore from 'stimulus-read-more'
+
+const application = Application.start()
+application.register('read-more', ReadMore)
