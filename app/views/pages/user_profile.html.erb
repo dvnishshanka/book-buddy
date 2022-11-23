@@ -1,20 +1,26 @@
-<div class="userProfile-container">
-   <h1>User Profile</h1>
-
-  <div class="userProfile-header">
-    <h2>My info</h2>
-          <% if @user.photo.attached?%>
-            <%= cl_image_tag user.photo.key, class:"avatar-large" %>
-          <% else %>
-            <%= image_tag("logo-s.png", class: 'avatar-large' )%>
-          <%end%>
-    <div class= "user-info">
-      <h2><%= @user.display_name %></h2>
-      <p><%= @user.email%></p>
-      <p>🗺<%= @user.city%></p>
-    </div>
+<div class="container">
+  <div class="userProfile-image-center">
+    <% if @user.photo.attached?%>
+      <%= cl_image_tag current_user.photo.key, class:"avatar-bordered" %>
+    <% else %>
+      <%= image_tag("logo-s.png", class: 'avatar-bordered' )%>
+    <%end%>
   </div>
-
+  <br>
+  <div class="ms-3">
+    <p class="userProfile-field-name">Name</p>
+    <p><%= current_user.first_name %> <%= current_user.last_name %></p>
+    <p class="userProfile-field-name">Display Name</p>
+    <p><%= @current_user.display_name %></p>
+    <p class="userProfile-field-name">Email</p>
+    <p><%= current_user.email%></p>
+    <p class="userProfile-field-name">Street</p>
+    <p><%= current_user.street%></p>
+    <p class="userProfile-field-name">City</p>
+    <p><%= current_user.city%></p>
+    <p class="userProfile-field-name">Country</p>
+    <p><%= current_user.country%></p>
+  </div>
    <div class="userProfile-paragraph">
     <div class="create-new-book">
       <h2>Ready to create a new Book?</h2>
@@ -46,4 +52,3 @@
 
 
 </div>
-<div class="div">test</div>
