@@ -12,11 +12,13 @@
         <p class="nav-bottom-text">Explore</p>
       </div>
     <% end %>
+    <% if current_user !=nil %>
     <%= link_to dashboard_path(current_user), class: "nav-bottom-item" do %>
       <div class="nav-bottom-item">
         <i class="fa-solid fa-book-open nav-icon"></i>
         <p class="nav-bottom-text">Books</p>
       </div>
+    <% end %>
     <% end %>
     <%= link_to chatrooms_path, class: "nav-bottom-item" do %>
       <div class="nav-bottom-item">
