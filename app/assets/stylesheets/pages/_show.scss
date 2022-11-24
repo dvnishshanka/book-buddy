@@ -5,7 +5,15 @@
 
 .book-image {
   display: flex;
-justify-content: center;
+  margin-top: 70px;
+  justify-content: center;
+  width: 100%;
+
+  img {
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px $app-light-grey;
+  }
 }
 
 
@@ -35,7 +43,4 @@ justify-content: center;
       &:hover {
         color: #EF7B45;
       }
-
-
-
 }
