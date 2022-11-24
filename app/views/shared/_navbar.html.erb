@@ -15,13 +15,16 @@
                       action: "keyup->search-books#update" }
                     %>
 
-    <% end %>
+    
   </div>
 
   <div class="book-category-container">
-    <% categories = Book.all.map{|t| t.category}.uniq%>
-    <%categories.each do |category|%>
-      <%= link_to category, root_path(:category => "fiction"), class: "filter-button"  %>
+
+        <%=link_to "classic", root_path(:category => "classic"), class: "filter-button" %>
+  <%=link_to "fiction", root_path(:category => "fiction"), class: "filter-button"  %>
+  <%=link_to "poetry", root_path(:category => "poetry"), class: "filter-button"  %>
+  <%=link_to "sci-fi", root_path(:category => "sci-fi"), class: "filter-button"  %>
+
     <% end %>
   </div>
 
