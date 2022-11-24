@@ -1,30 +1,29 @@
-<div class="container" style="">
-  <div class="">
-    <br>
-      <h3>Dashboard <%= current_user.display_name.capitalize || current_user.first_name.capitalize %> !</h3>
-    <hr>
+<div class="container">
+  <h4>My Bookings</h4>
 
-      <h4 class="">Books rented</h4>
-
-       <% if @book_copies.length > 0 %>
-        <%# <%= render 'shared/bookmark', %> %>
-          <% else %>
-          <h6>You don't have any books rented yet!.</h6>
-          <h6>Rent your first book here</h6>
-          <%# add a link to rent a book %>
-      <% end %>
-
-      <h5>My Books
-        <%= link_to new_book_path do%>
-          <button class=""><i class="fa-solid fa-circle-plus add_circle_outline green-color"></i>Book Time</button>
+    <% if @orders.length > 0 %>
+      <div class="dashboard-order-container">
+        <% @orders.each do |order|  %>
+          <%= render 'shared/order_card', order: order %>
         <% end %>
-      </h5>
-
-      <% if @book_copies.length >0 %>
-        <%# <%= render 'shared/rented_books_card' %> %>
-        <% else %>
-        <h6>No books added yet 👀.</h6>
-      <% end %>
-
+      </div>
+    <% else %>
+      <h6>No books ordered...... yet!.</h6>
+      <h6>Time to find your first book. Let the journey begin with Book Buddies...</h6>
+      <%= link_to "Start searching", root_path, class: "btn btn-primary"%>
+    <% end %>
+    <hr>
+    <h4>My Books</h4>
+    <% if @book_copies.length > 0 %>
+       <div class="dashboard-order-container">
+        <% @book_copies.each do |book_copy|  %>
+          <%= render 'shared/my_book_card', book_copy: book_copy %>
+        <% end %>
+      </div>
+      <% else %>
+      <h6>No books added...... yet!.</h6>
+      <h6>Share your first book from here.</h6>
+      <%= link_to "Add your Book", new_book_path, class: "btn btn-primary"%>
+    <% end %>
   </div>
 </div>
