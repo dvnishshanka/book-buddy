@@ -7,7 +7,7 @@
             <%= f.text_field :start_date, placeholder: 'select dates', class: "mb-3 p-1",
             data: {
               controller: "flatpickr",
-              flatpickr_disable: @disable_dates,
+              # flatpickr_disable: @disable_dates,
               flatpickr_min_date: Time.zone.now, # disables past dates
               mode: "range",
             }%>

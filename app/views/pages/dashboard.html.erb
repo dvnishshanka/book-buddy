@@ -1,4 +1,4 @@
-<div class="" style="">
+<div class="container" style="">
   <div class="">
     <br>
       <h3>Dashboard <%= current_user.display_name.capitalize || current_user.first_name.capitalize %> !</h3>
@@ -6,8 +6,8 @@
 
       <h4 class="">Books rented</h4>
 
-       <% if @book_copies.length >0 %>
-        <%= render 'shared/bookmark' %>
+       <% if @book_copies.length > 0 %>
+        <%# <%= render 'shared/bookmark', %> %>
           <% else %>
           <h6>You don't have any books rented yet!.</h6>
           <h6>Rent your first book here</h6>
