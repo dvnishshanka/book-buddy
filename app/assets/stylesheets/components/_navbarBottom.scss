@@ -6,6 +6,7 @@
 .nav-icon:hover {
 cursor: pointer;
 }
+
 .nav-bottom {
   display: flex;
   justify-content: space-around;
@@ -22,6 +23,7 @@ cursor: pointer;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+
   a {
   text-decoration: none;
   }
@@ -31,8 +33,7 @@ cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center ;
-  padding: 0px 16px;
+  justify-content: center;
 }
 .nav-bottom-text {
   font-size: 10px;
