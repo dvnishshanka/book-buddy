@@ -6,7 +6,8 @@
       <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>" data-chatroom-subscription-target="messages"  >
         <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>" id="message<%= message.id %>">
           <small>
-            <strong><%= message.user.display_name %></strong>
+
+
             <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
           </small>
           <p><%= message.content %></p>
