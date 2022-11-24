@@ -1,9 +1,9 @@
 <div class="container chatroom" data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" >
+  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" data-chatroom-subscription-current-user-id-value="<%= current_user.id %>" >
     <h1>#<%= @chatroom.name %></h1>
 
     <% @chatroom.messages.each do |message| %>
-      <div class="messages d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>" data-chatroom-subscription-target="messages"  >
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>" data-chatroom-subscription-target="messages"  >
         <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>" id="message<%= message.id %>">
           <small>
             <strong><%= message.user.display_name %></strong>
