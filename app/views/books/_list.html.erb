@@ -8,11 +8,23 @@
               </div>
 
               <div class="back">
-                  <h6><%= book.title %></h6>
-                  <p><%= book.author %></p>
-                    <%= link_to "more information", book_path(book) %>
+                <div class="ribbon">
+                  <div class="ribbon-text">
+                    <%= book.category %>
+                  </div>
+              </div>
+
+                                <%# <%= link_to book_path(book), class: "more-info-button" do %>
+                         <%# <i class="fa-solid fa-info icon-float"></i> %>
+                                <%# <% end %> %> %>
+
+                    <div class="card-text">
+                      <h6><%= book.title %></h6>
+                      <p><%= book.author %></p>
+
+                    </div>
               </div>
             </div>
-          <% end %>
+        <% end %>
       </div>
 </div>
