@@ -1,25 +1,29 @@
 <div class="container">
   <div class="userProfile-image-center">
     <% if @user.photo.attached?%>
-      <%= cl_image_tag current_user.photo.key, class:"avatar-bordered" %>
+      <%= cl_image_tag @user.photo.key, class:"avatar-bordered" %>
     <% else %>
-      <%= image_tag("logo-s.png", class: 'avatar-bordered' )%>
+      <%= render "shared/default_profile_image" %>
     <%end%>
   </div>
   <br>
   <div class="ms-3">
-    <p class="userProfile-field-name">Name</p>
-    <p><%= current_user.first_name %> <%= current_user.last_name %></p>
+    <% if @user == current_user %>
+      <p class="userProfile-field-name">Name</p>
+      <p><%= @user.first_name %> <%= @user.last_name %></p>
+    <% end %>
     <p class="userProfile-field-name">Display Name</p>
-    <p><%= @current_user.display_name %></p>
+    <p><%= @user.display_name || @user.first_name %></p>
+     <% if @user == current_user %>
     <p class="userProfile-field-name">Email</p>
-    <p><%= current_user.email%></p>
-    <p class="userProfile-field-name">Street</p>
-    <p><%= current_user.street%></p>
+      <p><%= @user.email%></p>
+      <p class="userProfile-field-name">Street</p>
+      <p><%= @user.street%></p>
+    <% end %>
     <p class="userProfile-field-name">City</p>
-    <p><%= current_user.city%></p>
+    <p><%= @user.city%></p>
     <p class="userProfile-field-name">Country</p>
-    <p><%= current_user.country%></p>
+    <p><%= @user.country%></p>
   </div>
    <div class="userProfile-paragraph">
     <div class="create-new-book">
