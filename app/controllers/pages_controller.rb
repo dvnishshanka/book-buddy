@@ -28,12 +28,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    current_user_books
-    current_user_orders
+    @book_copies = current_user.book_copies
+    @orders = current_user.orders
   end
 
-  def user_profile
-    @user = ["sara"]
-    @user = current_user
-  end
 end

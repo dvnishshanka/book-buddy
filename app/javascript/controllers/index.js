@@ -14,3 +14,7 @@ application.register("hello", HelloController)
 
 import SearchBooksController from "./search_books_controller"
 application.register("search-books", SearchBooksController)
+
+// import Flatpickr
+import Flatpickr from "stimulus-flatpickr"
+application.register('flatpickr', Flatpickr)

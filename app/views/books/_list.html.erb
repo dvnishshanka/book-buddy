@@ -1,4 +1,10 @@
 <div data-search-books-target="list" data-filter-books-target="book">
+  <div class="book-container">
+      <% @books.each do |book| %>
+        <div class= "book-container-card">
+          <div class="front">
+            <%= image_tag book.photo_url, crop: "fill" %>
+          </div>
 
       <div class="book-container">
           <% @books.each do |book| %>
@@ -14,9 +20,9 @@
                   </div>
               </div>
 
-                                <%# <%= link_to book_path(book), class: "more-info-button" do %>
-                         <%# <i class="fa-solid fa-info icon-float"></i> %>
-                                <%# <% end %> %> %>
+                          <%= link_to book_path(book), class: "more-info-button" do %>
+                         <i class="fa-solid fa-info icon-float"></i> %>
+                                <% end %> %> %>
 
                     <div class="card-text">
                       <h6><%= book.title %></h6>

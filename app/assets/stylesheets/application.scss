@@ -15,8 +15,7 @@
 @import "flatpickr/dist/flatpickr";
 
 body {
-  color: $black;
-  
+  color: $app-light-navyblue;
 }
 
 .container {
@@ -24,5 +23,6 @@ body {
 }
 
 .form-control {
-  color: $app-black
+  color: $app-black;
+  background-color: $app-light-yellow;
 }

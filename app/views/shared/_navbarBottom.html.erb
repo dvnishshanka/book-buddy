@@ -1,4 +1,4 @@
-<div class="nav sticky-md-bottom bg-success bg-opacity-75 nav-bottom">
+<div class="nav sticky-md-bottom bg-opacity-75 nav-bottom">
   <div class="container-fluid d-flex nav-bottom-item-container">
     <%= link_to root_path, class: "nav-bottom-item" do %>
       <div class="nav-bottom-item">
@@ -11,6 +11,14 @@
         <i class="fa fa-search nav-icon"></i>
         <p class="nav-bottom-text">Explore</p>
       </div>
+    <% end %>
+    <% if current_user !=nil %>
+    <%= link_to dashboard_path(current_user), class: "nav-bottom-item" do %>
+      <div class="nav-bottom-item">
+        <i class="fa-solid fa-book-open nav-icon"></i>
+        <p class="nav-bottom-text">Books</p>
+      </div>
+    <% end %>
     <% end %>
     <%= link_to chatrooms_path, class: "nav-bottom-item" do %>
       <div class="nav-bottom-item">
@@ -25,7 +33,7 @@
           <p class="nav-bottom-text">Profile</p>
         </div>
         <div class="dropup-content">
-          <%= link_to "Profile", user_profile_path%>
+          <%= link_to "Profile", user_profile_path(current_user.id)%>
           <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
         </div>
       </div>

@@ -1,18 +1,13 @@
-.userProfile-container {
-  background-color: white;
-  margin: 1.2rem;
+.userProfile-image-center {
+  display: flex;
+  justify-content: center;
 }
 
-.userProfile-header {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  margin: 16px auto 8px auto;
-  padding: 24px;
-  padding-left: 100px;
-  h1, p {
-    justify-content: left;
-  }
+.userProfile-field-name {
+  color: $app-light-grey;
+  font-size: 15px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .userProfile-paragraph {

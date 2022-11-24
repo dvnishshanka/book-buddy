@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="userProfile-image-center">
+    <% if @user.photo.attached?%>
+      <%= cl_image_tag @user.photo.key, class:"avatar-bordered" %>
+    <% else %>
+      <%= render "shared/default_profile_image" %>
+    <%end%>
+  </div>
+  <br>
+  <div class="ms-3">
+    <% if @user == current_user %>
+      <p class="userProfile-field-name">Name</p>
+      <p><%= @user.first_name %> <%= @user.last_name %></p>
+    <% end %>
+    <p class="userProfile-field-name">Display Name</p>
+    <p><%= @user.display_name || @user.first_name %></p>
+     <% if @user == current_user %>
+    <p class="userProfile-field-name">Email</p>
+      <p><%= @user.email%></p>
+      <p class="userProfile-field-name">Street</p>
+      <p><%= @user.street%></p>
+    <% end %>
+    <p class="userProfile-field-name">City</p>
+    <p><%= @user.city%></p>
+    <p class="userProfile-field-name">Country</p>
+    <p><%= @user.country%></p>
+  </div>
+   <div class="userProfile-paragraph">
+    <div class="create-new-book">
+      <h2>Ready to create a new Book?</h2>
+      <%= link_to "Add a Book", root_path, class: "btn-btn-succes" %>
+    </div>
+  </div>
+
+  <div class="parent">
+    <div class="child">
+      <h2>All books 28</h2>
+      <%# show the first 4 books %>
+    </div>
+  </div>
+
+  <div class="parent">
+    <div class="child">
+      <h2>All reviews 87</h2>
+      <%# add card with last review %>
+        <div class="review-card-container">
+            <span class="review-card">
+              <p></p>
+              <p>Rating</p>
+              <p>image</p>
+            </span>
+        </div>
+    </div>
+  </div>
+
+
+
+</div>
