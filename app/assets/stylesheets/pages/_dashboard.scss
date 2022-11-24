@@ -1,0 +1,59 @@
+.dashboard-order-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.dashboard-order-card {
+  background-color: $app-white;
+  display: flex;
+  width: 400px;
+  min-height: 130px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+  img {
+    height: 100%;
+    width: 120px;
+    border-radius: 10px 0px 0px 10px;
+    object-fit: cover;
+  }
+}
+
+.dashboard-order-card-description {
+ padding: 10px;
+
+ p {
+  padding: 0px;
+  margin: 0px;
+  font-size: 0.8rem;
+  padding-bottom: 3px;
+ }
+
+ a {
+  text-decoration: none;
+ }
+}
+
+.dashboard-order-card-title {
+  // Limit the heading for several lines
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  display: -moz-box;
+  -moz-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.dashboard-order-status {
+  padding: 5px 5px !important;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  float: right;
+  background-color: $app-light-yellow;
+}

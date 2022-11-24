@@ -30,7 +30,6 @@ class PagesController < ApplicationController
   def dashboard
     @book_copies = current_user.book_copies
     @orders = current_user.orders
-    raise
   end
 
 end

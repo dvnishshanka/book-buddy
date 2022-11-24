@@ -19,11 +19,10 @@
   </div>
 
   <div class="book-category-container">
-  <%=link_to "fiction", root_path(:category => "fiction"), class: "filter-button" %>
-  <%=link_to "horror", root_path(:category => "horror"), class: "filter-button"  %>
-  <%=link_to "poetry", root_path(:category => "poetry"), class: "filter-button"  %>
-  <%=link_to "sci-fi", root_path(:category => "sci-fi"), class: "filter-button"  %>
-
+    <% categories = Book.all.map{|t| t.category}.uniq%>
+    <%categories.each do |category|%>
+      <%= link_to category, root_path(:category => "fiction"), class: "filter-button"  %>
+    <% end %>
   </div>
 
 

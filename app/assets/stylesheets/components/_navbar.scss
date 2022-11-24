@@ -37,6 +37,9 @@
      overflow-x: scroll;
      overflow-y: hidden;
      white-space: nowrap;
+     a {
+      text-decoration: none;
+    }
   }
 
     .filter-button {
@@ -45,11 +48,13 @@
       border-radius: 15px;
       box-shadow: none;
       font-size: 1rem;
+      margin-right: 10px;
       padding: 5px 10px;
       &:hover {
         background-color: rgba(#EF7B45, 0.8);
         color: #FCFBF4;
       }
+
     }
 
     .selected {
