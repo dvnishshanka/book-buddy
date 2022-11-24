@@ -15,15 +15,20 @@
                       action: "keyup->search-books#update" }
                     %>
 
-    
+
   </div>
 
   <div class="book-category-container">
 
-        <%=link_to "classic", root_path(:category => "classic"), class: "filter-button" %>
-  <%=link_to "fiction", root_path(:category => "fiction"), class: "filter-button"  %>
-  <%=link_to "poetry", root_path(:category => "poetry"), class: "filter-button"  %>
-  <%=link_to "sci-fi", root_path(:category => "sci-fi"), class: "filter-button"  %>
+  <%= categories = Book.all.map{|t| t.category}.uniq %>
+  <button class= "filter-button" >
+  </button>
+
+        <%# <%=link_to "classic", root_path(:category => "classic"), class: "filter-button" %>
+  <%# <%=link_to "fiction", root_path(:category => "fiction"), class: "filter-button"  %> %>
+  <%# <%=link_to "poetry", root_path(:category => "poetry"), class: "filter-button"  %> %>
+  <%# <%=link_to "sci-fi", root_path(:category => "sci-fi"), class: "filter-button"  %> %>
+  <%# <%=link_to "comics", root_path(:category => "comics"), class: "filter-button"  %> %> %>
 
     <% end %>
   </div>

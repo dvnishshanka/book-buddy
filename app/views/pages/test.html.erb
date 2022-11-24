@@ -1,3 +1,5 @@
 
 
-
+<% categories = Book.all.map{|t| t.category}.uniq%>
+    <%categories.each do |category|%>
+    
