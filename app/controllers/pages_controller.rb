@@ -17,7 +17,7 @@ class PagesController < ApplicationController
       end
       respond_to do |format|
         format.html # Follow regular flow of Rails
-        format.text { render partial: "books/list", locals: {books: @books}, formats: [:html] }
+        format.text { render partial: "books/list", locals: { books: @books }, formats: [:html] }
       end
     end
     # raise
@@ -30,7 +30,5 @@ class PagesController < ApplicationController
   def dashboard
     @book_copies = current_user.book_copies
     @orders = current_user.orders
-    raise
   end
-
 end

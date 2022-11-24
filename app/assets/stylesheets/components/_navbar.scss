@@ -16,12 +16,12 @@
 }
 
 .search-bar {
-  height: 30px;
+  height: 25px;
   width: 220px;
   padding: 20px;
   align-items: center;
   border: none;
-  border-radius: 30rem;
+  border-radius: 10px;
   box-shadow: 1px 1px 2px #999;
   background-color: #FCFBF4;
   color: #28262C;
@@ -37,6 +37,9 @@
      overflow-x: scroll;
      overflow-y: hidden;
      white-space: nowrap;
+     a {
+      text-decoration: none;
+    }
   }
 
     .filter-button {
@@ -45,11 +48,13 @@
       border-radius: 15px;
       box-shadow: none;
       font-size: 1rem;
+      margin-right: 10px;
       padding: 5px 10px;
       &:hover {
         background-color: rgba(#EF7B45, 0.8);
         color: #FCFBF4;
       }
+
     }
 
     .selected {

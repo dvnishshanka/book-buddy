@@ -86,7 +86,47 @@
 .back {
   background-color: $app-white;
   transform: rotateY(180deg);
+  height: 220px;
+  width: 150px;
   border-radius: 10px;
+  overflow:hidden
 
 
+}
+
+.ribbon {
+  position: absolute;
+  top: 10px;
+  right: -22px;
+  transform: rotate(45deg);
+  color: $app-white;
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  width: 90px;
+  background-color: $app-light-green;
+}
+
+//  .ribbon {
+//   width: 0px;
+//   height: 90px;
+//   background-color: $app-white;
+//   position: absolute;
+//   top: -5px;
+//   right: 20px;
+//   border: solid 15px $app-light-green;
+//   border-bottom: solid 15px transparent;
+//   border-top-left-radius: 5px;
+//   border-top-right-radius: 5px;
+
+// }
+
+.ribbon-text {
+  // transform: rotate(90deg);
+  color: $app-white;
+  font-size: 12px
+ }
+
+.card-text {
+  margin-top: 50px;
 }

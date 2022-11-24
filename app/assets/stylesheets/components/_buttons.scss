@@ -1,11 +1,10 @@
 
 // Float button on show.html
 .home-button{
-	position:absolute;
+	position:fixed;
 	width:40px;
 	height:40px;
-  right: 282px;
-    top: 43px;
+  top: 43px;
 	background-color: #69A297;
 	color: #28262C;
 	border-radius:50px;
@@ -30,16 +29,39 @@
 	box-shadow: 1px 1px 2px #999;
   justify-content: center;
 }
-// Float button on show.html
-.bookmark-button {
-  position:absolute;
+Float button on show.html
+.add-book-button {
+  position:fixed;
 	width:40px;
 	height:40px;
-	left: 282px;
-    top: 43px;
+  top: 43px;
 	background-color: #69A297;
 	color: #28262C;
 	border-radius:50px;
 	text-align:center;
 	box-shadow: 1px 1px 2px #999;
+}
+
+.more-info-button {
+  position:absolute;
+	width:30px;
+	height:30px;
+	right: 282px;
+    top: 43px;
+	background-color: #69A297;
+	color: #28262C;
+	border-radius:50px;
+  text-align: center;
+
+
+}
+
+.icon-float{
+	margin-top:7px;
+}
+
+.upper-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%
 }

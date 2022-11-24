@@ -1,0 +1,20 @@
+<div class= "dashboard-order-card">
+  <%= link_to book_path(book_copy.book_id) do %>
+    <%= image_tag book_copy.book.photo_url %>
+  <% end %>
+ <div class= "dashboard-order-card-description">
+    <%= link_to book_path(book_copy.book_id) do %>
+      <p class="mb-2 dashboard-order-card-title" style = "font-size: 1rem;"><strong><%= book_copy.book.title %></strong></p>
+    <% end %>
+    <p><i class="fa-solid fa-euro-sign"></i>  <%= book_copy.price %> for <%= book_copy.availability_status %></p>
+    <%= link_to user_profile_path(book_copy.user_id) do %>
+      <p><i class="fa-regular fa-user"></i>  <%= book_copy.user.display_name || book_copy.user.first_name%></p>
+      <p><i class="fa-solid fa-location-dot"></i>  <%= book_copy.user.city  %>, <%= book_copy.user.country  %></p>
+    <% end %>
+    <hr>
+    <% book_copy.orders.first(2).each do |order| %>
+    <p><strong><%= order.user.display_name || order.user.first_name %></strong> <%=  "Requested" if order.status == "CREATED" %></p>
+    <p><i class="fa-regular fa-calendar-xmark"></i>  <%= order.start_date %> to <%= order.end_date %></p>
+    <% end %>
+ </div>
+</div>
