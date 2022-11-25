@@ -1,6 +1,6 @@
 class ChatroomsController < ApplicationController
   def index
-    @user = current_user
+    @user = current_user # <- You have access through current user.
     @chatroom = Chatroom.all
   end
 
