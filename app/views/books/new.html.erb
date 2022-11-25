@@ -26,9 +26,12 @@
         <%= f.input :isbn,
                   autofocus: true,
                   input_html: { autocomplete: "isbn" }%>
-        <%= f.input :category,
-                  autofocus: true,
-                  input_html: { autocomplete: "category" }%>
+    <% categories = Book.all.map{|t| t.category}.uniq%>
+    <%= f.input :category, :collection => [options_for_select(categories)] %>
+
+
+
+
         <%= f.input :language,
                   autofocus: true,
                   input_html: { autocomplete: "language" }%>
