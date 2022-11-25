@@ -13,6 +13,7 @@
         <%= f.input :comments,
                   autofocus: true,
                   input_html: { autocomplete: "comments" }%>
+        <%= f.input :photo, as: :file %>
       </div>
       <div class="form-actions">
         <%= f.button :submit, "Add", class: "btn-primary" %>
