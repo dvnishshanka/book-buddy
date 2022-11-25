@@ -2,4 +2,15 @@
 
 <% categories = Book.all.map{|t| t.category}.uniq%>
     <%categories.each do |category|%>
-    
+
+<button class= "filter-button" >
+  <%= categories = Book.all.map{|t| t.category}.uniq %>
+
+  <%categories.each do |category|%>
+  <%= link_to books_path do %>
+  <%= image_tag "Book Collection" %>
+<% end %>
+
+
+  </button>
+ <% end %>
