@@ -1,5 +1,12 @@
-<div class="container">
-  <h4>My Bookings</h4>
+<div class="container mt-4">
+  <div class= "d-flex justify-content-between align-items-center">
+    <h4 class="text-center">Your Bookings</h4>
+    <div>
+      <% if @orders.length > 0 %>
+        <%= link_to "Search for a book", root_path, class: "btn btn-primary text-center" %>
+      <% end %>
+    </div>
+  </div>
 
     <% if @orders.length > 0 %>
       <div class="dashboard-order-container">
@@ -13,17 +20,24 @@
       <%= link_to "Start searching", root_path, class: "btn btn-primary"%>
     <% end %>
     <hr>
-    <h4>My Books</h4>
-    <% if @book_copies.length > 0 %>
-       <div class="dashboard-order-container">
-        <% @book_copies.each do |book_copy|  %>
-          <%= render 'shared/my_book_card', book_copy: book_copy %>
+    <div class= "d-flex justify-content-between align-items-center">
+      <h4 class="text-center">Your Books</h4>
+      <div>
+        <% if @book_copies.length > 0 %>
+          <%= link_to "Add new Book", books_path, class: "btn btn-primary"%>
         <% end %>
+      </div>
+    </div>
+    <% if @book_copies.length > 0 %>
+      <div class="dashboard-order-container">
+      <% @book_copies.each do |book_copy|  %>
+        <%= render 'shared/my_book_card', book_copy: book_copy %>
+      <% end %>
       </div>
       <% else %>
       <h6>No books added...... yet!.</h6>
       <h6>Share your first book from here.</h6>
-      <%= link_to "Add your Book", new_book_path, class: "btn btn-primary"%>
+      <%= link_to "Add your Book", books_path, class: "btn btn-primary"%>
     <% end %>
   </div>
 </div>
