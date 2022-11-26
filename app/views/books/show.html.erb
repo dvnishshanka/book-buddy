@@ -40,8 +40,9 @@
     </div>
     <div class="info-isbn">
     <p>ISBN:<%= @book.isbn %></p>
-    <p><%=@book.category class=""  %></p>
-    </div>
+
+    <p class="filter-button"><%= @book.category %></p>
+
   </div>
 
   <h5>Available copies of this book</h5>
