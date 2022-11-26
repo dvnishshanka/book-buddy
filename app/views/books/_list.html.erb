@@ -1,33 +1,24 @@
 <div data-search-books-target="list" data-filter-books-target="book">
+  <div class="book-container">
+      <% @books.each do |book| %>
+        <div class= "book-container-card">
+          <div class="front">
+            <%= image_tag book.photo_url, crop: "fill" %>
+          </div>
 
-
-      <div class="book-container">
-          <% @books.each do |book| %>
-            <div class= "book-container-card">
-              <div class="front">
-                <%= image_tag book.photo_url, crop: "fill" %>
+          <div class="back">
+            <%= link_to "more", book_path(book), class: "container" %>
+            <div class="ribbon">
+              <div class="ribbon-text">
+                <%= book.category %>
               </div>
-
-              <div class="back">
-              <%= link_to "more", book_path(book) %>
-
-                <div class="ribbon">
-                  <div class="ribbon-text">
-                    <%= book.category %>
-                  </div>
-                </div>
-
-
-
-
-
-                    <div class="card-text">
-                      <h4><%= book.title %></h4>
-                      <h6>- <%= book.author %></h6>
-                    </div>
-                </div>
-                
             </div>
-        <% end %>
-      </div>
+            <div class="card-text container">
+              <h4><%= book.title %></h4>
+              <h6>- <%= book.author %></h6>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
 </div>
