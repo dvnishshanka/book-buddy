@@ -3,6 +3,9 @@
       <%= link_to root_path, class: "home-button" do %>
       <i class="fa-solid fa-arrow-left my-float ms-0"></i>
       <% end %>
+       <%= link_to root_path, class: "bookmark-button" do %>
+      <i class="fa-regular fa-bookmark my-float ms-0"></i>
+      <% end %>
 
 
 
@@ -20,28 +23,23 @@
   <p><%= @book.author %></p>
   </div>
   <hr>
-  <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
+  <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more..." data-read-more-less-text-value="Read less">
     <p class="content-1" data-read-more-target="content">"<%= @book.description %>"</p>
     <button class="read-more" data-action="read-more#toggle">Read more</button>
     <template data-read-more-target="full">
       <p class="content-2">"<%= @book.description %>"</p>
     </template>
     </div>
+    <hr>
 
 
-    <div class="book-copy-card">
-      <% @book.book_copies.each do |book_copy| %>
-        <p><%= book_copy.availability_status %></p>
-        <p>What <%= book_copy.user.display_name %> said about this book:"<%= book_copy.comments %>"</p>
-        <%= link_to new_book_copy_order_path(book_copy) do %>
-          <p>Get in touch with <%= book_copy.user.display_name %></p>
-        <% end %>
-      <% end %>
-    </div>
+
+
+
     <div class="info-isbn">
-    <p>ISBN:<%= @book.isbn %></p>
+    <p class= "isbn" >ISBN:<%= @book.isbn %></p>
 
-    <p class="filter-button"><%= @book.category %></p>
+    <span class="filter-button"><%= @book.category %></span>
 
   </div>
 
