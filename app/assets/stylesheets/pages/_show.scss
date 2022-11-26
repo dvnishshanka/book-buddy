@@ -34,15 +34,15 @@
 }
 
 .read-more {
+  display: contents;
   background-color: rgba(237, 235, 235, 0.7);
       border: none;
       border-radius: 15px;
       box-shadow: none;
-      font-size: 0.8rem;
+      font-size: 1rem;
       padding: 2px 5px;
-      &:hover {
-        color: #EF7B45;
-      }
+      color: #EF7B45;
+
 }
 
 .info {
@@ -52,11 +52,16 @@
 }
 
 .info-isbn {
-  font-weight: 300;
+  font-weight: 100;
   display: flex;
   align-items: center;
   justify-content: space-around;
 
+ p {
+  margin-top: 15px;
+  font-size: small;
+
+ }
 }
 
 .description {
