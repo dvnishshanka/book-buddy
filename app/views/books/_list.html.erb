@@ -1,4 +1,4 @@
-<div data-search-books-target="list" data-filter-books-target="book">
+<div data-search-books-target="list" data-filter-books-target="book" class="container" style="margin-top: 100px;">
   <div class="book-container">
       <% @books.each do |book| %>
         <div class= "book-container-card">
@@ -12,10 +12,14 @@
               <div class="ribbon-text">
                 <%= book.category %>
               </div>
+
+            </div>
+     <div class="card-text container">
+              <h4><%= book.title %></h4>
+              <h6>- <%= book.author %></h6>
             </div>
 
-          <% end %>
           </div>
       </div>
-
+   <% end %>
 </div>
