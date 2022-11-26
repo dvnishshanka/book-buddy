@@ -35,6 +35,11 @@ cursor: pointer;
   align-items: center;
   justify-content: center;
 }
+
+.nav-bottom-item:hover {
+ color:$app-navyblue !important;
+}
+
 .nav-bottom-text {
   font-size: 10px;
   padding: 0px;
@@ -49,7 +54,7 @@ cursor: pointer;
 
 /* Dropup content (Hidden by Default) */
 .dropup-content {
-  display: none;
+  // display: none;
   position: absolute;
   bottom: 10px;
   right: 5px;
@@ -67,16 +72,3 @@ cursor: pointer;
   text-decoration: none;
   display: block;
 }
-
-/* Change color of dropup links on hover */
-.dropup-content a:hover {background-color: #ddd}
-
-/* Show the dropup menu on hover */
-.dropup:hover .dropup-content {
-  display: block;
-}
-
-// /* Change the background color of the dropup button when the dropup content is shown */
-// .dropup:hover .dropbtn {
-//   background-color: #2980B9;
-// }

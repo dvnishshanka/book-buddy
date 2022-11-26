@@ -27,14 +27,16 @@
       </div>
     <% end %>
     <% if user_signed_in? %>
-      <div class="dropup">
-        <div class=" nav-bottom-item" >
+      <div class="btn-group dropup" style="color: white;">
+        <button class="nav-bottom-item" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: none; border: none;"  >
+
           <i class="fa fa-user nav-icon"></i>
           <p class="nav-bottom-text">Profile</p>
-        </div>
-        <div class="dropup-content">
-          <%= link_to "Profile", user_profile_path(current_user.id)%>
-          <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
+
+        </button>
+        <div class="dropdown-menu dropdown-menu-begin" >
+          <%= link_to "Profile", user_profile_path(current_user.id), class: "dropdown-item"%>
+          <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
         </div>
       </div>
     <% else %>
