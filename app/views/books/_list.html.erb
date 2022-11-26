@@ -1,30 +1,21 @@
-
-<div data-search-books-target="list">
-
-
-      <div class="book-container">
-          <% @books.each do |book| %>
-            <div class= "book-container-card">
-              <div class="front">
-                <%= image_tag book.photo_url, crop: "fill" %>
-              </div>
-
-                  <div class="back">
-                      <div id="ribbonText" class="ribbon">
-                        <div class="ribbon-text">
-                          <h6 style="font-size: <%= book.category.length >= 14 ? "10px !important" : "14px !important"   %>" ><%= book.category %></h6>
-                        </div>
-                      </div>
-
-                          <div class="card-text">
-                            <h5>- <%= book.author %></h5>
-                              <h6 style="font-size: <%= book.title.length >= 14 ? "16px !important" : "24px !important"   %>" ><%= book.title %></h6>
-                          </div>
-                            <p class="see-more"><%= link_to "See More", book_path(book) %></p>
-                </div>
-            </div>
+<div data-search-books-target="list" data-filter-books-target="book">
+  <div class="book-container">
+      <% @books.each do |book| %>
+        <div class= "book-container-card">
+          <div class="front">
+            <%= image_tag book.photo_url, crop: "fill" %>
           </div>
+
+          <div class="back">
+            <%= link_to "more", book_path(book), class: "container" %>
+            <div class="ribbon">
+              <div class="ribbon-text">
+                <%= book.category %>
+              </div>
+            </div>
+
           <% end %>
-        </div>
-    
+          </div>
+      </div>
+
 </div>
