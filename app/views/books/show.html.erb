@@ -28,6 +28,7 @@
     <h5>Copies of this book</h5>
     <div class="book-copy-card">
       <% @book.book_copies.each do |book_copy| %>
+
         <p><%= book_copy.availability_status %></p>
         <p>What <%= book_copy.user.display_name %> said about this book:"<%= book_copy.comments %>"</p>
         <%= link_to new_book_copy_order_path(book_copy) do %>

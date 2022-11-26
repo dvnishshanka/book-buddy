@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_19_145403) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_26_084208) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_19_145403) do
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_url"
     t.index ["book_id"], name: "index_book_copies_on_book_id"
     t.index ["user_id"], name: "index_book_copies_on_user_id"
   end
@@ -71,12 +72,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_19_145403) do
   end
 
   create_table "chatrooms", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "chats", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
