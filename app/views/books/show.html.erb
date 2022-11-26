@@ -36,6 +36,25 @@
 
 
 
+
+
+    <div class="book-copy-card">
+      <% @book.book_copies.each do |book_copy| %>
+        <p><%= book_copy.availability_status %></p>
+        <p>What <%= book_copy.user.display_name %> said about this book:"<%= book_copy.comments %>"</p>
+        <% if book_copy.user != current_user %>
+        <%= link_to new_book_copy_order_path(book_copy) do %>
+          <p>Get in touch with <%= book_copy.user.display_name %></p>
+        <% end %>
+
+
+        <% if book_copy.user.id != current_user.id %>
+          <%= link_to "Request Book 🚀", new_book_copy_order_path(book_copy)  %>
+
+        <% end %>
+      <% end %>
+    </div>
+
     <div class="info-isbn">
     <p class= "isbn" >ISBN:<%= @book.isbn %></p>
 

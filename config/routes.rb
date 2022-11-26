@@ -11,11 +11,23 @@ Rails.application.routes.draw do
     resources :book_copies, only: %i[new create]
   end
   resources :book_copies, only: %i[index show] do
-    resources :orders, only: %i[new create index]
+    resources :orders, only: %i[new create index] do
+      member do
+          patch "accept_order"
+          patch "reject_order"
+      end
+    end
   end
 
   resources :chatrooms, only: [:show, :index] do
     resources :messages, only: :create
+  end
+
+  resources :orders do
+    member do
+      patch "accept"
+      patch "reject"
+    end
   end
 
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard

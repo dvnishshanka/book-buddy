@@ -28,7 +28,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @book_copies = current_user.book_copies
-    @orders = current_user.orders
+     @book_copies = current_user.book_copies # "All my books"
+    @orders = current_user.orders  # "all my requests "
+
   end
 end

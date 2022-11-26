@@ -1,4 +1,6 @@
 <div class= "dashboard-order-card">
+<%= order.id %>
+<%= order.book_copy.id %>
   <%= link_to book_path(order.book_copy.book_id) do %>
     <%= image_tag order.book_copy.book.photo_url %>
   <% end %>
@@ -11,6 +13,14 @@
       <p><i class="fa-regular fa-user"></i>  <%= order.book_copy.user.display_name || order.book_copy.user.first_name%></p>
       <p><i class="fa-solid fa-location-dot"></i>  <%= order.book_copy.user.city  %>, <%= order.book_copy.user.country  %></p>
     <% end %>
-    <p class="dashboard-order-status"><strong><%=  "Requested" if order.status == "CREATED" %></strong></p>
+
+
+    <% if order.status == "CREATED"%>
+       <p class="dashboard-order-status"><strong>Requested 😬</strong></p>
+    <% elsif  order.status == "ACCEPTED"%>
+     <p class="dashboard-order-status" style="background-color: lightgreen"><strong>Accepted 😎</strong></p>
+     <% elsif  order.status == "REJECTED"%>
+     <p class="dashboard-order-status" style="background-color: red"><strong>Rejected 😢</strong></p>
+    <% end %>
  </div>
 </div>
