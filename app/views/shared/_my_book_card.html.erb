@@ -26,9 +26,21 @@
       <hr>
       <div class= "d-flex justify-content-between align-items-center">
       <p><i class="fa-regular fa-user"></i>  <strong><%= order.user.display_name || order.user.first_name %></strong></p>
-      <p class="dashboard-order-status"><strong><%=  "Requested" if order.status == "CREATED" %></strong></p>
+
       </div>
       <p><i class="fa-regular fa-calendar-xmark"></i>  <%= order.start_date %> to <%= order.end_date %></p>
+        <% if order.status == "CREATED" %>
+            <p class="dashboard-order-status"><strong>Requested</strong></p>
+            <%= link_to "Accept ✅", accept_order_path(order), data: {turbo_method: :patch}  %>
+            <%= link_to "Reject ✅", reject_order_path(order), data: {turbo_method: :patch} %>
+
+         <% elsif order.status == "ACCEPTED"%>
+         <p class="dashboard-order-status" style="background-color:lightgreen"><strong>Accepted 😎</strong></p>
+         <%= link_to "Reject ✋", reject_order_path(order), data: {turbo_method: :patch} %>
+         <% elsif order.status == "REJECTED"%>
+         <p class="dashboard-order-status" style="background-color:red"><strong>Rejected 😢</strong></p>
+            <%= link_to "Re-Accept ✅", accept_order_path(order), data: {turbo_method: :patch}  %>
+        <% end %>
       <% end %>
     </div>
 
