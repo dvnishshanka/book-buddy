@@ -10,9 +10,6 @@ class BookCopiesController < ApplicationController
     set_book
   end
 
-  def show
-  end
-
   def create
     @book_copy = BookCopy.new(book_copy_params)
     @book_copy.book = set_book if @book_copy.book_id.nil?

@@ -55,10 +55,8 @@
     font-size: 12px;
   }
 
-  h5 {
-    font-size: small;
-    font-weight: 600;
-
+  h6 {
+    font-size: 16px;
 
     // Limit the heading for several lines
     display: -webkit-box;
@@ -96,23 +94,16 @@
 
 }
 
-.see-more {
-  padding-left: 16px;
-    position: absolute;
-    bottom: -5px;
-}
-
 .ribbon {
   position: absolute;
-  height: 24px;
-  top: 19px;
-  right: -35px;
+  top: 10px;
+  right: -22px;
   transform: rotate(45deg);
   color: $app-white;
   font-weight: 500;
   font-size: 12px;
   text-align: center;
-  width: 134px;
+  width: 90px;
   background-color: $app-light-green;
 }
 
@@ -133,11 +124,9 @@
 .ribbon-text {
   // transform: rotate(90deg);
   color: $app-white;
-  font-size: 14px;
-  margin-top: 6px;
+  font-size: 12px
  }
 
 .card-text {
-  margin-left: 10px;
-  margin-top: 58px;
+  margin-top: 50px;
 }
