@@ -14,3 +14,12 @@
 
   </button>
  <% end %>
+
+
+<div class="container" style= "margin-top: 140px;">
+      <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
+      <%= link_to "Profile", user_profile_path(current_user.id)%>
+  </div>
+
+
+<%= link_to "Add a book", new_book_book_copy_path(@book) %>
