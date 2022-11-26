@@ -23,6 +23,13 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
+  resources :orders do
+    member do
+      patch "accept"
+      patch "reject"
+    end
+  end
+
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard
   get "user_profile/:id", to: "user_profiles#show", as: :user_profile
   get "test", to: "pages#test"

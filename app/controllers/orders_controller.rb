@@ -33,25 +33,18 @@ class OrdersController < ApplicationController
     end
   end
 
-  def accept_order
 
-    @order = Order.find(params[:id])
 
-    @order.update(status: "accepted")
-
-    raise
+  def accept
+    @order =  Order.find(params[:id])
+    @order.update(status: "ACCEPTED")
     redirect_to dashboard_path
-
   end
 
-  def reject_order
-
-    @order = Order.find(params[:id])
-
-    @order.update(status: "rejected")
-
+  def reject
+    @order =  Order.find(params[:id])
+    @order.update(status: "REJECTED")
     redirect_to dashboard_path
-
   end
 
 

@@ -18,8 +18,7 @@
  .book-container {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
-  margin-top: 25px;
+
   flex-wrap: wrap;
  }
 
@@ -90,20 +89,25 @@
   width: 150px;
   border-radius: 10px;
   overflow:hidden
+}
 
-
+.see-more {
+  padding-left: 16px;
+    position: absolute;
+    bottom: -5px;
 }
 
 .ribbon {
   position: absolute;
-  top: 10px;
-  right: -22px;
+  height: 24px;
+  top: 19px;
+  right: -35px;
   transform: rotate(45deg);
   color: $app-white;
   font-weight: 500;
   font-size: 12px;
   text-align: center;
-  width: 90px;
+  width: 134px;
   background-color: $app-light-green;
 }
 
@@ -121,12 +125,15 @@
 
 // }
 
+
 .ribbon-text {
   // transform: rotate(90deg);
   color: $app-white;
-  font-size: 12px
+  font-size: 14px;
+  margin-top: 6px;
  }
 
 .card-text {
-  margin-top: 50px;
+  margin-left: 10px;
+  margin-top: 70px;
 }
