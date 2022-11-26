@@ -1,31 +1,34 @@
 <div class="container">
-  <div class="upper-button-container">
     <div>
       <%= link_to root_path, class: "home-button" do %>
       <i class="fa-solid fa-arrow-left my-float ms-0"></i>
       <% end %>
+
+
+
     </div>
-    <div>
-      <%= link_to new_book_book_copy_path(@book), class: "home-button" do %>
+     <%= link_to new_book_book_copy_path(@book), class: "book-copy-button" do %>
       <i class="fa fa-plus my-float me-0"></i>
       <% end %>
-    </div>
   </div>
 
-  <div class="book-image">
-    <%= image_tag @book.photo_url, crop: "fill" %>
-  </div>
+          <div class="book-image">
+            <%= image_tag @book.photo_url, crop: "fill" %>
+          </div>
+          <div class="info">
   <h3><%= @book.title %></h3>
   <p><%= @book.author %></p>
+  </div>
   <hr>
-  <div data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
+  <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
     <p class="content-1" data-read-more-target="content">"<%= @book.description %>"</p>
     <button class="read-more" data-action="read-more#toggle">Read more</button>
     <template data-read-more-target="full">
       <p class="content-2">"<%= @book.description %>"</p>
     </template>
-    <%= link_to "Add a book", new_book_book_copy_path(@book) %>
-    <h5>Copies of this book</h5>
+    </div>
+
+
     <div class="book-copy-card">
       <% @book.book_copies.each do |book_copy| %>
 
@@ -36,11 +39,12 @@
         <% end %>
       <% end %>
     </div>
-    <hr>
+    <div class="info-isbn">
     <p>ISBN:<%= @book.isbn %></p>
-    <p><%= @book.category %></p>
+    <p><%=@book.category class=""  %></p>
+    </div>
   </div>
-  <hr>
+
   <h5>Available copies of this book</h5>
     <div class="book-copy-card">
       <% @book.book_copies.each do |book_copy| %>
@@ -51,5 +55,5 @@
         </div>
       <% end %>
     </div>
-  </div>
+
 </div>
