@@ -13,9 +13,6 @@ application.register("hello", HelloController)
 import SearchBooksController from "./search_books_controller"
 application.register("search-books", SearchBooksController)
 
-import ToggleProfileController from "./toggle_profile_controller"
-application.register("toggle-profile", ToggleProfileController)
-
 // import Flatpickr
 import Flatpickr from "stimulus-flatpickr"
 application.register('flatpickr', Flatpickr)
