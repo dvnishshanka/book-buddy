@@ -3,10 +3,10 @@
     min-height: 50vh;
   }
   .today {
-    border: 1.5px solid $app-light-navyblue !important;
+    border: 1.5px solid $app-navyblue !important;
   }
   th, .day {
-  color: $app-light-navyblue !important;
+  color: $app-navyblue !important;
   }
 }
 
@@ -16,7 +16,7 @@
   border-radius: 4px;
   font-size: 12px;
   background: $app-light-blue;
-  color: $app-light-navyblue !important;
+  color: $app-navyblue !important;
   transition: background 0.3s ease;
 }
 
