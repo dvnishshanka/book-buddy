@@ -1,8 +1,10 @@
 <div class="container">
+
   <div>
     <%= link_to root_path, class: "home-button" do %>
     <i class="fa-solid fa-arrow-left my-float ms-0"></i>
     <% end %>
+
   </div>
 
   <div>
@@ -19,13 +21,15 @@
       <p><%= @book.author %></p>
     </div>
   <hr>
-  <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
+  <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more..." data-read-more-less-text-value="Read less">
     <p class="content-1" data-read-more-target="content">"<%= @book.description %>"</p>
     <button class="read-more" data-action="read-more#toggle">Read more</button>
     <template data-read-more-target="full">
       <p class="content-2">"<%= @book.description %>"</p>
     </template>
+
   </div>
+
 
 
       <p>ISBN:<%= @book.isbn %></p>
@@ -33,6 +37,7 @@
 
   <div class="book-copy-card">
     <% @book.book_copies.each do |book_copy| %>
+
 
 
 
