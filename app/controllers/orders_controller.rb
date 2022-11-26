@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
 
     @order.update(status: "accepted")
 
-
+    raise
     redirect_to dashboard_path
 
   end

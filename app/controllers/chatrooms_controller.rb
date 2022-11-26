@@ -9,7 +9,4 @@ class ChatroomsController < ApplicationController
     @message = Message.new
   end
 
-  def create
-    @message = Message.new
-  end
 end

@@ -1,4 +1,6 @@
 <div class= "dashboard-order-card">
+<%= order.id %>
+<%= order.book_copy.id %>
   <%= link_to book_path(order.book_copy.book_id) do %>
     <%= image_tag order.book_copy.book.photo_url %>
   <% end %>
