@@ -33,6 +33,8 @@ class OrdersController < ApplicationController
     end
   end
 
+
+
   def accept
     @order =  Order.find(params[:id])
     @order.update(status: "ACCEPTED")
@@ -54,7 +56,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:start_date)
+    params.require(:order).permit(:start_date, :status, :end_date)
   end
 
   def set_previous_order_dates

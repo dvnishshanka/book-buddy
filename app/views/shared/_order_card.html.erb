@@ -1,4 +1,6 @@
 <div class= "dashboard-order-card">
+<%= order.id %>
+<%= order.book_copy.id %>
   <%= link_to book_path(order.book_copy.book_id) do %>
     <%= image_tag order.book_copy.book.photo_url %>
   <% end %>
@@ -11,6 +13,7 @@
       <p><i class="fa-regular fa-user"></i>  <%= order.book_copy.user.display_name || order.book_copy.user.first_name%></p>
       <p><i class="fa-solid fa-location-dot"></i>  <%= order.book_copy.user.city  %>, <%= order.book_copy.user.country  %></p>
     <% end %>
+
 
     <% if order.status == "CREATED"%>
        <p class="dashboard-order-status"><strong>Requested 😬</strong></p>
