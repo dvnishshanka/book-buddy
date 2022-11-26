@@ -5,22 +5,21 @@
           <div class="front">
             <%= image_tag book.photo_url, crop: "fill" %>
           </div>
-
-          <div class="back">
-            <%= link_to "more", book_path(book), class: "container" %>
-            <div class="ribbon">
-              <div class="ribbon-text">
-                <h6 style="font-size: <%= book.category.length >= 14 ? "10px !important" : "14px !important"   %>" ><%= book.category %></h6>
-              </div>
-          </div>
-
+              <div class="back">
+                <div class="ribbon">
+                  <div class="ribbon-text">
+                    <h6 style="font-size: <%= book.category.length >= 14 ? "10px !important" : "14px !important"   %>" ><%= book.category %></h6>
+                  </div>
+                </div>
             <div class="card-text">
               <h6>- <%= book.author %></h6>
               <h6 style="font-size: <%= book.title.length >= 14 ? "16px !important" : "24px !important"   %>" ><%= book.title %></h6>
             </div>
 
-          </div>
+            <p class="see-more"><%= link_to "See More", book_path(book) %></p>
+
+        </div>
 
   </div>
-<% end %>
+  <% end %>
 </div>
