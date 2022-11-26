@@ -1,7 +1,7 @@
 class ChatroomsController < ApplicationController
   def index
     @user = current_user # <- You have access through current user.
-    @chatroom = Chatroom.all
+    @chatroom = Chatroom.where(id: @user)
   end
 
   def show

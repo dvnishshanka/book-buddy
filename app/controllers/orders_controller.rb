@@ -33,6 +33,29 @@ class OrdersController < ApplicationController
     end
   end
 
+  def accept_order
+
+    @order = Order.find(params[:id])
+
+    @order.update(status: "accepted")
+
+
+    redirect_to dashboard_path
+
+  end
+
+  def reject_order
+
+    @order = Order.find(params[:id])
+
+    @order.update(status: "rejected")
+
+    redirect_to dashboard_path
+
+  end
+
+
+
   private
 
   def set_book_copy
@@ -40,7 +63,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:start_date)
+    params.require(:order).permit(:start_date, :status, :end_date)
   end
 
   def set_previous_order_dates

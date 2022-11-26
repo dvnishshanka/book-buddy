@@ -11,7 +11,12 @@ Rails.application.routes.draw do
     resources :book_copies, only: %i[new create]
   end
   resources :book_copies, only: %i[index show] do
-    resources :orders, only: %i[new create index]
+    resources :orders, only: %i[new create index] do
+      member do
+          patch "accept_order"
+          patch "reject_order"
+      end
+    end
   end
 
   resources :chatrooms, only: [:show, :index] do

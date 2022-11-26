@@ -30,8 +30,11 @@
       <% @book.book_copies.each do |book_copy| %>
         <p><%= book_copy.availability_status %></p>
         <p>What <%= book_copy.user.display_name %> said about this book:"<%= book_copy.comments %>"</p>
+        <% if book_copy.user != current_user %>
         <%= link_to new_book_copy_order_path(book_copy) do %>
           <p>Get in touch with <%= book_copy.user.display_name %></p>
+        <% end %>
+        <%= link_to "request book", new_book_copy_order_path(book_copy)  %>
         <% end %>
       <% end %>
     </div>
