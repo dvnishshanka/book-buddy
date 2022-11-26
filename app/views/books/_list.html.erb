@@ -1,3 +1,4 @@
+
 <div data-search-books-target="list">
 
 
@@ -22,6 +23,12 @@
                             <p class="see-more"><%= link_to "See More", book_path(book) %></p>
                 </div>
             </div>
-        <% end %>
-      </div>
+            <div class="card-text container">
+              <h4><%= book.title %></h4>
+              <h6>- <%= book.author %></h6>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
 </div>

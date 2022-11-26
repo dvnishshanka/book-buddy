@@ -1,13 +1,14 @@
 .navbar {
   justify-content: space-around;
-  background: #FFFFFF;
+  background:  $app-blue;
   position: fixed;
   z-index: 999;
   top:0;
   width: 100%;
   height: min-content;
   border-bottom-style: solid;
-  border-bottom-color: #8C7284;
+  border-bottom-width: thin;
+  border-bottom-color: $app-light-green;
 }
 
 .search {

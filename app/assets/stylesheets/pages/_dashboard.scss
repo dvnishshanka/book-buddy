@@ -11,13 +11,13 @@
   display: flex;
   width: 400px;
   min-height: 130px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-bottom: 10px;
 
   img {
     height: 100%;
     width: 120px;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 5px 0px 0px 5px;
     object-fit: cover;
   }
 }
@@ -50,10 +50,36 @@
 }
 
 .dashboard-order-status {
-  padding: 5px 5px !important;
+  padding: 3px 7px !important;
+  font-size: 0.8rem;
   border-radius: 4px;
   margin-bottom: 20px;
   margin-right: 20px;
   float: right;
-  background-color: $app-light-yellow;
+  background-color: $app-orange;
+}
+
+.dashboard-my-book-card-container {
+  background-color: $app-white;
+  width: 400px;
+  min-height: 130px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding-bottom: 0px;
+}
+
+.dashboard-my-book-card {
+  background-color: $app-white;
+  display: flex;
+  width: 100%;
+  min-height: 130px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 0px;
+
+  img {
+    height: 100%;
+    width: 120px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
 }
