@@ -18,6 +18,9 @@
        <p class="dashboard-order-status"><strong>Requested 😬</strong></p>
     <% elsif  order.status == "ACCEPTED"%>
      <p class="dashboard-order-status" style="background-color: lightgreen"><strong>Accepted 😎</strong></p>
+     <%= link_to new_book_copy_order_order_review_path(order.book_copy.id, order.id) do %>
+     <p class="dashboard-order-status me-2" style="background-color: pink"><strong>Leave a review 😎</strong></p>
+     <% end %>
      <% elsif  order.status == "REJECTED"%>
      <p class="dashboard-order-status" style="background-color: red"><strong>Rejected 😢</strong></p>
     <% end %>
