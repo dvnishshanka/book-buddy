@@ -1,0 +1,7 @@
+<div class="container">
+
+  <%= render "user_profiles/profile", user: @order_review.order.book_copy.user %>
+  <%= render "order_reviews/form", order_review: @order_review, order: @order_review.order %>
+  <%= render "user_profiles/user_reviews", order_reviews: @order_reviews %>
+
+</div>

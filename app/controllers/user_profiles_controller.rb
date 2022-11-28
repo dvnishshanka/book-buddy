@@ -1,6 +1,7 @@
 class UserProfilesController < ApplicationController
   def show
     set_user
+    @order_review = OrderReview.new
   end
 
   private

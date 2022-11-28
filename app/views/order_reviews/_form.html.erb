@@ -1,0 +1,15 @@
+<p>Leave  a comment</p>
+  <button>Leave a review</button>
+
+   <%= simple_form_for [order.book_copy, order, order_review] do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :rating, :collection => [1, 2, 3, 4, 5] %>
+        <%= f.input :content,
+                  autofocus: true,
+                  input_html: { autocomplete: "content" }%>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Add", class: "btn-primary" %>
+      </div>
+    <% end %>
