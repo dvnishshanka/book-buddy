@@ -44,11 +44,13 @@
   <div class="book-copy-card">
     <% @book.book_copies.each do |book_copy| %>
       <div class="book-copies"></div>
+      <%= link_to "Get in touch 🚀", new_book_copy_chatroom_path(book_copy)  %>
         <p> Available for <%= book_copy.availability_status %></p>
         <p>"<%= book_copy.comments.capitalize %>"-<%= book_copy.user.display_name %></p>
         <p>Get in touch with <%= book_copy.user.display_name %></p>
           <% if book_copy.user.id != current_user.id %>
         <%= link_to "Request Book 🚀", new_book_copy_order_path(book_copy)  %>
+        <%= link_to "Get in touch 🚀", new_book_copy_chatroom_path(book_copy)  %>
       <% end %>
       </div>
     <% end %>

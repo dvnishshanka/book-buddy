@@ -16,6 +16,7 @@
   </div>
 
   <%= simple_form_for [@chatroom, @message],
+    remote: true,
     html: {data: {action: "turbo:submit-end->chatroom-subscription#resetForm"}, class: "d-flex"} do |f|
   %>
     <%= f.input :content,

@@ -13,15 +13,14 @@
         <p><%= @user.email %></p>
     </div>
     <br>
-    <br>
-    <% @chatroom.each do |chatroom| %>
-      <%= link_to "General Chat", chatroom_path(chatroom) %>
-    <% end %>
-    <%if @user.photo.attached? %>
-      <%= cl_image_tag(@user.photo.key, class: '') %>
-    <% else %>
-      <%= image_tag("", class: '' ) %>
-    <% end %>
+
+    <h2 class="chat-header">All my chats</h2>
+    <div class="chat-dº">
+      <div class="container">
+        <%# <%= render 'components/chat-card' %>
+      </div>
+    </div>
+
   </div>
 
 </div>
