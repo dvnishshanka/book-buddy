@@ -15,40 +15,38 @@
         </div>
 
 
-
-    <div class="book-category-container">
-             <div class="filter-button">
-<ion-icon name="library"></ion-icon>
-<%=link_to "All books", root_path %>
-</div>
-
- <div class="filter-button">
- <ion-icon name="skull"></ion-icon>
-<%=link_to "Horror", root_path(:category => "horror")%>
-</div>
-
- <div class="filter-button">
- <ion-icon name="planet"></ion-icon>
-<%=link_to "Sci-fi", root_path(:category => "sci-fi")%>
-</div>
-
- <div class="filter-button">
- <ion-icon name="receipt"></ion-icon>
-<%=link_to "Poetry", root_path(:category => "poetry")%>
-</div>
-
- <div class="filter-button">
- <ion-icon name="bonfire"></ion-icon>
-<%=link_to "Fiction", root_path(:category => "fiction")%>
-</div>
-
- <div class="filter-button">
- <ion-icon name="earth"></ion-icon>
-<%=link_to "Travel", root_path(:category => "travel")%>
-</div>
-
-      <% end %>
+  <div class="book-category-container">
+    <div class="filter-button">
+      <ion-icon name="library"></ion-icon>
+      <%=link_to "All books", root_path %>
     </div>
 
+    <div class="filter-button">
+      <ion-icon name="skull"></ion-icon>
+      <%=link_to "Horror", root_path(:category => "horror")%>
+    </div>
+
+    <div class="filter-button">
+      <ion-icon name="planet"></ion-icon>
+      <%=link_to "Sci-fi", root_path(:category => "sci-fi")%>
+    </div>
+
+    <div class="filter-button">
+      <ion-icon name="receipt"></ion-icon>
+      <%=link_to "Poetry", root_path(:category => "poetry")%>
+    </div>
+
+    <div class="filter-button">
+      <ion-icon name="bonfire"></ion-icon>
+      <%=link_to "Fiction", root_path(:category => "fiction")%>
+    </div>
+
+    <div class="filter-button">
+      <ion-icon name="earth"></ion-icon>
+      <%=link_to "Travel", root_path(:category => "travel")%>
+    </div>
+
+  <% end %>
+  </div>
 
 </div>
