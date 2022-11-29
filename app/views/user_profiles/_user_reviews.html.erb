@@ -1,7 +1,25 @@
+<div class="d-flex align-center mt-4" data-insert-in-list-target="items">
+  <div class="me-3">
+    <% if order_review.order.user.photo.attached?%>
+      <%= cl_image_tag order_review.order.user.photo.key, class:"avatar-bordered-small" %>
+    <% else %>
+      <div class='avatar-bordered-small d-flex justify-content-center align-items-center' style= "background-color: #75c9b7;" >
+        <%= render "shared/default_profile_image", user: order_review.order.user %>
+      </div>
+    <%end%>
+  </div>
 
-<% if order_reviews.length > 0 %>
-  <%order_reviews.each do |order_review|%>
-    <p><%=order_review.content   %></p>
-    <p> <%=order_review.order.user_id  %></p>
-  <% end %>
-<% end %>
+  <div>
+    <p class= "m-0"><%=order_review.order.user.display_name || order_review.order.user.first_name %></p>
+    <p class="m-0 pb-1" style="font-size: 9px;"><%=order_review.created_at.strftime("%a, %d %b %y") %></p>
+    <%  rating = order_review.rating%>
+    <% rating.times do |i| %>
+      <i class="fa-solid fa-book-open" style="color: #fa8334; font-size: 10px;"></i>
+    <% end %>
+    <% (5-rating).times do |i| %>
+      <i class="fa-solid fa-book-open" style="color: #b2b1b1; font-size: 10px;"></i>
+    <% end %>
+        <p class="m-0" style="font-size: 12px;"><%=order_review.content %></p>
+  </div>
+  <hr>
+</div>
