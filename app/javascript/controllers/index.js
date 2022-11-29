@@ -16,6 +16,9 @@ application.register("hello", HelloController)
 import InsertInListController from "./insert_in_list_controller"
 application.register("insert-in-list", InsertInListController)
 
+import RealtimeController from "./realtime_controller"
+application.register("realtime", RealtimeController)
+
 import ScrollController from "./scroll_controller"
 application.register("scroll", ScrollController)
 
