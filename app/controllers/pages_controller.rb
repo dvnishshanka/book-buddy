@@ -13,18 +13,17 @@ class PagesController < ApplicationController
         sql_query = "title ILIKE :query OR author ILIKE :query OR description ILIKE :query"
         @books = Book.where(sql_query, query: "%#{params[:query]}%")
       else
-        @books = Book.all.limit(10)
+        @books = Book.all.sample(8)
       end
       respond_to do |format|
         format.html # Follow regular flow of Rails
         format.text { render partial: "books/list", locals: { books: @books }, formats: [:html] }
       end
-      @horrorbooks = Book.where()
+      @horrorbooks = Book.where(category: "Horror")
+
     end
     # raise
-
   end
-
 
   def dashboard
      @book_copies = current_user.book_copies # "All my books"

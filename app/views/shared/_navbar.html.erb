@@ -1,39 +1,52 @@
 <div class="navbar">
 
-  <div class="search">
-    <%= form_with url: root_path, method: :get, html: { data: { search_books_target: "form"}} do |f| %>
+        <div class="search">
 
-      <%= f.text_field :query,
-                    value: params[:query],
-                    class: "search-bar",
-                    placeholder: "Find a book",
-                    data: {
-                      search_books_target: "input",
-                      action: "keyup->search-books#update" }
-                    %>
+          <%= form_with url: root_path, method: :get, html: { data: { search_books_target: "form"}} do |f| %>
 
-
-  </div>
+            <%= f.text_field :query,
+                          value: params[:query],
+                          class: "search-bar",
+                          placeholder: "Find your next book here...",
+                          data: {
+                            search_books_target: "input",
+                            action: "keyup->search-books#update" }
+                          %>
+        </div>
 
 
 
     <div class="book-category-container">
-        <%=link_to "All books", root_path, class: "filter-button"  %>
-        <%=link_to "Classic", root_path(:category => "classic"), class: "filter-button" %>
-        <%=link_to "Travel", root_path(:category => "travel"), class: "filter-button"  %>
-        <%=link_to "Poetry", root_path(:category => "poetry"), class: "filter-button"  %>
-        <%=link_to "Sci-fi", root_path(:category => "sci-fi"), class: "filter-button"  %>
-        <%=link_to "Horror", root_path(:category => "horror"), class: "filter-button"  %>
-        <%=link_to "Short Stories", root_path(:category => "short stories"), class: "filter-button"  %>
+             <div class="filter-button">
+<ion-icon name="library"></ion-icon>
+<%=link_to "All books", root_path %>
+</div>
 
+ <div class="filter-button">
+ <ion-icon name="skull"></ion-icon>
+<%=link_to "Horror", root_path(:category => "horror")%>
+</div>
 
-        <button><%=link_to "Classic", root_path(:category => "classic"), class: "filter-button" %>
-        <%= image_tag("horror.png") %>
+ <div class="filter-button">
+ <ion-icon name="planet"></ion-icon>
+<%=link_to "Sci-fi", root_path(:category => "sci-fi")%>
+</div>
 
+ <div class="filter-button">
+ <ion-icon name="receipt"></ion-icon>
+<%=link_to "Poetry", root_path(:category => "poetry")%>
+</div>
 
+ <div class="filter-button">
+ <ion-icon name="bonfire"></ion-icon>
+<%=link_to "Fiction", root_path(:category => "fiction")%>
+</div>
 
+ <div class="filter-button">
+ <ion-icon name="earth"></ion-icon>
+<%=link_to "Travel", root_path(:category => "travel")%>
+</div>
 
-        </button>
       <% end %>
     </div>
 

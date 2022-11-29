@@ -6,19 +6,20 @@
   top:0;
   width: 100%;
   height: min-content;
-  border-bottom-style: solid;
-  border-bottom-width: thin;
-  border-bottom-color: $app-light-green;
+  border-bottom-style:solid;
+  border-bottom-width:thin;
+  border-bottom-color: #C44536;
 }
 
 .search {
   border: none;
   align-items: center;
+  display: flex;
 }
 
 .search-bar {
   height: 18px;
-  width: 220px;
+  width: 250px;
   padding: 20px;
   border: none;
   border-radius: 50px;
@@ -29,18 +30,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  }
+  margin-top: 10px;
+  margin-bottom: 16px;
 
-.search-nav-icon {
-  position: absolute;
 }
-
-
-
-
-
-
-
 
   .navbar-brand {
     width: 50px;
@@ -48,41 +41,33 @@
 
 
   .book-category-container {
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: scroll;
     white-space: nowrap;
      a {
       text-decoration: none;
       font-size: smaller;
-
+      }
   }
 
-  .book-category-container::-webkit-scrollbar {
-      display: none;
-
-  }
-  }
 
     .filter-button {
 
-      border: none;
-
-      box-shadow: none;
+      display: flex;
+    flex-direction: column;
+    align-items: center;
       font-size: .8rem;
       font-weight: 300;
       margin-right: 10px;
-      padding: 5px 10px;
-      &:hover {
-        background-color: rgba(#EF7B45, 0.8);
-        color: #FCFBF4;
-      }
-
+      padding: 0px 10px;
+      box-sizing: border-box;
     }
 
-    .selected {
-      color: #FCFBF4;
-    }
+    ion-icon {
+      font-size: 20px;
+      padding-bottom: 5px;
+      font-weight: 400; //Preferred size here
+  }
 
-    .hide {
-      display: none;
-    }
+  body::-webkit-scrollbar {
+    display: none;
+  }
