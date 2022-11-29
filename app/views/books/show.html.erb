@@ -40,18 +40,18 @@
 
 
 
-  <h5>Available copies of this book</h5>
-  <div class="book-copy-card">
-    <% @book.book_copies.each do |book_copy| %>
-      <div class="book-copies"></div>
-        <p> Available for <%= book_copy.availability_status %></p>
-        <p>"<%= book_copy.comments.capitalize %>"-<%= book_copy.user.display_name %></p>
-        <p>Get in touch with <%= book_copy.user.display_name %></p>
-          <% if book_copy.user.id != current_user.id %>
-        <%= link_to "Request Book 🚀", new_book_copy_order_path(book_copy)  %>
-      <% end %>
-      </div>
-    <% end %>
-    <% end %>
-  </div>
+          <h5>Available copies of this book</h5>
+          <div class="book-copy-card">
+            <% @book.book_copies.each do |book_copy| %>
+              <div class="book-copies">
+                <p> Available for <%= book_copy.availability_status %></p>
+                <p>"-<%= book_copy.comments.capitalize %>"
+                <p>Get in touch with <%= book_copy.user.display_name %></p>
+                  <% if book_copy.user.id != current_user.id %>
+                <%= link_to "Request Book 🚀", new_book_copy_order_path(book_copy)  %>
+              <% end %>
+              </div>
+            <% end %>
+            <% end %>
+          </div>
 </div>

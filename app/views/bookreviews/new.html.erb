@@ -1,0 +1,18 @@
+<h1>Bookreviews#new</h1>
+<p>Find me in app/views/bookreviews/new.html.erb</p>
+<h1>New review</h1>
+<%= simple_form_for [@book, @bookreview] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating, :collection => [1, 2, 3, 4, 5] %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
+
+<div>
+  <% if @book.reviews.blank? %>
+    Be the first to leave a review for <%= @book.title %>
+  <% else %>
+    <% @book.reviews.each do |review| %>
+      <p><%= review.content %></p>
+    <% end %>
+  <% end %>
+</div>
