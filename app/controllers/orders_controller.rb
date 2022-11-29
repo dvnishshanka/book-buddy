@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
   before_action :set_book_copy, only: %i[new]
 
+    skip_before_action :verify_authenticity_token, :only => [:update, :accept, :reject]
+
+
   def index
     # Scope your query to the dates being shown:
     start_date = params.fetch(:start_date, Date.today).to_date
@@ -35,14 +38,23 @@ class OrdersController < ApplicationController
 
   def accept
     @order = Order.find(params[:id])
+
     @order.update(status: "ACCEPTED")
-    redirect_to dashboard_path
+
+    respond_to do |format|
+      format.html { redirect_to dashboard_path }
+      format.text { render partial: "shared/acceptance", locals: {order: @order}, formats: [:html] }
+    end
   end
 
   def reject
     @order = Order.find(params[:id])
     @order.update(status: "REJECTED")
-    redirect_to dashboard_path
+
+    respond_to do |format|
+      format.html { redirect_to dashboard_path }
+      format.text { render partial: "shared/acceptance", locals: {order: @order}, formats: [:html] }
+    end
   end
 
   private
