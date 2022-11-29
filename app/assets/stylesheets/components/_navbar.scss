@@ -1,6 +1,6 @@
 .navbar {
   justify-content: space-around;
-  background:  $app-blue;
+  background:  #FCFBF4;
   position: fixed;
   z-index: 999;
   top:0;
@@ -17,16 +17,29 @@
 }
 
 .search-bar {
-  height: 25px;
+  height: 18px;
   width: 220px;
   padding: 20px;
-  align-items: center;
   border: none;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px #999;
+  border-radius: 50px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: #FCFBF4;
   color: #28262C;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
+
+.search-nav-icon {
+  position: absolute;
+}
+
+
+
+
+
+
 
 
   .navbar-brand {
@@ -35,9 +48,9 @@
 
 
   .book-category-container {
-     overflow-x: auto;
-     overflow-y: hidden;
-     white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
      a {
       text-decoration: none;
       font-size: smaller;
@@ -46,16 +59,17 @@
 
   .book-category-container::-webkit-scrollbar {
       display: none;
-      width: 0 !important
+
   }
   }
 
     .filter-button {
-      background-color: rgba(237, 235, 235, 0.7);
+
       border: none;
-      border-radius: 15px;
+
       box-shadow: none;
-      font-size: 1rem;
+      font-size: .8rem;
+      font-weight: 300;
       margin-right: 10px;
       padding: 5px 10px;
       &:hover {
@@ -67,7 +81,6 @@
 
     .selected {
       color: #FCFBF4;
-      background-color: rgba(#EF7B45, 1);
     }
 
     .hide {

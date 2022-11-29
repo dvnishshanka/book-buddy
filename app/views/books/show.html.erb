@@ -1,76 +1,62 @@
 <div class="container">
-    <div>
-      <%= link_to root_path, class: "home-button" do %>
-      <i class="fa-solid fa-arrow-left my-float ms-0"></i>
-      <% end %>
-       <%= link_to root_path, class: "bookmark-button" do %>
-      <i class="fa-regular fa-bookmark my-float ms-0"></i>
-      <% end %>
+
+          <%= link_to root_path, class: "home-button" do %>
+          <i class="fa-solid fa-arrow-left my-float ms-0"></i>
+          <% end %>
+          <%= link_to root_path, class: "bookmark-button" do %>
+          <i class="fa-regular fa-bookmark my-float ms-0"></i>
+          <% end %>
+          <%= link_to new_book_book_copy_path(@book), class: "book-copy-button" do %>
+          <i class="fa fa-plus my-float me-0"></i>
+          <% end %>
+
+                <div class="book-image">
+                  <%= image_tag @book.photo_url, crop: "fill" %>
+                </div>
+                    <div class="info">
+                      <h3><%= @book.title %></h3>
+                      <p><%= @book.author %></p>
+                    </div>
+
+                    <div class="info-isbn">
+                        <p class= "isbn" >ISBN:<%= @book.isbn %></p>
+                        <span class="filter-button"><%= @book.category %></span>
+                      </div>
+            <hr>
+                <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more..." data-read-more-less-text-value="Read less">
+                  <p class="content-1" data-read-more-target="content">"<%= @book.description %>"</p>
+                  <button class="read-more" data-action="read-more#toggle">Read more</button>
+                  <template data-read-more-target="full">
+                    <p class="content-2">"<%= @book.description %>"</p>
+                  </template>
+                </div>
+                  <hr>
 
 
 
-    </div>
-     <%= link_to new_book_book_copy_path(@book), class: "book-copy-button" do %>
-      <i class="fa fa-plus my-float me-0"></i>
-      <% end %>
-  </div>
-
-          <div class="book-image">
-            <%= image_tag @book.photo_url, crop: "fill" %>
-          </div>
-          <div class="info">
-  <h3><%= @book.title %></h3>
-  <p><%= @book.author %></p>
-  </div>
-  <hr>
-  <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more..." data-read-more-less-text-value="Read less">
-    <p class="content-1" data-read-more-target="content">"<%= @book.description %>"</p>
-    <button class="read-more" data-action="read-more#toggle">Read more</button>
-    <template data-read-more-target="full">
-      <p class="content-2">"<%= @book.description %>"</p>
-    </template>
-    </div>
-    <hr>
+            <h5>Available copies of this book</h5>
+            <hr>
 
 
+        <div class="book-copy-card">
+          <% @book.book_copies.each do |book_copy| %>
+              <p>"<%= book_copy.comments %>"</p>
+              <p><%= book_copy.availability_status %></p>
+            <% if book_copy.user != current_user %>
+            <%= link_to new_book_copy_order_path(book_copy) do %>
+            <% end %>
 
 
+            <% if book_copy.user.id != current_user.id %>
+              <%= link_to "Request Book 🚀", new_book_copy_order_path(book_copy)  %>
 
-
-
-    <div class="book-copy-card">
-      <% @book.book_copies.each do |book_copy| %>
-        <p><%= book_copy.availability_status %></p>
-        <p>What <%= book_copy.user.display_name %> said about this book:"<%= book_copy.comments %>"</p>
-        <% if book_copy.user != current_user %>
-        <%= link_to new_book_copy_order_path(book_copy) do %>
-          <p>Get in touch with <%= book_copy.user.display_name %></p>
-        <% end %>
-
-
-        <% if book_copy.user.id != current_user.id %>
-          <%= link_to "Request Book 🚀", new_book_copy_order_path(book_copy)  %>
-
-        <% end %>
-      <% end %>
-    </div>
-
-    <div class="info-isbn">
-    <p class= "isbn" >ISBN:<%= @book.isbn %></p>
-
-    <span class="filter-button"><%= @book.category %></span>
-
-  </div>
-
-  <h5>Available copies of this book</h5>
-    <div class="book-copy-card">
-      <% @book.book_copies.each do |book_copy| %>
-        <div class="book-copies">
-          <p> Available for <%= book_copy.availability_status %></p>
-          <p>"<%= book_copy.comments.capitalize %>"-<%= book_copy.user.display_name %></p>
-          <p>Get in touch with <%= book_copy.user.display_name %></p>
+            <% end %>
+          <% end %>
         </div>
-      <% end %>
-    </div>
+
+
+
+<% end %>
+
 
 </div>

@@ -1,7 +1,4 @@
 <div class="navbar">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag("/assets/logo-crop.png", class: "navbar-brand", alt: "Book-Buddy logo") %>
-  <% end %>
 
   <div class="search">
     <%= form_with url: root_path, method: :get, html: { data: { search_books_target: "form"}} do |f| %>
@@ -21,11 +18,22 @@
 
 
     <div class="book-category-container">
+        <%=link_to "All books", root_path, class: "filter-button"  %>
         <%=link_to "Classic", root_path(:category => "classic"), class: "filter-button" %>
-        <%=link_to "Fiction", root_path(:category => "fiction"), class: "filter-button"  %>
+        <%=link_to "Travel", root_path(:category => "travel"), class: "filter-button"  %>
         <%=link_to "Poetry", root_path(:category => "poetry"), class: "filter-button"  %>
         <%=link_to "Sci-fi", root_path(:category => "sci-fi"), class: "filter-button"  %>
-        <%=link_to "All books", root_path, class: "filter-button"  %>
+        <%=link_to "Horror", root_path(:category => "horror"), class: "filter-button"  %>
+        <%=link_to "Short Stories", root_path(:category => "short stories"), class: "filter-button"  %>
+
+
+        <button><%=link_to "Classic", root_path(:category => "classic"), class: "filter-button" %>
+        <%= image_tag("horror.png") %>
+
+
+
+
+        </button>
       <% end %>
     </div>
 
