@@ -30,19 +30,9 @@
 
       </div>
       <p><i class="fa-regular fa-calendar-xmark"></i>  <%= order.start_date %> to <%= order.end_date %></p>
-        <% if order.status == "CREATED" %>
-            <p class="dashboard-order-status"><strong>Requested</strong></p>
-            <%= link_to "Accept ✅", accept_order_path(order), data: {turbo_method: :patch}  %>
-            <%= link_to "Reject ✅", reject_order_path(order), data: {turbo_method: :patch} %>
-
-         <% elsif order.status == "ACCEPTED"%>
-         <p class="dashboard-order-status" style="background-color:lightgreen"><strong>Accepted 😎</strong></p>
-         <%= link_to "Reject ✋", reject_order_path(order), data: {turbo_method: :patch} %>
-         <% elsif order.status == "REJECTED"%>
-         <p class="dashboard-order-status" style="background-color:red"><strong>Rejected 😢</strong></p>
-            <%= link_to "Re-Accept ✅", accept_order_path(order), data: {turbo_method: :patch}  %>
-        <% end %>
+      <%= render "shared/acceptance", order: order  %>
       <% end %>
+
     </div>
 
   <% end %>
