@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_26_093344) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_185550) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -95,7 +95,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_093344) do
     t.bigint "order_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
     t.index ["order_id"], name: "index_order_reviews_on_order_id"
+    t.index ["user_id"], name: "index_order_reviews_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -135,6 +137,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_093344) do
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "order_reviews", "orders"
+  add_foreign_key "order_reviews", "users"
   add_foreign_key "orders", "book_copies"
   add_foreign_key "orders", "users"
 end

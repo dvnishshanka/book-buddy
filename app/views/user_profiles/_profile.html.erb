@@ -1,0 +1,37 @@
+<div class="userProfile-image-center">
+
+    <% if user.photo.attached?%>
+      <%= cl_image_tag user.photo.key, class:"avatar-bordered" %>
+    <% else %>
+      <div class='avatar-bordered d-flex justify-content-center align-items-center' style= "background-color: #75c9b7;" >
+        <p style="font-size: 4rem"><%= render "shared/default_profile_image", user: user %></p>
+      </div>
+    <%end%>
+</div>
+<br>
+<div class="ms-3">
+  <% if user == current_user %>
+    <p class="userProfile-field-name">Name</p>
+    <p><%= user.first_name %> <%= user.last_name %></p>
+  <% end %>
+  <p class="userProfile-field-name">Display Name</p>
+  <p><%= user.display_name || user.first_name %></p>
+  <% if user == current_user %>
+    <p class="userProfile-field-name">Email</p>
+    <p><%= user.email%></p>
+    <p class="userProfile-field-name">Street</p>
+    <p><%= user.street%></p>
+  <% end %>
+  <p class="userProfile-field-name">City</p>
+  <p><%= user.city%></p>
+  <p class="userProfile-field-name">Country</p>
+  <p><%= user.country%></p>
+</div>
+<% if user == current_user %>
+  <div class="userProfile-paragraph">
+    <div class="create-new-book">
+      <h2>Ready to create a new Book?</h2>
+      <%= link_to "Add a Book", root_path, class: "btn-btn-succes" %>
+    </div>
+  </div>
+<% end %>
