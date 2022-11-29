@@ -5,24 +5,14 @@
 	width:40px;
 	height:40px;
   top: 60px;
-	background-color: #69A297;
+	background-color: $app-blue;
 	color: #28262C;
 	border-radius:50px;
 	text-align:center;
 	box-shadow: 1px 1px 2px #999;
 }
 
-.bookmark-button {
-  position:absolute;
-	width:40px;
-	height:40px;
-  top: 60px;
-	background-color: #69A297;
-	color: #28262C;
-	border-radius:50px;
-	text-align:center;
-	box-shadow: 1px 1px 2px #999;
-}
+
 // Float button on show.html
 .my-float{
 	margin-top:11px;
