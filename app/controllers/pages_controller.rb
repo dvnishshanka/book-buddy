@@ -22,7 +22,6 @@ class PagesController < ApplicationController
       @horrorbooks = Book.where(category: "Horror")
 
     end
-    # raise
   end
 
   def dashboard

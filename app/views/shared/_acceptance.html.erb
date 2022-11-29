@@ -1,14 +1,17 @@
-<div data-controller="update-my-book-card" data-update-my-book-card-target="items">
+<div>
   <% if order.status == "CREATED" %>
     <p class="dashboard-order-status"><strong>Requested</strong></p>
-    <%= link_to "Accept ✅", accept_order_path(order), data: {turbo_method: :patch, update_my_book_target: "btnaccept", action: "click->update-my-book-card#send"}  %>
-    <%= link_to "Reject ✅", reject_order_path(order), data: {turbo_method: :patch, update_my_book_target: "btnreject", action: "click->update-my-book-card#send"} %>
+    <%= link_to "Accept ✅", accept_order_path(order), data: {turbo_method: :patch, update_my_book_card_target: "btnaccept", action: "click->update-my-book-card#scrollTo"}  %>
+
+    <%= link_to "Reject ✅", reject_order_path(order), data: {turbo_method: :patch, update_my_book_card_target: "btnreject", action: "click->update-my-book-card#scrollTo"} %>
 
   <% elsif order.status == "ACCEPTED"%>
   <p class="dashboard-order-status" style="background-color:lightgreen"><strong>Accepted 😎</strong></p>
-  <%= link_to "Reject ✋", reject_order_path(order), data: {turbo_method: :patch, update_my_book_target: "btnreject", action: "click->update-my-book-card#send"} %>
+
+  <%= link_to "Reject ✋", reject_order_path(order), data: {turbo_method: :patch, update_my_book_card_target: "btnreject", action: "click->update-my-book-card#scrollTo"} %>
+
   <% elsif order.status == "REJECTED"%>
   <p class="dashboard-order-status" style="background-color:red"><strong>Rejected 😢</strong></p>
-    <%= link_to "Re-Accept ✅", accept_order_path(order), data: {turbo_method: :patch, update_my_book_target: "btnaccept", action: "click->update-my-book-card#send"}  %>
+    <%= link_to "Re-Accept ✅", accept_order_path(order), data: {turbo_method: :patch, update_my_book_card_target: "btnaccept", action: "click->update-my-book-card#scrollTo"}  %>
   <% end %>
 </div>
