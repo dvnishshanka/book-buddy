@@ -1,33 +1,39 @@
 .navbar {
   justify-content: space-around;
-  background:  $app-blue;
+  background:  #FCFBF4;
   position: fixed;
   z-index: 999;
   top:0;
   width: 100%;
   height: min-content;
-  border-bottom-style: solid;
-  border-bottom-width: thin;
-  border-bottom-color: $app-light-green;
+  border-bottom-style:solid;
+  border-bottom-width:thin;
+  border-bottom-color: #C44536;
 }
 
 .search {
   border: none;
   align-items: center;
+  display: flex;
 }
 
 .search-bar {
-  height: 25px;
-  width: 220px;
+  height: 18px;
+  width: 250px;
   padding: 20px;
-  align-items: center;
   border: none;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px #999;
+  border-radius: 50px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: #FCFBF4;
   color: #28262C;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 16px;
 
+}
 
   .navbar-brand {
     width: 50px;
@@ -35,41 +41,33 @@
 
 
   .book-category-container {
-     overflow-x: auto;
-     overflow-y: hidden;
-     white-space: nowrap;
+    overflow-x: scroll;
+    white-space: nowrap;
      a {
       text-decoration: none;
       font-size: smaller;
-
+      }
   }
 
-  .book-category-container::-webkit-scrollbar {
-      display: none;
-      width: 0 !important
-  }
-  }
 
     .filter-button {
-      background-color: rgba(237, 235, 235, 0.7);
-      border: none;
-      border-radius: 15px;
-      box-shadow: none;
-      font-size: 1rem;
+
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+      font-size: .8rem;
+      font-weight: 300;
       margin-right: 10px;
-      padding: 5px 10px;
-      &:hover {
-        background-color: rgba(#EF7B45, 0.8);
-        color: #FCFBF4;
-      }
-
+      padding: 0px 10px;
+      box-sizing: border-box;
     }
 
-    .selected {
-      color: #FCFBF4;
-      background-color: rgba(#EF7B45, 1);
-    }
+    ion-icon {
+      font-size: 20px;
+      padding-bottom: 5px;
+      font-weight: 400; //Preferred size here
+  }
 
-    .hide {
-      display: none;
-    }
+  body::-webkit-scrollbar {
+    display: none;
+  }
