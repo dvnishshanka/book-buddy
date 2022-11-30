@@ -12,6 +12,10 @@ require 'openssl'
 puts "Getting rid of old books"
 Book.destroy_all
 # User.destroy_all
+OrderReview.destroy_all
+Order.destroy_all
+BookCopy.destroy_all
+Message.destroy_all
 puts "Here we go!!!"
 
 # User.create!(email: "andy@gmail.com", password: "123456", first_name: "Andrew", last_name: "Grant", display_name: "Andy")
@@ -46,7 +50,6 @@ def new_book(search, category = nil)
         isbn: book["volumeInfo"]["industryIdentifiers"].nil? ? nil : book["volumeInfo"]["industryIdentifiers"][0]["identifier"], #tenery operater
         category: defined_category,
         language: book["volumeInfo"]["language"],
-        #averagerating: book["volumeInfo"]["averageRating"],
         photo_url: "https://books.google.com/books/content?id=#{book['id']}&printsec=frontcover&img=1&zoom=1&source=gbs_api")
 end
 

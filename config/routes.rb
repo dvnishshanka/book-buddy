@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'bookreviews/new'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :books do
     resources :book_copies, only: %i[new create]
-    resources :reviews, only: %i[new create]
+    resources :book_reviews, only: :create
   end
 
   resources :book_copies, only: %i[index show] do
@@ -33,7 +32,7 @@ Rails.application.routes.draw do
       patch "reject"
     end
   end
-
+  get "book_reviews/:id", to: "bookreviews#new"
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard
   get "user_profile/:id", to: "user_profiles#show", as: :user_profile
   get "test", to: "pages#test"

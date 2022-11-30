@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @hash = params
+    # @horrorbooks = Book.where(category: "Horror")
     # raise
     @hash.key?("category")
     if @hash.key?("category")
@@ -19,7 +20,7 @@ class PagesController < ApplicationController
         format.html # Follow regular flow of Rails
         format.text { render partial: "books/list", locals: { books: @books }, formats: [:html] }
       end
-      @horrorbooks = Book.where(category: "Horror")
+
 
     end
     # raise

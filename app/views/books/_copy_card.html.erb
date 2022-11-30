@@ -1,0 +1,32 @@
+<div class="book-copy-card">
+          <% @book.book_copies.each do |book_copy| %>
+              <div class="book-copies">
+                <div class="img-comments">
+                  <% if book_copy.user.photo.attached?%>
+                    <%= cl_image_tag book_copy.user.photo.key, class:"avatar-bordered-small" %>
+                  <% else %>
+                    <div class='avatar-bordered-small d-flex justify-content-center align-items-center' style= "padding-right: 9px; background-color: #75c9b7;" >
+                      <p style="font-size: 1rem"><%= render "shared/default_profile_image", user: book_copy.user %></p>
+                     </div>
+                <% end %>
+                        <ul>
+                          <li><em>"<%= book_copy.comments.capitalize %>"</em></li>
+                          <li class="display-name">- <%= book_copy.user.display_name %></li>
+                        </ul>
+                </div>
+
+                  <div class="requests">
+                    <% if book_copy.availability_status == "Sell" %>
+                      <p><i class="fa-solid fa-euro-sign"></i> <%= book_copy.price %></p>
+                    <% else %>
+                      <p><%= book_copy.availability_status %></p>
+                    <% end %>
+
+                      <% if book_copy.user.id != current_user.id %>
+                        <%= link_to "Request Book", new_book_copy_order_path(book_copy), class:"request-btn"  %>
+                      <% end %>
+                    </div>
+
+              </div>
+            <% end %>
+</div>

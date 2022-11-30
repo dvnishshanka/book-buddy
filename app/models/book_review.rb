@@ -1,5 +1,5 @@
 class BookReview < ApplicationRecord
-  belongs_to :book
-  belongs_to :user
-  validates :content, presence: true
+  belongs_to :book, class_name: "Book", dependent: :destroy
+  belongs_to :user, dependent: :destroy
+  validates :rating, :content, presence: true
 end
