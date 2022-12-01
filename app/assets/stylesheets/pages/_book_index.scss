@@ -1,19 +1,13 @@
 .book-index-container-card {
   width: 150px;
-  min-height: 220px;
   border-radius: 5px;
   background-color: $app-white;
   margin-bottom: 20px;
-  text-decoration: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  transition: transform 1500ms;
-  transform-style: preserve-3d;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-
 
   img {
     height: 220px;
@@ -21,16 +15,12 @@
     border-radius: 5px;
   }
 
-  a {
-    text-decoration: none;
-  }
+}
 
-  p  {
-    font-size: 12px;
-  }
-
-  h6 {
-    font-size: 16px;
+.index-text-container {
+  background-color: whitesmoke;
+  text-decoration: none;
+  border-radius: 5px;
 
     // Limit the heading for several lines
     display: -webkit-box;
@@ -41,6 +31,5 @@
     -moz-box-orient: vertical;
 
     overflow: hidden;
-  }
 
 }

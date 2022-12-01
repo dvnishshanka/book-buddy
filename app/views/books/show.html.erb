@@ -39,7 +39,6 @@
         <% end %>
           <%= render "books/copy_card", books: @books %>
 
-           <%= link_to bookreviews_new_path(@book) do %>
-     <p class="dashboard-order-status me-2" style="background-color: pink"><strong>Leave a review 😎</strong></p>
-     <% end %>
+      <%= link_to "Review this book", book_book_review_path(@book), class: "btn btn-primary"%>
+
 </div>

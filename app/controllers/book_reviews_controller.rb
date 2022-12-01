@@ -1,32 +1,28 @@
 class BookReviewsController < ApplicationController
-  before_action :set_book_review, only: %i[new create]
   def new
-      # We need @book in our `simple_form_for`
-    @book = Book.find(params[:book_id])
-    @book_review = BookReview.new
+    @bookreview = BookReview.new
   end
 
   def show
+    @bookreviews = BookReview.all
+    @book = Book.find(params[:book_id])
   end
 
   def create
-    @book_review = BookReview.new(book_review_params)
-    @book_review.book = @book
+    # raise
+    @book = Book.find(params[:book_id])
+    @bookreview = BookReview.new(book_review_params)
+    @bookreview.book = @book
+    @bookreview.save!
+  end
 
-    if @book_review.save
-      redirect_to book_path(@book)
-    else
-      render :new, status: :unprocessable_entity
-    end
+  def index
+    @bookreviews = BookReview.all
   end
 
   private
 
-  def set_book_review
-    @book = Book.find(params[:book_id])
-  end
-
   def book_review_params
-    params.require(:book_review).permit(:rating, :content)
+    params.require(:bookreview).permit(:content)
   end
 end

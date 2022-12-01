@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :books do
+    resources :book_reviews
     resources :book_copies, only: %i[new create]
-    resources :book_reviews, only: :create
   end
 
   resources :book_copies, only: %i[index show] do
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
       patch "reject"
     end
   end
-  get "book_reviews/:id", to: "bookreviews#new"
+  get "book_book_reviews/new", to: "book_book_reviews#new"
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard
   get "user_profile/:id", to: "user_profiles#show", as: :user_profile
   get "test", to: "pages#test"

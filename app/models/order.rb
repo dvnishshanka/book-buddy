@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
-  belongs_to :user
-  has_many :order_reviews
-  belongs_to :book_copy
+  belongs_to :user, dependent: :destroy
+  has_many :order_reviews, dependent: :destroy
+  belongs_to :book_copy, dependent: :destroy
   validates :start_date, :end_date, presence: true
   validate :end_date_after_start_date
 

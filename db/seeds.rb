@@ -12,10 +12,10 @@ require 'openssl'
 puts "Getting rid of old books"
 Book.destroy_all
 # User.destroy_all
-OrderReview.destroy_all
-Order.destroy_all
-BookCopy.destroy_all
-Message.destroy_all
+# OrderReview.destroy_all
+# Order.destroy_all
+# BookCopy.destroy_all
+# Message.destroy_all
 puts "Here we go!!!"
 
 # User.create!(email: "andy@gmail.com", password: "123456", first_name: "Andrew", last_name: "Grant", display_name: "Andy")
@@ -58,7 +58,7 @@ new_book("In+The+End,+It+Was+All+About+Love", "Non-fiction")
 new_book("brave+new+world+huxley", "Sci-fi")
 new_book("Ubik", "Sci-fi")
 new_book("The+Silence+of+the+Girls", "Greek mythology")
-new_book("Red+Dragon", "Horror")
+new_book("Deeper+Than+The+Ocean", "Horror")
 new_book("The+Third+Policeman", "Dark Comedy")
 new_book("Raise+High+the+Roof+Beam,+Carpenters+and+Seymour", "Short stories")
 new_book("Leaves+of+Grass", "Poetry")
@@ -67,15 +67,22 @@ new_book("The+Lion,+The+Witch+and+the+Wardrobe", "Childrens")
 new_book("catch+22", "War story ")
 new_book("Cosmicomics", "Sci-fi")
 new_book("All+Souls+day", "Fiction")
+new_book("The+Picture+of+Dorian+Gray", "Classic")
+new_book("All+Down+Darkness+Wide:+A+Memoir", "Non-fiction")
+new_book("Dubliners", "Short stories")
+new_book("Listen+to+the+Land+Speak+:+A+Journey+into+the+wisdom+of+what+lies+beneath+us", "Non-fiction")
+
+new_book("We+Have+Always+Been+Here", "Horror")
+new_book("Sign+Here", "Horror")
 
 new_book("Helter+Skelter", "True crime")
 new_book("The+Great+Gatsby", "Classic")
 new_book("Stories+of+Your+Life+and+Others", "Fiction")
 new_book("Island+of+a+Thousand+Mirrors")
-new_book("Pet+Sematary", "Horror")
+new_book("The+Shining", "Horror")
 new_book("The+Years+with+Laura+Diaz")
 new_book("For+Esme+with+Love+and+Squalor", "Short stories")
-new_book("invisible+cities", "Fiction")
+new_book("The+Haunting+of+Hill+House", "Horror")
 new_book("The+Island+that+dared", "Travel")
 new_book("The+Green+mile", "Horror")
 new_book("The+Death+of+Artemio+Cruz", "Classic")

@@ -23,3 +23,22 @@
 
 
 <%= link_to "Add a book", new_book_book_copy_path(@book) %>
+
+<%= link_to new_book_book_review_path(@book, @bookreview) do %>
+     <p class="dashboard-order-status me-2" style="background-color: pink"><strong>Leave a review 😎</strong></p>
+     <% end %>
+
+               <button>
+<%= link_to "reviews", "form_modal", books: @books %>
+<%= turbo_stream.replace "remote_modal" do %>
+<% end %>
+</button>
+
+
+<div class="second-lists">
+ <%= render "books/irish", books: @books %>
+
+</div>
+
+
+array.sum(0.0) / array.size

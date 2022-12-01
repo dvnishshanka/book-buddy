@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
     @hash = params
     # @horrorbooks = Book.where(category: "Horror")
+    # @irishbooks = Book.where(title: ["The Third Policeman", "The Picture of Dorian Gray", "All Down Darkness Wide","Listen to the Land Speak"])
     # raise
     @hash.key?("category")
     if @hash.key?("category")
@@ -14,13 +15,17 @@ class PagesController < ApplicationController
         sql_query = "title ILIKE :query OR author ILIKE :query OR description ILIKE :query"
         @books = Book.where(sql_query, query: "%#{params[:query]}%")
       else
-        @books = Book.all.sample(8)
+        @books = Book.all
       end
       respond_to do |format|
         format.html # Follow regular flow of Rails
         format.text { render partial: "books/list", locals: { books: @books }, formats: [:html] }
       end
 
+  def show
+    @book = Book.find(params[:id])
+    @bookreview = BookReview.new
+  end
 
     end
     # raise

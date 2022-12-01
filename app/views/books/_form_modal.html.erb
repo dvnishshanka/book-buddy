@@ -1,0 +1,39 @@
+<%= turbo_frame_tag :remote_modal, target: :_top do %>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+ aria-hidden="true" data_controller="bs_modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+               <%= simple_form_for [@book, @bookreview] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating, :collection => [1, 2, 3, 4, 5] %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
+
+<div>
+  <% if @book.book_reviews.blank? %>
+    Be the first to leave a review for <%= @book.title %>
+  <% else %>
+    <% @book.book_reviews.each do |review| %>
+      <p><%= review.content %></p>
+       <p><%= review.rating %></p>
+      <p><%= review.user.display_name %></p>
+    <% end %>
+  <% end %>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<% end %>
