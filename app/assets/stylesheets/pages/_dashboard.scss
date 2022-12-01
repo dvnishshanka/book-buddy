@@ -1,18 +1,24 @@
 .dashboard-order-container {
-  display: flex;
-  justify-content: space-around;
   margin-bottom: 20px;
   margin-top: 25px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+}
+
+@media(max-width: 990px) {
+  .dashboard-order-container {
+    grid-template-columns: 1fr ;
+  }
 }
 
 .dashboard-order-card {
   background-color: $app-white;
   display: flex;
-  width: 400px;
+  width: 350px;
   min-height: 130px;
   border-radius: 5px;
   margin-bottom: 10px;
+
 
   img {
     height: 100%;
@@ -61,7 +67,6 @@
 
 .dashboard-my-book-card-container {
   background-color: $app-white;
-  width: 400px;
   min-height: 130px;
   border-radius: 5px;
   margin-bottom: 10px;

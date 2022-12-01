@@ -1,0 +1,35 @@
+<% @messages.each do |messages| %>
+  <div class="row">
+    <div class="chat-card ">
+      <% if message.receiver.photo.attached?%>
+        <div>
+          <% if message.current_user == current_user %>
+            <%=cl_image_tag message.current_user.photo.key, class:"avatar-large"%>
+          <% else %>
+            <%=cl_image_tag chat.current_user.photo.key, class:"avatar-large"%>
+          <% end %>
+        </div>
+      <% else %>
+        <div>
+          <%= render "shared/default_profile_image" %>
+        </div>
+      <%end%>
+        <div class="chat-card-infos">
+          <% if chat.current_user == current_user %>
+            <%= link_to chatroom.current_user.display_name,  chatroom_path(chatroom)%>
+          <% else %>
+            <%= link_to chatroom.current_user.display_name,  chatroom_path(chatroom)%>
+          <% end %>
+          <div class="message-small">
+            <% message = Message.where(chatroom: chatroom).last %>
+            <% if message %>
+              <%= Message.where(chatroom: chatroom) %>
+            <% end %>
+          </div>
+        </div>
+      <div class="chat-date">
+        <p id="chat-card-time"><%= chat.updated_at.strftime("%b %e at %l:%M %p") %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>

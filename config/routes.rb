@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   end
 
   resources :book_copies, only: %i[index show] do
+    resources :chatroom, only: %i[create]
     resources :orders, only: %i[new create index] do
+
       # member do
       #   patch "accept_order"
       #   patch "reject_order"

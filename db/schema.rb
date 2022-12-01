@@ -146,8 +146,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_213714) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "book_copies", "books"
   add_foreign_key "book_copies", "users"
+
   add_foreign_key "book_reviews", "books"
   add_foreign_key "book_reviews", "users"
+  add_foreign_key "chatrooms", "book_copy"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "order_reviews", "orders"
