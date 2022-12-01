@@ -1,6 +1,10 @@
 <div class= "book-container-card">
   <div class="front">
+    <% if book.photo_url.nil? %>
+    <h4>sorry no image</h4>
+    <% else %>
     <%= image_tag book.photo_url, crop: "fill"  %>
+    <% end %>
   </div>
   <div class="back">
     <%= link_to book_path(book) do%>
