@@ -23,3 +23,58 @@
 
 
 <%= link_to "Add a book", new_book_book_copy_path(@book) %>
+
+<%= link_to new_book_book_review_path(@book, @bookreview) do %>
+     <p class="dashboard-order-status me-2" style="background-color: pink"><strong>Leave a review 😎</strong></p>
+     <% end %>
+
+               <button>
+<%= link_to "reviews", "form_modal", books: @books %>
+<%= turbo_stream.replace "remote_modal" do %>
+<% end %>
+</button>
+
+
+<div class="second-lists">
+ <%= render "books/irish", books: @books %>
+
+</div>
+
+
+array.sum(0.0) / array.size
+
+
+<%= simple_form_for [@book, @bookreview] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating, :collection => [1, 2, 3, 4, 5] %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
+
+<div class="book-copy-card">
+  <% if @book.book_reviews.blank? %>
+
+          Be the first to leave a review for <%= @book.title %>
+            <% else %>
+          <% @book.book_reviews.each do |review| %>
+          <div class="book-copies">
+
+            <p><%= review.content %></p>
+             <p><%= review.rating %></p>
+              <p><%= review.user.display_name %></p>
+          <% end %>
+        </div>
+  <% end %>
+</div> %>
+
+
+<%= turbo_frame_tag :remote_modal, target: :_top do %>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+ aria-hidden="true" data_controller="bs_modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>

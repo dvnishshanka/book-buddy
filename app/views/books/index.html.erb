@@ -19,7 +19,7 @@
           <% if (@database_book == "" || @database_book == nil) %>
             <%= link_to new_book_path (book) do %>
               <%= image_tag "https://books.google.com/books/content?id=#{book['id']}&printsec=frontcover&img=1&zoom=1&source=gbs_api", crop: "fill" %>
-              <div class="container pt-1 mb-0">
+              <div class="index-text-container">
                 <h6><strong><%=  book["volumeInfo"]["title"]%></strong></h6>
                 <p><%= book["volumeInfo"]["authors"].nil? ? nil : book["volumeInfo"]["authors"][0] %></p>
                 <p><%=book["volumeInfo"]["industryIdentifiers"].nil? ? nil : "ISBN: #{book["volumeInfo"]["industryIdentifiers"][0]["identifier"]}" %></p>

@@ -18,6 +18,8 @@ class PagesController < ApplicationController
         format.html
         format.text { render partial: "books/list", locals: { books: @books }, formats: [:html] }
       end
+      @horrorbooks = Book.where(category: "Horror")
+
     end
   end
 

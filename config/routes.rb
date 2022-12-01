@@ -5,8 +5,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
+  # get "book_book_reviews/new", to: "book_book_reviews#new"
   resources :books do
+    resources :book_reviews
     resources :book_copies, only: %i[new create]
   end
 

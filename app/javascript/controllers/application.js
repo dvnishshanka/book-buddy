@@ -21,3 +21,6 @@ import Flatpickr from 'stimulus-flatpickr'
 application.register('flatpickr', Flatpickr)
 
 export { application }
+
+
+

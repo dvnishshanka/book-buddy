@@ -1,15 +1,9 @@
-.book-copies {
-  background: aliceblue;
-
-}
-
+// BOOK IMAGE
 .book-image {
   display: flex;
   margin-top: 70px;
   justify-content: center;
   width: 100%;
-
-
 
   img {
     width: 150px;
@@ -18,10 +12,17 @@
   }
 }
 
+// BOOK TITLE, AUTHOR, CAT
+.info {
 
-*{padding:0;margin:0;}
+  margin-top: 28px;
+  text-align: center;
+}
 
 
+
+
+// READ-MORE
 .content-1 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -35,6 +36,12 @@
   overflow: hidden;
 }
 
+.description {
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .read-more {
   display: contents;
   background-color: rgba(237, 235, 235, 0.7);
@@ -44,41 +51,68 @@
       font-size: 1rem;
       padding: 2px 5px;
       color: #EF7B45;
-
-}
-
-.info {
-
-  margin-top: 28px;
-  text-align: center;
-}
-
-.info-isbn {
-  font-weight: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
- p {
-  margin-top: 15px;
-  font-size: small;
-
- }
-}
-
-.description {
-
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 
+// COPY CARDS
 .book-copy-card {
-  background-color: $app-white;
-  display: flex;
-  width: 300px;
-  min-height: 100px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  color: $app-text;
 
+}
+
+.book-copies {
+  height: 125px;
+  background: $app-body;
+  border-width: 4px 4px 4px 4px;
+  border-bottom-color: #EF7B45;
+  border-bottom-style:solid;
+  border-bottom-width:thin;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.avatar-bordered-small {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.img-comments {
+  display: flex;
+  justify-content: left;
+  padding-left: 10px;
+  padding-top: 10px;
+
+
+  p {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+}
+
+.request-btn {
+  text-decoration: none;
+}
+
+ul {
+
+  list-style-type: none;
+  padding-left: 20px;
+
+  em {
+    font-size: small;
+  }
+}
+
+.display-name {
+  font-weight: lighter;
+  font-size: small;
+}
+
+.requests {
+  display: flex;
+  justify-content: space-around;
 }
