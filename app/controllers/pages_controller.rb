@@ -3,9 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @hash = params
-    # @horrorbooks = Book.where(category: "Horror")
-    # @irishbooks = Book.where(title: ["The Third Policeman", "The Picture of Dorian Gray", "All Down Darkness Wide","Listen to the Land Speak"])
-    # raise
     @hash.key?("category")
     if @hash.key?("category")
       @books = Book.where(category: @hash["category"].capitalize)
@@ -18,22 +15,16 @@ class PagesController < ApplicationController
         @books = Book.all
       end
       respond_to do |format|
-        format.html # Follow regular flow of Rails
+        format.html
         format.text { render partial: "books/list", locals: { books: @books }, formats: [:html] }
       end
-
-  def show
-    @book = Book.find(params[:id])
-    @bookreview = BookReview.new
-  end
+      @horrorbooks = Book.where(category: "Horror")
 
     end
-    # raise
   end
 
   def dashboard
-     @book_copies = current_user.book_copies # "All my books"
+    @book_copies = current_user.book_copies # "All my books"
     @orders = current_user.orders  # "all my requests "
-
   end
 end

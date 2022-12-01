@@ -10,6 +10,7 @@
         <%= f.input :price,
                   autofocus: true,
                   input_html: { autocomplete: "price" }%>
+        <%= f.input :condition,:collection => [1, 2, 3, 4, 5] %>
         <%= f.input :comments,
                   autofocus: true,
                   input_html: { autocomplete: "comments" }%>

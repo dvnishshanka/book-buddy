@@ -23,8 +23,9 @@
   <% if book_copy.orders.length > 0 %>
     <div class="container pb-1 mb-0">
       <% book_copy.orders.each do |order| %>
+      <div>
       <hr>
-      <div class= "d-flex justify-content-between align-items-center">
+
       <p><i class="fa-regular fa-user"></i>  <strong><%= order.user.display_name || order.user.first_name %></strong></p>
 
 
@@ -33,6 +34,8 @@
       <%= render "shared/acceptance", order: order  %>
       <% end %>
 
+
+    </div>
     </div>
 
   <% end %>
