@@ -1,9 +1,12 @@
-<div class="dashboard-my-book-card-container">
-  <div class= "dashboard-my-book-card">
+<div class="dashboard-my-book-card-container justify-content-center">
+
+  <div class= "dashboard-my-book-card shadow ">
+
+
     <%= link_to book_path(book_copy.book_id) do %>
       <%= image_tag book_copy.book.photo_url %>
     <% end %>
-  <div class= "dashboard-order-card-description">
+    <div class= "dashboard-order-card-description">
       <div>
         <%= link_to book_path(book_copy.book_id) do %>
           <p class="mb-2 dashboard-order-card-title" style = "font-size: 1rem;"><strong><%= book_copy.book.title %></strong></p>
@@ -14,29 +17,23 @@
         <br>
         <p>You don't have any orders for this book yet.</p>
       <% end %>
-  </div>
-
-
-
+    </div>
   </div>
 
   <% if book_copy.orders.length > 0 %>
     <div class="container pb-1 mb-0 ">
       <% book_copy.orders.each do |order| %>
       <div>
-      <hr>
-
-      <p><i class="fa-regular fa-user"></i>  <strong><%= order.user.display_name || order.user.first_name %></strong></p>
-
+        <hr>
+        <p><i class="fa-regular fa-user"></i>  <strong><%= order.user.display_name || order.user.first_name %></strong></p>
 
       </div>
       <p><i class="fa-regular fa-calendar-xmark"></i>  <%= order.start_date %> to <%= order.end_date %></p>
       <%= render "shared/acceptance", order: order  %>
       <% end %>
-
-
-    </div>
     </div>
 
   <% end %>
+
+
 </div>
