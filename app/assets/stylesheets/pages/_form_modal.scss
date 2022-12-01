@@ -1,0 +1,37 @@
+.book-copy-card {
+  color: $app-text;
+
+}
+
+.book-copies {
+  height: 125px;
+  background: $app-body;
+  border-width: 4px 4px 4px 4px;
+  border-bottom-color: #EF7B45;
+  border-bottom-style:solid;
+  border-bottom-width:thin;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.avatar-bordered-small {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.img-comments {
+  display: flex;
+  justify-content: left;
+  padding-left: 10px;
+  padding-top: 10px;
+
+
+  p {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+}

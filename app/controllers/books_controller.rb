@@ -5,9 +5,10 @@ require 'openssl'
 require 'nokogiri'
 
 class BooksController < ApplicationController
-
   def new
     @book = Book.new
+    @book_review = BookReview.new
+
     set_details_from_api if defined?(params["volumeInfo"]["title"])
   end
 
@@ -27,6 +28,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @bookreview = BookReview.new  # Add this line
   end
 
   private
