@@ -24,6 +24,3 @@ application.register("scroll", ScrollController)
 
 import SearchBooksController from "./search_books_controller"
 application.register("search-books", SearchBooksController)
-
-import UpdateMyBookCardController from "./update_my_book_card_controller"
-application.register("update-my-book-card", UpdateMyBookCardController)
