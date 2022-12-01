@@ -1,24 +1,18 @@
-<div data-search-books-target="list" data-filter-books-target="book" class="container" style="margin-top: 130px;">
-  <div class="book-container">
-      <% @books.each do |book| %>
-
-        <div class= "book-container-card">
-          <div class="front">
-            <%= image_tag book.photo_url, crop: "fill"  %>
-          </div>
-              <div class="back">
-              <%= link_to book_path(book) do%>
-                <div class="ribbon">
-                  <div class="ribbon-text">
-                    <h6 style="font-size: <%= book.category.length >= 14 ? "10px !important" : "14px !important"   %>" ><%= book.category %></h6>
-                  </div>
-                </div>
-            <div class="card-text">
-              <h6><%= book.author %></h6>
-              <h4 style="font-size: <%= book.title.length >= 14 ? "16px !important" : "24px !important"   %>" ><em>"<%= book.title %>"</em></h4>
-            </div>
-            <% end %>
+<div class= "book-container-card">
+  <div class="front">
+    <%= image_tag book.photo_url, crop: "fill"  %>
+  </div>
+  <div class="back">
+    <%= link_to book_path(book) do%>
+      <div class="ribbon">
+        <div class="ribbon-text">
+          <h6 style="font-size: <%= book.category.length >= 14 ? "10px !important" : "14px !important"   %>" ><%= book.category %></h6>
         </div>
       </div>
-  <% end %>
+      <div class="card-text">
+        <h6><%= book.author %></h6>
+        <h4 style="font-size: <%= book.title.length >= 14 ? "16px !important" : "24px !important"   %>" ><em>"<%= book.title %>"</em></h4>
+      </div>
+    <% end %>
+  </div>
 </div>

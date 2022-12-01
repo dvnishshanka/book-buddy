@@ -28,6 +28,6 @@ class BookCopiesController < ApplicationController
   end
 
   def book_copy_params
-    params.require(:book_copy).permit(:comments, :availability_status, :price)
+    params.require(:book_copy).permit(:comments, :availability_status, :price, :condition)
   end
 end

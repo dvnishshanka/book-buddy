@@ -38,12 +38,11 @@ class OrdersController < ApplicationController
 
   def accept
     @order = Order.find(params[:id])
-
     @order.update(status: "ACCEPTED")
 
     respond_to do |format|
       format.html { redirect_to dashboard_path }
-      format.text { render partial: "shared/acceptance", locals: {order: @order}, formats: [:html] }
+      format.text { render partial: "shared/acceptance", locals: { order: @order }, formats: [:html] }
     end
   end
 
@@ -53,7 +52,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to dashboard_path }
-      format.text { render partial: "shared/acceptance", locals: {order: @order}, formats: [:html] }
+      format.text { render partial: "shared/acceptance", locals: { order: @order }, formats: [:html] }
     end
   end
 
