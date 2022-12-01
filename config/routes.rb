@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
+  # get "book_book_reviews/new", to: "book_book_reviews#new"
   resources :books do
     resources :book_reviews
     resources :book_copies, only: %i[new create]
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
       patch "reject"
     end
   end
-  get "book_book_reviews/new", to: "book_book_reviews#new"
+
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard
   get "user_profile/:id", to: "user_profiles#show", as: :user_profile
   get "test", to: "pages#test"

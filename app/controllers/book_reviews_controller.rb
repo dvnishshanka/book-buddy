@@ -1,6 +1,7 @@
 class BookReviewsController < ApplicationController
   def new
     @bookreview = BookReview.new
+    @book = Book.find(params[:book_id])
   end
 
   def show
@@ -9,11 +10,15 @@ class BookReviewsController < ApplicationController
   end
 
   def create
-    # raise
-    @book = Book.find(params[:book_id])
     @bookreview = BookReview.new(book_review_params)
+    @book = Book.find(params[:book_id])
     @bookreview.book = @book
-    @bookreview.save!
+    @bookreview.user = current_user
+    if @bookreview.save!
+      redirect_to book_path(@book)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def index
@@ -23,6 +28,6 @@ class BookReviewsController < ApplicationController
   private
 
   def book_review_params
-    params.require(:bookreview).permit(:content)
+    params.require(:book_review).permit(:rating, :content)
   end
 end
