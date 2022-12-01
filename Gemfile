@@ -29,8 +29,7 @@ gem "jbuilder"
 
 gem 'bootstrap', '~> 5.1.3'
 
-
-
+gem 'pry', '~> 0.13.1'
 
 ###adding json for api
 gem 'json', '~> 2.6', '>= 2.6.2'

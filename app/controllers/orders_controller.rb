@@ -39,11 +39,14 @@ class OrdersController < ApplicationController
   def accept
     @order = Order.find(params[:id])
     @order.update(status: "ACCEPTED")
-
+    @chatroom = Chatroom.new(bookcopy_id: @order.book_copy_id, name:'sara')
+    @chatroom.save
+    binding.pry
     respond_to do |format|
       format.html { redirect_to dashboard_path }
       format.text { render partial: "shared/acceptance", locals: { order: @order }, formats: [:html] }
     end
+
   end
 
   def reject
@@ -74,3 +77,6 @@ class OrdersController < ApplicationController
     end
   end
 end
+
+
+#name: BookCopy.where(id: @order.book_copy_id)[0].)
