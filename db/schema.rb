@@ -50,7 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_213714) do
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo_url"
     t.integer "condition"
     t.index ["book_id"], name: "index_book_copies_on_book_id"
     t.index ["user_id"], name: "index_book_copies_on_user_id"
@@ -87,8 +86,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_213714) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "bookcopy_id"
-    t.index ["bookcopy_id"], name: "index_chatrooms_on_bookcopy_id"
+    t.bigint "book_copy_id"
+    t.index ["book_copy_id"], name: "index_chatrooms_on_book_copy_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -146,7 +145,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_213714) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "book_copies", "books"
   add_foreign_key "book_copies", "users"
-
   add_foreign_key "book_reviews", "books"
   add_foreign_key "book_reviews", "users"
   add_foreign_key "chatrooms", "book_copy"
