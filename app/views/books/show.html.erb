@@ -16,11 +16,40 @@
         <div class="book-image">
           <%= image_tag @book.photo_url, crop: "fill" %>
         </div>
+
         <div class="info">
           <p><%= @book.category %></p>
           <h3><%= @book.title %></h3>
           <p><%= @book.author %></p>
         </div>
+               <div class="review">
+                 <% if @book.book_reviews.blank? %>
+                    Already read <%= @book.title %>?, leave a review here.
+                <% else %>
+                    <% @book.book_reviews.sample(1).each do |review| %>
+                          <div class="show-review">
+                              <ul>
+                                <li><em>"<%=review.content %>"</em></li>
+                                <li class="name">-<%=review.user.display_name || review.user.first_name %></li>
+                                <li class="date"><%=review.created_at.strftime("%a, %d %b %y") %></li>
+                              </ul>
+                              <% end %>
+                          </div>
+                        <% end %>
+                        <div class="more">
+                            <div class="rating">
+                              <%  avgrating = @book.book_reviews.average(:rating)%>
+                                <% avgrating.to_i.times do |i| %>
+                                  <i class="fa-solid fa-book-open" style="color: #fa8334; font-size: 10px;"></i>
+                                <% end %>
+                                <% (5-avgrating).to_i.times do |i| %>
+                                  <i class="fa-solid fa-book-open" style="color: #b2b1b1; font-size: 10px;"></i>
+                                <% end %>
+                                  <p>Avg rating</p>
+                            </div>
+                            <%= link_to "See all Reviews", new_book_book_review_path(@book), class: "btn-review"%>
+                        </div>
+                  </div>
       <hr>
       <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more..." data-read-more-less-text-value="Read less">
         <p class="content-1" data-read-more-target="content">"<%= @book.description %>"</p>
@@ -39,6 +68,7 @@
         <% end %>
           <%= render "books/copy_card", books: @books %>
 
-      <%= link_to "Review this book", new_book_book_review_path(@book), class: "btn btn-primary"%>
+
+
 
 </div>

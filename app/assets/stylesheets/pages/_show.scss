@@ -116,3 +116,36 @@ ul {
   display: flex;
   justify-content: space-around;
 }
+
+.review {
+  border-top-color: #EF7B45;
+  border-top-style: solid;
+  border-top-width: thin;
+
+  ul em {
+font-size:medium;
+}
+}
+
+.name {
+  font-size: smaller
+}
+
+.date {
+  font-size: xx-small;
+}
+
+.show-review {
+  margin-top: 10px;
+}
+
+.btn-review {
+  text-decoration: none;
+  color: #EF7B45;
+  padding-right: 10px;;
+}
+
+.more {
+  display: flex;
+    justify-content: space-between;
+}

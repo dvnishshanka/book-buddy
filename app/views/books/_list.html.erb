@@ -8,7 +8,7 @@
   </div>
   <div class="back">
     <%= link_to book_path(book) do%>
-      <div class="ribbon">
+      <div class="ribbon"  style="background-color:<%= book.ribbon(book.category) %>">
         <div class="ribbon-text">
           <h6 style="font-size: <%= book.category.length >= 14 ? "10px !important" : "14px !important"   %>" ><%= book.category %></h6>
         </div>
