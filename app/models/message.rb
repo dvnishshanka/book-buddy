@@ -1,6 +1,6 @@
 class Message < ApplicationRecord
   belongs_to :chatroom
-  belongs_to :user
+  belongs_to :User
   has_one_attached :photo
 
   def sender?(a_user)

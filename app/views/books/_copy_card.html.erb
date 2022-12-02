@@ -24,6 +24,7 @@
 
                       <% if book_copy.user.id != current_user.id %>
                         <%= link_to "Request Book", new_book_copy_order_path(book_copy), class:"request-btn"  %>
+                        <%= link_to "Get in touch 🚀", chatroom_path(book_copy)  %>
                       <% end %>
                     </div>
 
