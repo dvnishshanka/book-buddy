@@ -1,14 +1,14 @@
 <div  data-controller="realtime" data-realtime-target="body">
   <% if order.status == "CREATED" %>
     <p class="dashboard-order-status" ><strong>Requested</strong></p>
-    <%= link_to "Accept ✅", accept_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"}  %>
-    <%= link_to "Reject ✅", reject_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"} %>
+    <%= link_to "Accept ✅", accept_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"}, class: "normal-link"   %>
+    <%= link_to "Reject ✅", reject_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"}, class: "normal-link"  %>
 
   <% elsif order.status == "ACCEPTED"%>
   <p class="dashboard-order-status" style="background-color:lightgreen"><strong>Accepted 😎</strong></p>
-  <%= link_to "Reject ✋", reject_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"} %>
+  <%= link_to "Reject ✋", reject_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"},class: "normal-link" %>
   <% elsif order.status == "REJECTED"%>
   <p class="dashboard-order-status" style="background-color:red"><strong>Rejected 😢</strong></p>
-    <%= link_to "Re-Accept ✅", accept_order_path(order), data: {turbo_method: :patch, action: "click->realtime#send"}  %>
+    <%= link_to "Re-Accept ✅", accept_order_path(order), data: {turbo_method: :patch, action: "click->realtime#send"}, class: "normal-link"  %>
   <% end %>
 </div>
