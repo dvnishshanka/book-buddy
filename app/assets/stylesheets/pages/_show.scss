@@ -173,4 +173,11 @@ font-size:medium;
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+.show-page-icon-description {
+  color: $app-light-grey;
+}
 
+.show-page-icon {
+  color: $app-dark-grey;
+  font-size: 30px;
+}
