@@ -1,4 +1,4 @@
-<div class="navbar">
+<div class="navbar" data-controller="buttons">
  <%# <%= image_tag "bluelogo.png" %>
 
         <div class="search">
@@ -18,53 +18,52 @@
 
   <div class="book-category-container">
     <div class="filter-button">
-      <ion-icon name="library"></ion-icon>
+      <ion-icon name="library" data-buttons-target="allIcon"></ion-icon>
       <%=link_to "All books", root_path %>
     </div>
 
-    <div class="filter-button">
-    <%# onclick="document.getElementById('id2').style.color = 'green'" %>
-      <ion-icon name="skull"></ion-icon>
-      <%=link_to "Horror", root_path(:category => "horror")%>
+    <div class="filter-button" data-buttons-target="outerlayer">
+      <ion-icon name="skull" data-buttons-target="horrorIcon"></ion-icon>
+      <%=link_to "Horror", root_path(:category => "horror"), data: {buttons_target: "horrorbtn"} %>
     </div>
 
     <div class="filter-button">
-      <ion-icon name="planet"></ion-icon>
-      <%=link_to "Sci-fi", root_path(:category => "sci-fi")%>
+      <ion-icon name="planet" data-buttons-target="scifiIcon"></ion-icon>
+      <%=link_to "Sci-fi", root_path(:category => "sci-fi"), data: {buttons_target: "scibtn"}%>
     </div>
 
     <div class="filter-button">
-      <ion-icon name="receipt"></ion-icon>
-      <%=link_to "Poetry", root_path(:category => "poetry")%>
+      <ion-icon name="receipt" data-buttons-target="poetryIcon"></ion-icon>
+      <%=link_to "Poetry", root_path(:category => "poetry"), data: {buttons_target: "poetrybtn"}%>
     </div>
 
     <div class="filter-button">
-      <ion-icon name="bonfire"></ion-icon>
+      <ion-icon name="bonfire" data-buttons-target="fictionIcon"></ion-icon>
       <%=link_to "Fiction", root_path(:category => "fiction")%>
     </div>
 
     <div class="filter-button">
-      <ion-icon name="earth"></ion-icon>
+      <ion-icon name="earth" data-buttons-target="travelIcon"></ion-icon>
       <%=link_to "Travel", root_path(:category => "travel")%>
     </div>
 
     <div class="filter-button">
-      <ion-icon name="bulb"></ion-icon>
+      <ion-icon name="bulb" data-buttons-target="educationIcon"></ion-icon>
       <%=link_to "Education", root_path(:category => "education")%>
     </div>
 
     <div class="filter-button">
-      <ion-icon name="heart"></ion-icon>
+      <ion-icon name="heart" data-buttons-target="romanceIcon"></ion-icon>
       <%=link_to "Romance", root_path(:category => "romance")%>
     </div>
 
     <div class="filter-button">
-      <ion-icon name="ice-cream"></ion-icon>
+      <ion-icon name="ice-cream" data-buttons-target="comedyIcon"></ion-icon>
       <%=link_to "Comedy", root_path(:category => "comedy")%>
     </div>
 
     <div class="filter-button">
-      <ion-icon name="magnet"></ion-icon>
+      <ion-icon name="magnet" data-buttons-target="crimeIcon"></ion-icon>
       <%=link_to "Crime", root_path(:category => "crime")%>
     </div>
 

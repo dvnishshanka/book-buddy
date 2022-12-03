@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema[7.0].define(version: 2022_12_02_165415) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,7 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_165415) do
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo_url"
     t.integer "condition"
     t.index ["book_id"], name: "index_book_copies_on_book_id"
     t.index ["user_id"], name: "index_book_copies_on_user_id"
@@ -64,7 +61,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_165415) do
     t.bigint "book_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
     t.index ["book_id"], name: "index_book_reviews_on_book_id"
+    t.index ["user_id"], name: "index_book_reviews_on_user_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -87,8 +86,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_165415) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "bookcopy_id"
-    t.index ["bookcopy_id"], name: "index_chatrooms_on_bookcopy_id"
+    t.bigint "book_copy_id"
+    t.index ["book_copy_id"], name: "index_chatrooms_on_book_copy_id"
   end
 
   create_table "messages", force: :cascade do |t|
