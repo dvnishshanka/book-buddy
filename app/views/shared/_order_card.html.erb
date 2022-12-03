@@ -17,6 +17,11 @@
     <% if order.status == "CREATED"%>
        <p class="dashboard-order-status"><strong>Requested 😬</strong></p>
     <% elsif  order.status == "ACCEPTED"%>
+     <%= link_to  chatroom_path(order.book_copy),class:"btn btn-success me-3" do   %>
+                <div style="font-size: 12px;">
+                  <i class="fa-solid fa-message"></i> Chat
+                </div>
+              <% end %>
      <p class="dashboard-order-status" style="background-color: lightgreen"><strong>Accepted 😎</strong></p>
      <%= link_to new_book_copy_order_order_review_path(order.book_copy.id, order.id) do %>
      <p class="dashboard-order-status me-2" style="background-color: pink"><strong>Leave a review 😎</strong></p>
@@ -26,3 +31,10 @@
     <% end %>
  </div>
 </div>
+
+<%#
+ <%= link_to  chatroom_path(book_copy),class:"btn btn-success me-3" do   %>
+                <%# <div style="font-size: 12px;">
+                  <i class="fa-solid fa-message"></i> Chat
+                </div> %>
+              <%# <% end %>
