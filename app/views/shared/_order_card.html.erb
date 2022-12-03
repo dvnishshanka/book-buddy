@@ -9,14 +9,33 @@
     <% end %>
     <p><i class="fa-regular fa-calendar-xmark"></i>  <%= order.start_date %> to <%= order.end_date %></p>
     <%= link_to user_profile_path(order.book_copy.user_id) do %>
-      <p><i class="fa-regular fa-user"></i>  <%= order.book_copy.user.display_name || order.book_copy.user.first_name%></p>
-      <p><i class="fa-solid fa-location-dot"></i>  <%= order.book_copy.user.city  %>, <%= order.book_copy.user.country  %></p>
+    <div class="d-flex align-items-center">
+    <div class="pe-2">
+       <% if order.book_copy.user.photo.attached?%>
+            <%= cl_image_tag order.book_copy.user.photo.key, class:"avatar-bordered-small" %>
+          <% else %>
+            <div class='avatar-bordered-small justify-content-center align-items-center' style= " background-color: #75c9b7; " >
+              <p style="font-size: 1.5rem; text-align: center;" ><%= render "shared/default_profile_image", user: order.book_copy.user %></p>
+            </div>
+          <% end %>
+          </div>
+          <div class="justify-content-center d-flex flex-column">
+      <p class="normal-link pb-0"> <%= order.book_copy.user.display_name || order.book_copy.user.first_name%></p>
+      <p> <%= order.book_copy.user.city  %>, <%= order.book_copy.user.country  %></p>
+      </div>
+       </div>
     <% end %>
+
 
 
     <% if order.status == "CREATED"%>
        <p class="dashboard-order-status"><strong>Requested 😬</strong></p>
     <% elsif  order.status == "ACCEPTED"%>
+     <%= link_to  chatroom_path(order.book_copy),class:"btn btn-success me-3" do   %>
+                <div style="font-size: 12px;">
+                  <i class="fa-solid fa-message"></i> Chat
+                </div>
+              <% end %>
      <p class="dashboard-order-status" style="background-color: lightgreen"><strong>Accepted 😎</strong></p>
      <%= link_to new_book_copy_order_order_review_path(order.book_copy.id, order.id) do %>
      <p class="dashboard-order-status me-2" style="background-color: pink"><strong>Leave a review 😎</strong></p>
@@ -26,3 +45,10 @@
     <% end %>
  </div>
 </div>
+
+<%#
+ <%= link_to  chatroom_path(book_copy),class:"btn btn-success me-3" do   %>
+                <%# <div style="font-size: 12px;">
+                  <i class="fa-solid fa-message"></i> Chat
+                </div> %>
+              <%# <% end %>

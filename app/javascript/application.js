@@ -6,3 +6,4 @@ import "stimulus-flatpickr"
 import "stimulus-read-more"
 
 window.bootstrap = bootstrap
+

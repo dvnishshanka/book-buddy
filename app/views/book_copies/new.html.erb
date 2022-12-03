@@ -5,14 +5,20 @@
     <%= image_tag @book.photo_url, crop: "fill", class: "image-center" %>
     <%= simple_form_for [@book, @book_copy] do |f| %>
       <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :availability_status, :collection => ['Swap','Rent','Sell'] %>
+      <div class="form-inputs mt-3 pt-3">
+      <%= f.label(:availability_status, "Book is available for: ") %>
+      <br>
+        <%= f.collection_radio_buttons :availability_status,  [['Rent', 'Rent'], ['Swap', 'Swap'],['Sell','Sell']],:first, :last %>
+        <br>
+        <br>
         <%= f.input :price,
+                  placeholder: 'Add the price here',
                   autofocus: true,
                   input_html: { autocomplete: "price" }%>
-        <%= f.input :condition,:collection => [1, 2, 3, 4, 5] %>
+        <%= f.input :condition,prompt: 'Rate the condition of the book', :collection => [["1 - Very poor",1], ["2 - Poor", 2], ["3 - Satisfactory", 3], ["4 - Good", 4], ["5 - Very good ", 5]] %>
         <%= f.input :comments,
                   autofocus: true,
+                  placeholder: 'Add any special comments here',
                   input_html: { autocomplete: "comments" }%>
       </div>
       <div class="form-actions">

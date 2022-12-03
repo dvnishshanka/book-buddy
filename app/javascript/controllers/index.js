@@ -7,6 +7,9 @@ import { application } from "./application"
 import BsModalController from "./bs_modal_controller"
 application.register("bs-modal", BsModalController)
 
+import ButtonsController from "./buttons_controller"
+application.register("buttons", ButtonsController)
+
 import ChatroomSubscriptionController from "./chatroom_subscription_controller"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
 

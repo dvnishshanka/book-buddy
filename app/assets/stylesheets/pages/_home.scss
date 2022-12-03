@@ -17,6 +17,7 @@
  .book-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
  }
 
  @media(max-width: 1400px) {
@@ -136,7 +137,6 @@
   font-size: 12px;
   text-align: center;
   width: 134px;
-  background-color: #C44536;
 }
 
 //  .ribbon {
@@ -158,7 +158,7 @@
   // transform: rotate(90deg);
   color: $app-white;
   font-size: 14px;
-  margin-top: 6px;
+  margin-top: -6px;
  }
 
 .card-text {
