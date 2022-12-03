@@ -1,4 +1,4 @@
-<div class="container">
+
 
       <div>
         <%= link_to root_path, class: "home-button" do %>
@@ -24,7 +24,7 @@
         </div>
                <div class="review">
                  <% if @book.book_reviews.blank? %>
-                    Already read <%= @book.title %>?, leave a review here.
+                    Already read <%= @book.title %>?, <%= link_to "Leave a review", new_book_book_review_path(@book), class: "btn-review"%>.
                 <% else %>
                     <% @book.book_reviews.sample(1).each do |review| %>
                           <div class="show-review">
@@ -34,9 +34,7 @@
                                 <li class="date"><%=review.created_at.strftime("%a, %d %b %y") %></li>
                               </ul>
                               <% end %>
-                          </div>
-                        <% end %>
-                        <div class="more">
+                              <div class="more">
                             <div class="rating">
                               <%  avgrating = @book.book_reviews.average(:rating)%>
                                 <% avgrating.to_i.times do |i| %>
@@ -49,7 +47,9 @@
                             </div>
                             <%= link_to "See all Reviews", new_book_book_review_path(@book), class: "btn-review"%>
                         </div>
-                  </div>
+                          </div>
+                        <% end %>
+              </div>
       <hr>
       <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more..." data-read-more-less-text-value="Read less">
         <p class="content-1" data-read-more-target="content">"<%= @book.description %>"</p>
@@ -67,8 +67,3 @@
       <h5>Available copies of this book</h5>
         <% end %>
           <%= render "books/copy_card", books: @books %>
-
-
-
-
-</div>

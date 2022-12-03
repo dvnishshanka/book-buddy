@@ -77,3 +77,40 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
+
+
+<div class="modal-container">
+  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Leave a review</button>
+
+  <div id="id01" class="w3-modal">
+    <div class="modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+
+          <%= render "book_reviews/form_modal", books: @books %>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-container">
+  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Leave a review</button>
+
+  <div id="id01" class="w3-modal">
+    <div class="modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+
+          <%= render "book_reviews/form_modal", books: @books %>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ onclick="document.getElementById('id1').style.color = 'red'"
