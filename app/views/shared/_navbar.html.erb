@@ -1,5 +1,5 @@
 <div class="navbar">
- <%# <%= image_tag "bluelogo.png" %> 
+ <%# <%= image_tag "bluelogo.png" %>
 
         <div class="search">
 
@@ -23,6 +23,7 @@
     </div>
 
     <div class="filter-button">
+    <%# onclick="document.getElementById('id2').style.color = 'green'" %>
       <ion-icon name="skull"></ion-icon>
       <%=link_to "Horror", root_path(:category => "horror")%>
     </div>
@@ -45,6 +46,26 @@
     <div class="filter-button">
       <ion-icon name="earth"></ion-icon>
       <%=link_to "Travel", root_path(:category => "travel")%>
+    </div>
+
+    <div class="filter-button">
+      <ion-icon name="bulb"></ion-icon>
+      <%=link_to "Education", root_path(:category => "education")%>
+    </div>
+
+    <div class="filter-button">
+      <ion-icon name="heart"></ion-icon>
+      <%=link_to "Romance", root_path(:category => "romance")%>
+    </div>
+
+    <div class="filter-button">
+      <ion-icon name="ice-cream"></ion-icon>
+      <%=link_to "Comedy", root_path(:category => "comedy")%>
+    </div>
+
+    <div class="filter-button">
+      <ion-icon name="magnet"></ion-icon>
+      <%=link_to "Crime", root_path(:category => "crime")%>
     </div>
 
   <% end %>
