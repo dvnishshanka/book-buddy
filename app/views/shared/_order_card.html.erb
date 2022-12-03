@@ -9,9 +9,23 @@
     <% end %>
     <p><i class="fa-regular fa-calendar-xmark"></i>  <%= order.start_date %> to <%= order.end_date %></p>
     <%= link_to user_profile_path(order.book_copy.user_id) do %>
-      <p><i class="fa-regular fa-user"></i>  <%= order.book_copy.user.display_name || order.book_copy.user.first_name%></p>
-      <p><i class="fa-solid fa-location-dot"></i>  <%= order.book_copy.user.city  %>, <%= order.book_copy.user.country  %></p>
+    <div class="d-flex align-items-center">
+    <div class="pe-2">
+       <% if order.book_copy.user.photo.attached?%>
+            <%= cl_image_tag order.book_copy.user.photo.key, class:"avatar-bordered-small" %>
+          <% else %>
+            <div class='avatar-bordered-small justify-content-center align-items-center' style= " background-color: #75c9b7; " >
+              <p style="font-size: 1.5rem; text-align: center;" ><%= render "shared/default_profile_image", user: order.book_copy.user %></p>
+            </div>
+          <% end %>
+          </div>
+          <div class="justify-content-center d-flex flex-column">
+      <p class="normal-link pb-0"> <%= order.book_copy.user.display_name || order.book_copy.user.first_name%></p>
+      <p> <%= order.book_copy.user.city  %>, <%= order.book_copy.user.country  %></p>
+      </div>
+       </div>
     <% end %>
+
 
 
     <% if order.status == "CREATED"%>

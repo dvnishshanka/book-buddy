@@ -152,11 +152,12 @@ font-size:medium;
 
 
 .book-category-tag {
-  padding: 3px 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-radius: 15px;
   font-size: 12px;
   background-color: $app-light-navyblue-op75 ;
-
+  height: 20px;
 }
 
 /* The Modal (background) */
