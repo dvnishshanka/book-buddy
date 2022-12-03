@@ -1,4 +1,4 @@
-<p>Top rated Horror Books</p>
+<p>Books that inspired <span class="horror-text">Movies and Tv shows</span></p>
 <div class="book-container">
       <% @horrorbooks.each do |book| %>
 
@@ -7,7 +7,7 @@
             <%= image_tag book.photo_url, crop: "fill" %>
           </div>
               <div class="back">
-                <div class="ribbon">
+                <div class="ribbon" style="background-color:<%= book.ribbon(book.category) %>">
                   <div class="ribbon-text">
                     <h6 style="font-size: <%= book.category.length >= 14 ? "10px !important" : "14px !important"   %>" ><%= book.category %></h6>
                   </div>
