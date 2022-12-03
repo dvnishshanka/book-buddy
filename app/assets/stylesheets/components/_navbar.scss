@@ -41,7 +41,7 @@
 
 
   .book-category-container {
-    overflow-x:scroll;
+    overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
      a {
@@ -54,6 +54,10 @@
   .book-category-container::-webkit-scrollbar {
     width: 1px;
     height: 0%;              /* width of the entire scrollbar */
+  }
+
+  .book-category-container::-webkit-scrollbar {
+    height: 0%;
   }
 
 
