@@ -1,4 +1,4 @@
-
+<div data-insert-in-list-target="items">
       <div class="form">
         <%= simple_form_for [@book, @bookreview] do |f| %>
           <%= f.input :content %>
@@ -7,36 +7,38 @@
         <% end %>
       </div>
 
-                <% if @book.book_reviews.blank? %>
-                    Be the first to leave a review for <%= @book.title %>
+
+
+    <div data-insert-in-list-target="items">
+        <% if @book.book_reviews.blank? %>
+              Be the first to leave a review for <%= @book.title %>
+        <% else %>
+            <% @book.book_reviews.each do |review| %>
+              <div class="book-copy-card">
+                <% if review.user.photo.attached?%>
+                  <%= cl_image_tag review.user.photo.key, class:"avatar-bordered-small" %>
                 <% else %>
-                  <div class="book-copy-card">
-                      <% @book.book_reviews.each do |review| %>
-                          <div class="book-copies">
-                            <div class="img-comments">
-                                <% if review.user.photo.attached?%>
-                                        <%= cl_image_tag review.user.photo.key, class:"avatar-bordered-small" %>
-                                <% else %>
-                                  <div class='avatar-bordered-small d-flex justify-content-center align-items-center' style= "padding-right: 9px; background-color: #75c9b7;" >
-                                  <p style="font-size: 1rem"><%= render "shared/default_profile_image", user: review.user %></p>
-                                </div>
-                            <% end %>
-
-                              <ul>
-                                <li><em>"<%=review.content %>"</em></li>
-                                <li><%=review.user.display_name || review.user.first_name %></li>
-                                <li><%=review.created_at.strftime("%a, %d %b %y") %></li>
-                              </ul>
-                            </div>
-                            <%  rating = review.rating%>
-                            <% rating.times do |i| %>
-                              <i class="fa-solid fa-book-open" style="color: #fa8334; font-size: 10px;"></i>
-                            <% end %>
-                            <% (5-rating).times do |i| %>
-                              <i class="fa-solid fa-book-open" style="color: #b2b1b1; font-size: 10px;"></i>
-                            <% end %>
-                            <% end %>
-
-                          </div>
-                        <% end %>
+                  <div class='avatar-bordered-small d-flex justify-content-center align-items-center' style= "padding-right: 9px; background-color: #75c9b7;" >
+                    <p style="font-size: 1rem"><%= render "shared/default_profile_image", user: review.user %></p>
                   </div>
+                <%end%>
+
+                        <p class= "m-0"><%=review.user.display_name || review.user.first_name %></p>
+                          <p class="m-0 pb-1" style="font-size: 9px;"><%=review.created_at.strftime("%a, %d %b %y") %></p>
+                            <% rating = review.rating%>
+                                <% rating.times do |i| %>
+                                  <i class="fa-solid fa-star" style="color: #fa8334; font-size: 10px;"></i>
+                                    <% end %>
+                                <% (5-rating).times do |i| %>
+                                  <i class="fa-regular fa-star" style="color: #b2b1b1; font-size: 10px;"></i>
+                                <% end %>
+                          <p class="m-0" style="font-size: 12px;"><%=review.content %></p>
+                        <% end %>
+
+              </div>
+            <% end %>
+    </div>
+
+
+
+</div>

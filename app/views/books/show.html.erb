@@ -35,6 +35,10 @@
                 <% end %>
                 <span ><%= avgrating if avgrating > 0%></span>
 
+                <%= link_to new_book_book_review_path(@book, @bookreview) do %>
+     <p class="dashboard-order-status me-2" style="background-color: pink"><strong>Leave a review 😎</strong></p>
+     <% end %>
+
             </div>
             </div>
            <p ><%= @book.category %></p>
@@ -86,7 +90,6 @@
         <% end %>
           <%= render "books/copy_card", books: @books %>
 
-  
+
 
 </div>
-
