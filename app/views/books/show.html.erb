@@ -13,49 +13,41 @@
         <% end %>
       </div>
 
-        <div class="book-image">
+        <div class="book-image" >
           <%= image_tag @book.photo_url, crop: "fill" %>
         </div>
 
+
         <div class="info">
-          <p><%= @book.category %></p>
+
           <h3><%= @book.title %></h3>
-          <p><%= @book.author %></p>
-        </div>
-               <div class="review">
-                 <% if @book.book_reviews.blank? %>
-                    Already read <%= @book.title %>?, <%= link_to "Leave a review", new_book_book_review_path(@book), class: "btn-review"%>.
-                <% else %>
-                    <% @book.book_reviews.sample(1).each do |review| %>
-                          <div class="show-review">
-                              <ul>
-                                <li><em>"<%=review.content %>"</em></li>
-                                <li class="name">-<%=review.user.display_name || review.user.first_name %></li>
-                                <li class="date"><%=review.created_at.strftime("%a, %d %b %y") %></li>
-                              </ul>
-                              <% end %>
-                              <div class="more">
-                            <div class="rating">
-                              <%  avgrating = @book.book_reviews.average(:rating)%>
-                                <% avgrating.to_i.times do |i| %>
-                                  <i class="fa-solid fa-book-open" style="color: #fa8334; font-size: 10px;"></i>
-                                <% end %>
-                                <% (5-avgrating).to_i.times do |i| %>
-                                  <i class="fa-solid fa-book-open" style="color: #b2b1b1; font-size: 10px;"></i>
-                                <% end %>
-                                  <p>Avg rating</p>
-                            </div>
-                            <%= link_to "See all Reviews", new_book_book_review_path(@book), class: "btn-review"%>
-                        </div>
-                          </div>
-                        <% end %>
-              </div>
+
+          <div class="d-flex justify-content-center align-content-center">
+          <p class="me-2"><%= @book.author %></p>
+          <p class="me-2">|</p>
+           <span class="rating">
+              <%  avgrating = @book.book_reviews.average(:rating) || 0%>
+                <% avgrating.to_i.times do |i| %>
+                  <i class="fa-solid fa-star" style="color: #fa8334; font-size: 11px;"></i>
+                <% end %>
+                <% (5-avgrating).to_i.times do |i| %>
+                  <i class="fa-regular fa-star" style="color: #b2b1b1; font-size: 11px;"></i>
+                <% end %>
+                <span ><%= avgrating if avgrating > 0%></span>
+
+            </div>
+            </div>
+           <p ><%= @book.category %></p>
+
+
+
       <hr>
+<h5>Synopsis</h5>
       <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more..." data-read-more-less-text-value="Read less">
-        <p class="content-1" data-read-more-target="content">"<%= @book.description %>"</p>
+        <p class="content-1 text-justify" data-read-more-target="content">"<%= @book.description %>"</p>
         <button class="read-more" data-action="read-more#toggle">Read more</button>
         <template data-read-more-target="full">
-          <p class="content-2">"<%= @book.description %>"</p>
+          <p class="content-2 text-justify">"<%= @book.description %>"</p>
         </template>
       </div>
       <hr>
@@ -67,3 +59,28 @@
       <h5>Available copies of this book</h5>
         <% end %>
           <%= render "books/copy_card", books: @books %>
+
+
+<div class="review">
+                 <% if @book.book_reviews.blank? %>
+                    Already read <%= @book.title %>?, leave a review here.
+                <% else %>
+                    <% @book.book_reviews.sample(1).each do |review| %>
+                          <div class="show-review">
+                              <ul>
+                                <li><em>"<%=review.content %>"</em></li>
+                                <li class="name">-<%=review.user.display_name || review.user.first_name %></li>
+                                <li class="date"><%=review.created_at.strftime("%a, %d %b %y") %></li>
+                              </ul>
+                              <% end %>
+                          </div>
+                        <% end %>
+                        <div class="more">
+
+                            <%= link_to "See all Reviews", new_book_book_review_path(@book), class: "btn-review"%>
+                        </div>
+                  </div>
+
+ </div>
+</div>
+

@@ -28,4 +28,8 @@ class OrderReviewsController < ApplicationController
   def order_review_params
     params.require(:order_review).permit(:rating, :content)
   end
+
+  def spin_words(sentence)
+
+  end
 end
