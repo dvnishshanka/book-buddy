@@ -13,8 +13,8 @@ class BookReviewsController < ApplicationController
     @bookreview = BookReview.new(book_review_params)
     @book = Book.find(params[:book_id])
     @bookreview.book = @book
-    @bookreview.user = current_user
-    if @bookreview.save!
+    @bookreview.user_id = current_user.id
+    if @bookreview.save
       redirect_to book_path(@book)
     else
       render :new, status: :unprocessable_entity
