@@ -38,7 +38,9 @@ class OrdersController < ApplicationController
   def accept
     @order = Order.find(params[:id])
     @order.update(status: "ACCEPTED")
-    @chatroom = Chatroom.new(book_copy_id: @order.book_copy_id, name: 'sara')
+
+    @chatroom = Chatroom.new(book_copy_id: @order.book_copy_id, name: @order.book_copy.book.title)
+
     @chatroom.save
     respond_to do |format|
       format.html { redirect_to dashboard_path }
