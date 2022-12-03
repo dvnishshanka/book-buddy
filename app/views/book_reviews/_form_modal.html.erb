@@ -1,20 +1,23 @@
-<div data-insert-in-list-target="items">
-      <div class="form">
-        <%= simple_form_for [@book, @bookreview] do |f| %>
-          <%= f.input :content %>
+<div class="container" data-insert-in-list-target="items">
+        <%= simple_form_for([@book, @bookreview], data: {insert_in_list_target: "form",
+        action: "submit->insert-in-list#send"}) do |f| %>
+         <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :content,
+              autofocus: true,
+              input_html: { autocomplete: "content" }%>
           <%= f.input :rating, :collection => [["1 - Very poor",1], ["2 - Poor", 2], ["3 - Satisfactory", 3], ["4 - Good", 4], ["5 - Very good ", 5]]%>
-          <%= f.submit "Submit", class: "btn btn-primary" %>
+        </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Leave a review", class: "btn-primary" %>
+          </div>
         <% end %>
-      </div>
 
-
-
-    <div data-insert-in-list-target="items">
         <% if @book.book_reviews.blank? %>
               Be the first to leave a review for <%= @book.title %>
         <% else %>
+         <div class="book-copy-card" data-insert-in-list-target="items">
             <% @book.book_reviews.each do |review| %>
-              <div class="book-copy-card">
                 <% if review.user.photo.attached?%>
                   <%= cl_image_tag review.user.photo.key, class:"avatar-bordered-small" %>
                 <% else %>
@@ -34,11 +37,7 @@
                                 <% end %>
                           <p class="m-0" style="font-size: 12px;"><%=review.content %></p>
                         <% end %>
-
-              </div>
-            <% end %>
-    </div>
-
-
+                <% end %>
+        </div>
 
 </div>
