@@ -1,11 +1,6 @@
-
+<%= render "shared/backBar" %>
 <div class="container">
-      <div>
-        <%= link_to :back, class: "home-button" do %>
-        <i class="fa-solid fa-arrow-left my-float ms-0"></i>
-        <% end %>
 
-      </div>
 
       <div>
         <%= link_to new_book_book_copy_path(@book), class: "book-copy-button" do %>
