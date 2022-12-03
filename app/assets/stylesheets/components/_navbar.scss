@@ -41,13 +41,17 @@
 
 
   .book-category-container {
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
      a {
       text-decoration: none;
       font-size: smaller;
       }
+  }
+
+  .book-category-container::-webkit-scrollbar {
+    height: 0%;
   }
 
 
