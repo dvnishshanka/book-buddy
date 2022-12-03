@@ -108,13 +108,13 @@ ul {
 }
 
 .display-name {
-  font-weight: lighter;
+  // font-weight: lighter;
   font-size: small;
 }
 
 .requests {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .review {
@@ -148,4 +148,12 @@ font-size:medium;
 .more {
   display: flex;
     justify-content: space-between;
+}
+
+.book-category-tag {
+  padding: 3px 15px;
+  border-radius: 15px;
+  font-size: 12px;
+  background-color: $app-light-navyblue-op75 ;
+
 }
