@@ -1,5 +1,5 @@
 
-
+<div class="container">
       <div>
         <%= link_to root_path, class: "home-button" do %>
         <i class="fa-solid fa-arrow-left my-float ms-0"></i>
@@ -41,13 +41,39 @@
 
 
 
-      <hr>
-<h5>Synopsis</h5>
+      <hr style="color: darkgrey;">
       <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more..." data-read-more-less-text-value="Read less">
         <p class="content-1 text-justify" data-read-more-target="content">"<%= @book.description %>"</p>
         <button class="read-more" data-action="read-more#toggle">Read more</button>
         <template data-read-more-target="full">
           <p class="content-2 text-justify">"<%= @book.description %>"</p>
+
+          <div class= "align-items-center d-flex justify-content-between">
+        <div class= "align-items-center d-flex flex-column justify-content-center w-25">
+          <p class="show-page-icon-description mb-1">publisher</p>
+          <i class="fa-regular fa-building show-page-icon"></i>
+          <p class="mb-0"><%= @book.publisher %></p>
+        </div>
+
+        <div class= "align-items-center d-flex flex-column justify-content-center w-25">
+          <p class="show-page-icon-description mb-1">language</p>
+         <i class="fa-solid fa-globe show-page-icon"></i>
+          <p class="mb-0"><%= @book.language %></p>
+        </div>
+
+        <div class= "align-items-center d-flex flex-column justify-content-center w-25">
+          <p class="show-page-icon-description mb-1">pages</p>
+         <i class="fa-regular fa-file-lines show-page-icon"></i>
+          <p class="mb-0"><%= @book.pages %></p>
+        </div>
+
+         <div class= "align-items-center d-flex flex-column justify-content-center w-25">
+           <p class="show-page-icon-description mb-1">year</p>
+           <i class="fa-regular fa-calendar show-page-icon"></i>
+          <p class="mb-0"><%= @book.year %></p>
+        </div>
+
+          </div>
         </template>
       </div>
       <hr>
@@ -56,40 +82,11 @@
             <p>Looks like we don't have any available copies of <em>'<%= @book.title %>'</em> <br>
               Have a copy you would like <%=link_to "like to add?", new_book_book_copy_path(@book) %></p>
         <% else %>
-      <h5>Available copies of this book</h5>
+      <h5 style="font-weight: bold;">Available copies of this book</h5>
         <% end %>
           <%= render "books/copy_card", books: @books %>
 
+  
 
-<div class="review">
-                 <% if @book.book_reviews.blank? %>
-                    Already read <%= @book.title %>?, leave a review here.
-                <% else %>
-                    <% @book.book_reviews.sample(1).each do |review| %>
-                          <div class="show-review">
-                              <ul>
-                                <li><em>"<%=review.content %>"</em></li>
-                                <li class="name">-<%=review.user.display_name || review.user.first_name %></li>
-                                <li class="date"><%=review.created_at.strftime("%a, %d %b %y") %></li>
-                              </ul>
-                              <% end %>
-                          </div>
-                              <div class="more">
-                            <div class="rating">
-                              <%  avgrating = @book.book_reviews.average(:rating)%>
-                                <% avgrating.to_i.times do |i| %>
-                                  <i class="fa-solid fa-book-open" style="color: #fa8334; font-size: 10px;"></i>
-                                <% end %>
-                                <% (5-avgrating).to_i.times do |i| %>
-                                  <i class="fa-solid fa-book-open" style="color: #b2b1b1; font-size: 10px;"></i>
-                                <% end %>
-                                  <p>Avg rating</p>
-                            </div>
-                            <%= link_to "See all Reviews", new_book_book_review_path(@book), class: "btn-review"%>
-                        </div>
-                        <% end %>
-
-                  </div>
-
- </div>
 </div>
+
