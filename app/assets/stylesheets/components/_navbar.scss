@@ -41,17 +41,56 @@
 
 
   .book-category-container {
-    overflow-x: hidden;
+    overflow-x:scroll;
     overflow-y: hidden;
     white-space: nowrap;
      a {
       text-decoration: none;
       font-size: smaller;
       }
+
+  }
+
+  .book-category-container::-webkit-scrollbar {
+    width: 1px;
+    height: 0%;              /* width of the entire scrollbar */
   }
 
 
-    .filter-button {
+
+
+
+
+
+
+
+
+// Attempt to color category
+  // .book-category-container[tabindex] {
+  //   transition:999s;
+  //   background: rgba(255,255,255,0);
+  // }
+
+  // .book-category-container:focus-within [tabindex] { /* rest all background when one element is focused */
+  //   transition:0s;
+  //   background: rgba(255,255,254,0);
+  // }
+
+  // .book-category-container [tabindex]:focus,
+  // .book-category-container [tabindex].active:focus{ /* set the background of only the focused one */
+  //   background-color: rgb(128,128,128);
+  //   transition:0s;
+  // }
+
+  // .book-category-container .active {
+  //   background-color: rgb(128,128,127);
+  // }
+
+
+
+
+
+  .filter-button {
 
       display: flex;
     flex-direction: column;
@@ -67,4 +106,34 @@
       font-size: 20px;
       padding-bottom: 5px;
       font-weight: 400; //Preferred size here
+  }
+
+  // .filter-button:active {
+  //   color: aquamarine;
+  //   background-color: #C44536;
+  //   font-size: 24px;
+  // }
+
+
+  // .filter-button:target ~ .navbar .book-category-container{
+
+  //   display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  //   font-size: 2rem;
+  //   font-weight: 900;
+  //   margin-right: 10px;
+  //   padding: 0px 10px;
+  //   box-sizing: border-box;
+  // }
+
+
+
+  #testbutton {
+    background-color: #0f2e0c;
+    color: white
+  }
+
+  #testbutton.clicked {
+    background-color: #ba0202;
   }

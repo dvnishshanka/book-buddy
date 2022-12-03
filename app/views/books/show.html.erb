@@ -1,4 +1,4 @@
-<div class="container">
+
 
       <div>
         <%= link_to root_path, class: "home-button" do %>
@@ -21,6 +21,7 @@
         <div class="info">
 
           <h3><%= @book.title %></h3>
+
           <div class="d-flex justify-content-center align-content-center">
           <p class="me-2"><%= @book.author %></p>
           <p class="me-2">|</p>
@@ -37,6 +38,7 @@
             </div>
             </div>
            <p ><%= @book.category %></p>
+
 
 
       <hr>
@@ -57,6 +59,7 @@
       <h5>Available copies of this book</h5>
         <% end %>
           <%= render "books/copy_card", books: @books %>
+
 
 <div class="review">
                  <% if @book.book_reviews.blank? %>
@@ -80,3 +83,4 @@
 
  </div>
 </div>
+
