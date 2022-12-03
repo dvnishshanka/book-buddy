@@ -14,10 +14,13 @@ class BookReviewsController < ApplicationController
     @book = Book.find(params[:book_id])
     @bookreview.book = @book
     @bookreview.user_id = current_user.id
-    if @bookreview.save
-      redirect_to book_path(@book)
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @bookreview.save
+        format.html { redirect_to new_book_book_review_path(@book, @bookreview) }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+      format.json
     end
   end
 
