@@ -1,81 +1,68 @@
 <%= render "shared/backBar" %>
-<div class="container ">
+<div class="container " style="margin-bottom: 130px;">
 
-      <div>
-        <%= link_to new_book_book_copy_path(@book), class: "book-copy-button" do %>
-        <i class="fa fa-plus my-float me-0"></i>
-        <% end %>
-      </div>
+  <div>
+    <%= link_to new_book_book_copy_path(@book), class: "btn btn-primary", style: "opacity: 0.9; position: fixed; bottom: 80px; right:20px;" do %>
+    <p class="p-0 m-0"><i class="fa-solid fa-circle-plus"></i> Book Copy </p>
+    <% end %>
+  </div>
 
-        <div class="book-image animate__animated animate__slideInDown animate__slower" >
-          <%= image_tag @book.photo_url, crop: "fill" %>
-        </div>
+  <h3 class="mb-0 mt-6 pt-4 mt-1 text-center"><strong><%= @book.title %></strong></h3>
+  <div class="book-image animate__animated animate__slideInDown animate__slower mt-3" >
+    <%= image_tag @book.photo_url, crop: "fill" %>
+  </div>
 
+  <div class="info mt-2">
+    <p class="mb-1 mt-0" style="font-weight: bold;"><%= @book.category %> | <%= @book.author %></p>
 
-        <div class="info mt-2">
-          <p class="mb-0 mt-0"><%= @book.category %></p>
-          <h3><%= @book.title %></h3>
+    <div class="d-flex justify-content-center align-items-center">
+     <%= render "shared/rating", avgrating: @book.book_reviews.average(:rating) || 0 %>
+    </div>
 
-          <div class="d-flex justify-content-center align-content-center">
+    <div class="mt-2 mb-4">
+      <%= link_to new_book_book_review_path(@book, @bookreview), class:"btn btn-info ps-1 pe-1 pt-0 pb-0" do %>
+        <p class="btn btn-info p-0 mb-0" style= "font-weight: bold; opacity: 0.7;"><i class="fa-regular fa-pen-to-square"></i> Leave a review</p>
+      <% end %>
+    </div>
+  </div>
 
-          <p class="me-2 "><%= @book.author %></p>
-          <p class="me-2">|</p>
-           <span class="rating">
-              <%  avgrating = @book.book_reviews.average(:rating) || 0%>
-                <% avgrating.to_i.times do |i| %>
-                  <i class="fa-solid fa-star" style="color: #fa8334; font-size: 11px;"></i>
-                <% end %>
-                <% (5-avgrating).to_i.times do |i| %>
-                  <i class="fa-regular fa-star" style="color: #b2b1b1; font-size: 11px;"></i>
-                <% end %>
-                <span ><%= avgrating if avgrating > 0%></span>
-
-                <%= link_to new_book_book_review_path(@book, @bookreview) do %>
-     <p class="dashboard-order-status me-2 " style="background-color: pink"><strong>Leave a review 😎<p></strong></p>
-     <% end %>
-
-            </div>
-            </div>
-
-
-
-
-      <hr style="color: darkgrey;">
       <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more..." data-read-more-less-text-value="Read less">
         <p class="content-1 text-justify" data-read-more-target="content">"<%= @book.description %>"</p>
         <button class="read-more" data-action="read-more#toggle">Read more</button>
         <template data-read-more-target="full">
           <p class="content-2 text-justify">"<%= @book.description %>"</p>
 
-          <div class= " d-flex justify-content-between align-items-start">
-        <div class= "align-items-center d-flex flex-column justify-content-center w-25">
-          <p class="show-page-icon-description mb-1">publisher</p>
-          <i class="fa-regular fa-building show-page-icon"></i>
-          <p class="mb-0 text-center"><%= @book.publisher %></p>
-        </div>
-
-        <div class= "align-items-center d-flex flex-column justify-content-center w-25">
-          <p class="show-page-icon-description mb-1">language</p>
-         <i class="fa-solid fa-globe show-page-icon"></i>
-          <p class="mb-0"><%= @book.language %></p>
-        </div>
-
-        <div class= "align-items-center d-flex flex-column justify-content-center w-25">
-          <p class="show-page-icon-description mb-1">pages</p>
-         <i class="fa-regular fa-file-lines show-page-icon"></i>
-          <p class="mb-0"><%= @book.pages %></p>
-        </div>
-
-         <div class= "align-items-center d-flex flex-column justify-content-center w-25">
-           <p class="show-page-icon-description mb-1">year</p>
-           <i class="fa-regular fa-calendar show-page-icon"></i>
-          <p class="mb-0"><%= @book.year %></p>
-        </div>
-
+        <% if @book.publisher !=nil%>
+          <div class= " d-flex mb-1">
+            <p class="show-page-icon-description mb-1 me-3"><i class="fa-regular fa-building "></i> Publisher :</p>
+            <p class="mb-0 text-center"><%= @book.publisher %></p>
           </div>
+        <% end %>
+
+      <% if @book.language !=nil%>
+        <div class= " d-flex mb-1">
+          <p class="show-page-icon-description mb-1 me-3"><i class="fa-solid fa-globe "></i> Language :</p>
+          <p class="mb-0 text-center"><%= @book.language %></p>
+        </div>
+      <% end %>
+
+      <% if @book.pages !=nil%>
+        <div class= " d-flex mb-1">
+          <p class="show-page-icon-description mb-1 me-3"><i class="fa-regular fa-file-lines "></i> Pages :</p>
+          <p class="mb-0 text-center"><%= @book.pages %></p>
+        </div>
+      <% end %>
+
+      <% if @book.year !=nil%>
+        <div class= " d-flex mb-1">
+          <p class="show-page-icon-description mb-1 me-3"><i class="fa-regular fa-calendar"></i> Year :</p>
+          <p class="mb-0 text-center"><%= @book.year %></p>
+        </div>
+      <% end %>
+
         </template>
       </div>
-      <hr>
+        <hr style="border-top: 1px solid #383232">
 
         <% if @book.book_copies.length == 0  %>
             <p>Looks like we don't have any available copies of <em>'<%= @book.title %>'</em> <br>

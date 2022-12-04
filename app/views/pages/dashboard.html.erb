@@ -29,9 +29,11 @@
     </div>
     <% if @book_copies.length > 0 %>
       <div class="dashboard-order-container">
+      <div class="row col">
       <% @book_copies.each do |book_copy|  %>
         <%= render 'shared/my_book_card', book_copy: book_copy %>
       <% end %>
+      </div>
       </div>
       <% else %>
       <h6>No books added...... yet!.</h6>

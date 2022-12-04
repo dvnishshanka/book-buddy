@@ -1,0 +1,11 @@
+<% avgrating.to_i.times do |i| %>
+  <i class="fa-solid fa-star" style="color: #fa8334; font-size: 12px;"></i>
+<% end %>
+<% if avgrating % 1 != 0 %>
+<i class="fa-solid fa-star-half-stroke" style="color: #fa8334; font-size: 12px;"></i>
+<% end %>
+<% (5-avgrating).to_i.times do |i| %>
+  <i class="fa-regular fa-star" style="color: #b2b1b1; font-size: 12px;"></i>
+<% end %>
+
+<span class="ms-3 ps-2 pe-2" style="background-color: orange"><%= avgrating.round(1) if avgrating > 0%></span>
