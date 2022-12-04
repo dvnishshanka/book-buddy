@@ -1,5 +1,5 @@
 <%= render "shared/backBar" %>
-<div class="container">
+<div class="container ">
 
       <div>
         <%= link_to new_book_book_copy_path(@book), class: "book-copy-button" do %>
@@ -7,7 +7,7 @@
         <% end %>
       </div>
 
-        <div class="book-image" >
+        <div class="book-image animate__animated animate__slideInDown animate__slower" >
           <%= image_tag @book.photo_url, crop: "fill" %>
         </div>
 
@@ -18,7 +18,7 @@
 
           <div class="d-flex justify-content-center align-content-center">
 
-          <p class="me-2"><%= @book.author %></p>
+          <p class="me-2 "><%= @book.author %></p>
           <p class="me-2">|</p>
            <span class="rating">
               <%  avgrating = @book.book_reviews.average(:rating) || 0%>
@@ -31,7 +31,7 @@
                 <span ><%= avgrating if avgrating > 0%></span>
 
                 <%= link_to new_book_book_review_path(@book, @bookreview) do %>
-     <p class="dashboard-order-status me-2" style="background-color: pink"><strong>Leave a review 😎</strong></p>
+     <p class="dashboard-order-status me-2 " style="background-color: pink"><strong>Leave a review 😎<p></strong></p>
      <% end %>
 
             </div>
