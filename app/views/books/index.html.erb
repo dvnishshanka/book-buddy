@@ -1,7 +1,7 @@
 <%= render "shared/backBar" %>
 <div class="container" style="margin-top: 40px;">
 
-  <%= form_with url: books_path, method: :get, class: "d-flex" do %>
+  <%= form_with url: books_path, method: :get, class: "d-flex mb-2" do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
@@ -9,8 +9,11 @@
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-  <p class="pb-0 mb-0">Cannot find your book details below.</p>
-  <%= link_to "Please add your book details from here", new_book_path, class: "pb-0"  %>
+
+  <%= link_to new_book_path, class: "pb-0 mb-3" do  %>
+   <p class="pb-0 mt-3 mb-4">If you cannot find your book details below,
+   please add your book details from <span class="normal-link mb-3 pb-3" style="text-decoration: underline;"> <i class="fa-solid fa-hand-point-right"></i> here.</span></p>
+  <% end %>
   <div class="book-container">
 
     <% if @books != nil %>
@@ -20,11 +23,11 @@
           <% if (@database_book == "" || @database_book == nil) %>
             <%= link_to new_book_path (book) do %>
               <%= image_tag "https://books.google.com/books/content?id=#{book['id']}&printsec=frontcover&img=1&zoom=1&source=gbs_api", crop: "fill" %>
-              <div class="index-text-container">
-                <h6><strong><%=  book["volumeInfo"]["title"]%></strong></h6>
-                <p><%= book["volumeInfo"]["authors"].nil? ? nil : book["volumeInfo"]["authors"][0] %></p>
-                <p><%=book["volumeInfo"]["industryIdentifiers"].nil? ? nil : "ISBN: #{book["volumeInfo"]["industryIdentifiers"][0]["identifier"]}" %></p>
-                <p><%= book["volumeInfo"]["categories"].nil? ? nil : "Category: #{book["volumeInfo"]["categories"][0]}" %></p>
+              <div class="index-text-container ">
+                <h6 class="mb-1 mt-1" ><strong><%=  book["volumeInfo"]["title"]%></strong></h6>
+                <p class="m-0" style= "font-size: 0.8rem;"><%= book["volumeInfo"]["authors"].nil? ? nil : book["volumeInfo"]["authors"][0] %></p>
+                <p class="m-0" style= "font-size: 0.6rem;"><%=book["volumeInfo"]["industryIdentifiers"].nil? ? nil : "ISBN #{book["volumeInfo"]["industryIdentifiers"][0]["identifier"]}" %></p>
+                <%# <p class="m-0" style= "font-size: 0.8rem;"><%= book["volumeInfo"]["categories"].nil? ? nil : "Category: #{book["volumeInfo"]["categories"][0]}" %></p>
               </div>
             <% end%>
 

@@ -1,6 +1,8 @@
 class Book < ApplicationRecord
   has_many :book_copies, dependent: :destroy
   has_many :book_reviews, dependent: :destroy
+  validates :category, presence: true
+  validates :year, :pages, numericality: true
 
   def ribbon(type)
     case type
