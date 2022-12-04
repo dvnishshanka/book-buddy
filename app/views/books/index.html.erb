@@ -27,7 +27,7 @@
                 <h6 class="mb-1 mt-1" ><strong><%=  book["volumeInfo"]["title"]%></strong></h6>
                 <p class="m-0" style= "font-size: 0.8rem;"><%= book["volumeInfo"]["authors"].nil? ? nil : book["volumeInfo"]["authors"][0] %></p>
                 <p class="m-0" style= "font-size: 0.6rem;"><%=book["volumeInfo"]["industryIdentifiers"].nil? ? nil : "ISBN #{book["volumeInfo"]["industryIdentifiers"][0]["identifier"]}" %></p>
-                <%# <p class="m-0" style= "font-size: 0.8rem;"><%= book["volumeInfo"]["categories"].nil? ? nil : "Category: #{book["volumeInfo"]["categories"][0]}" %></p>
+
               </div>
             <% end%>
 

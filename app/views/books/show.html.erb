@@ -8,7 +8,7 @@
   </div>
 
   <h3 class="mb-0 mt-6 pt-4 mt-1 text-center"><strong><%= @book.title %></strong></h3>
-  <div class="book-image animate__animated animate__slideInDown animate__slower mt-3" >
+  <div class="book-image animate__animated animate__slideInLeft animate__slower mt-3" >
     <%= image_tag @book.photo_url, crop: "fill" %>
   </div>
 
@@ -28,9 +28,17 @@
 
       <div class="description"data-controller="read-more" data-read-more-more-text-value="Read more..." data-read-more-less-text-value="Read less">
         <p class="content-1 text-justify" data-read-more-target="content">"<%= @book.description %>"</p>
-        <button class="read-more" data-action="read-more#toggle">Read more</button>
+        <button class=" normal-link" style="border: none; background:none;" data-action="read-more#toggle">Read more</button>
         <template data-read-more-target="full">
           <p class="content-2 text-justify">"<%= @book.description %>"</p>
+
+        <% if @book.isbn !=nil%>
+          <div class= " d-flex mb-1">
+            <p class="show-page-icon-description mb-1 me-3"><i class="fa-solid fa-barcode"></i> ISBN :</p>
+            <p class="mb-0 text-center"><%= @book.isbn %></p>
+          </div>
+        <% end %>
+
 
         <% if @book.publisher !=nil%>
           <div class= " d-flex mb-1">
@@ -65,10 +73,13 @@
         <hr style="border-top: 1px solid #383232">
 
         <% if @book.book_copies.length == 0  %>
-            <p>Looks like we don't have any available copies of <em>'<%= @book.title %>'</em> <br>
-              Have a copy you would like <%=link_to "like to add?", new_book_book_copy_path(@book) %></p>
+            <p style="font-weight: bold; font-size: 13px;">Sorry we don't have any copies of this book at the moment.<br>
+              If you like to share a copy, add from  <%=link_to new_book_book_copy_path(@book) do %>
+              <span class="normal-link" style="text-decoration: underline; font-size: 13px;"><i class="fa-solid fa-hand-point-right"></i> here. </span>
+              <% end %>
+              </p>
         <% else %>
-      <h5 style="font-weight: bold;">Available copies of this book</h5>
+      <h5 style="font-weight: bold;">Following people have copies of this book</h5>
         <% end %>
           <%= render "books/copy_card", books: @books %>
 
