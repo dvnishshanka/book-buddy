@@ -8,4 +8,6 @@
   <i class="fa-regular fa-star" style="color: #b2b1b1; font-size: 12px;"></i>
 <% end %>
 
-<span class="ms-3 ps-2 pe-2" style="background-color: orange; border-radius: 2px;"><%= avgrating.round(1) if avgrating > 0%></span>
+<% if avgrating > 0 %>
+  <span class="ms-1 ps-1 pe-1" style="background-color: orange; border-radius: 2px; font-size: 11px;"><%= avgrating.round(1) %></span>
+<% end %>

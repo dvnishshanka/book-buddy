@@ -1,4 +1,4 @@
-<div class="d-flex align-center mt-4" data-insert-in-list-target="items">
+<div class="d-flex align-center mt-2" data-insert-in-list-target="items">
   <div class="me-3">
     <% if order_review.order.user.photo.attached?%>
       <%= cl_image_tag order_review.order.user.photo.key, class:"avatar-bordered-small" %>
@@ -9,17 +9,24 @@
     <%end%>
   </div>
 
-  <div>
-    <p class= "m-0"><%=order_review.order.user.display_name || order_review.order.user.first_name %></p>
+  <div class= "d-flex flex-column justify-content-center">
+    <p class= "m-0"><%=order_review.order.user.display_name || order_review.order.user.first_name %>
+
+      <span class="m-0">
+        <% order_review.rating.to_i.times do |i| %>
+          <i class="fa-solid fa-star" style="color: #fa8334; font-size: 11px;"></i>
+        <% end %>
+        <% if order_review.rating % 1 != 0 %>
+          <i class="fa-solid fa-star-half-stroke" style="color: #fa8334; font-size: 11px;"></i>
+        <% end %>
+        <% (5-order_review.rating).to_i.times do |i| %>
+          <i class="fa-regular fa-star" style="color: #b2b1b1; font-size: 11px;"></i>
+        <% end %>
+      </span>
+    </p>
+    <p class="m-0 pb-1" style="font-size: 11px;"><%=order_review.content %></p>
     <p class="m-0 pb-1" style="font-size: 9px;"><%=order_review.created_at.strftime("%a, %d %b %y") %></p>
-    <%  rating = order_review.rating%>
-    <% rating.times do |i| %>
-      <i class="fa-solid fa-book-open" style="color: #fa8334; font-size: 10px;"></i>
-    <% end %>
-    <% (5-rating).times do |i| %>
-      <i class="fa-solid fa-book-open" style="color: #b2b1b1; font-size: 10px;"></i>
-    <% end %>
-        <p class="m-0" style="font-size: 12px;"><%=order_review.content %></p>
+
   </div>
-  <hr>
+  <hr style="border-top: 1px solid #383232" class="mt-2 mb-2">
 </div>
