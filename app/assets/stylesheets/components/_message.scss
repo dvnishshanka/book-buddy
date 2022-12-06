@@ -5,17 +5,23 @@
 
 // To style the message itself
 .sender-style, .receiver-style {
-  width: 70%;
-  max-width: 400px;
+  width: 80%;
+  max-width: 360px;
   border-radius: 4px;
   padding: 8px;
-  min-height: 80px;
+  min-height: 60px;
+  p {
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+    font-family: sans-serif;
+  }
 }
 
 .sender-style {
-  background-color: lightcoral;
+  background-color: #edd6d6;
 }
 
 .receiver-style {
-  background-color: #69A297;
+  background-color: #b0dad2;
 }
