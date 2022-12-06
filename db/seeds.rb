@@ -44,8 +44,8 @@ def new_book(search, category = nil)
         title: book["volumeInfo"]["title"],
         author: book["volumeInfo"]["authors"].nil? ? nil : book["volumeInfo"]["authors"][0],
         description: book["volumeInfo"]["description"],
-        pages: book["volumeInfo"]["pageCount"],
-        year: book["volumeInfo"]["publishedDate"],
+        pages: book["volumeInfo"]["pageCount"].to_i,
+        year: book["volumeInfo"]["publishedDate"].to_i,
         publisher: book["volumeInfo"]["publisher"],
         isbn: book["volumeInfo"]["industryIdentifiers"].nil? ? nil : book["volumeInfo"]["industryIdentifiers"][0]["identifier"], #tenery operater
         category: defined_category,
