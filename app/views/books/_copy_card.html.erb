@@ -23,7 +23,10 @@
           <p class="book-category-tag m-0 ms-1" style="font-weight:bold;"><%= book_copy.availability_status %></p>
       </div>
 
+      <% if book_copy.comments != nil %>
       <p class="my-0 mt-2 ms-0"><em>"<%= book_copy.comments.capitalize %>"</em></p>
+
+      <% end %>
 
       <div class="d-flex   align-items-center">
 
