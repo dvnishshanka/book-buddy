@@ -2,10 +2,10 @@
   margin-bottom: 20px;
   margin-top: 25px;
   display: grid;
-  grid-template-columns: 1fr 1fr ;
+  grid-template-columns: 1fr ;
 }
 
-@media(max-width: 990px) {
+@media(max-width: 1000px) {
   .dashboard-order-container {
     grid-template-columns: 1fr ;
   }
@@ -14,18 +14,18 @@
 .dashboard-order-card {
   background-color: $app-white;
   display: flex;
-  width: 350px;
+  width: 340px;
   min-height: 130px;
-  border-radius: 5px;
+  border-radius: 8px;
   margin-bottom: 10px;
 
 
-  // img {
-  //   height: 100%;
-  //   width: 120px;
-  //   border-radius: 5px 0px 0px 5px;
-  //   object-fit: cover;
-  // }
+  .dashboard-book-img {
+    height: 100%;
+    width: 120px;
+    border-radius: 8px 0px 0px 8px;
+    object-fit: cover;
+  }
 }
 
 .dashboard-order-card-description {
@@ -56,9 +56,10 @@
 }
 
 .dashboard-order-status {
-  padding: 3px 7px !important;
+  padding: 3px 15px !important;
   font-size: 0.8rem;
-  border-radius: 4px;
+  width: fit-content;
+  border-radius: 10px;
   margin-bottom: 20px;
   margin-right: 20px;
   float: right;

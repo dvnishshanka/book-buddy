@@ -1,13 +1,14 @@
-<div class="container">
-  <div class="row justify-content-center">
+<%= render "shared/backBar" %>
+<div class="container" >
+  <div class="row justify-content-center" style="height: 60vh;">
     <div class="col-11 col-sm-6 col-md-4 form-login">
       <h2>Make a booking</h2>
         <%= simple_form_for [@book_copy, @order] do |f| %>
           <div class="form-inputs">
-            <%= f.text_field :start_date, placeholder: 'select dates', class: "mb-3 p-1",
+            <%= f.text_field :start_date, placeholder: 'select dates', class: "mb-3 p-1", style: "width: 100%;",
             data: {
               controller: "flatpickr",
-              # flatpickr_disable: @disable_dates,
+              flatpickr_disable: @disable_dates,
               flatpickr_min_date: Time.zone.now, # disables past dates
               mode: "range",
             }%>

@@ -1,3 +1,4 @@
+ <h3 style="font-weight: bold;" class="mt-4 mb-2 text-center pt-2"><%= user.display_name || user.first_name %></h3>
 <div class="userProfile-image-center">
 
     <% if user.photo.attached?%>
@@ -8,30 +9,25 @@
       </div>
     <%end%>
 </div>
+<div class="text-center">
+<%= render "shared/rating", avgrating: OrderReview.where(user_id:  user.id).average(:rating) || 0 %>
+</div>
 <br>
 <div class="ms-3">
   <% if user == current_user %>
     <p class="userProfile-field-name">Name</p>
     <p><%= user.first_name %> <%= user.last_name %></p>
+    <p class="userProfile-field-name">Display Name</p>
+    <p><%= user.display_name || user.first_name %></p>
   <% end %>
-  <p class="userProfile-field-name">Display Name</p>
-  <p><%= user.display_name || user.first_name %></p>
   <% if user == current_user %>
     <p class="userProfile-field-name">Email</p>
     <p><%= user.email%></p>
-    <p class="userProfile-field-name">Street</p>
-    <p><%= user.street%></p>
   <% end %>
+  <p class="userProfile-field-name">Street</p>
+  <p><%= user.street%></p>
   <p class="userProfile-field-name">City</p>
   <p><%= user.city%></p>
   <p class="userProfile-field-name">Country</p>
   <p><%= user.country%></p>
 </div>
-<% if user == current_user %>
-  <div class="userProfile-paragraph">
-    <div class="create-new-book">
-      <h2>Ready to create a new Book?</h2>
-      <%= link_to "Add a Book", root_path, class: "btn-btn-succes" %>
-    </div>
-  </div>
-<% end %>

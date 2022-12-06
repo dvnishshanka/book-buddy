@@ -1,3 +1,4 @@
+<%= render "shared/backBar" %>
 <div class="calendar-container container">
   <%= month_calendar(events: @orders, attribute: :start_date, end_attribute: :end_date) do |date, orders| %>
     <%= date %>

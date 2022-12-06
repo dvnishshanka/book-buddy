@@ -61,7 +61,7 @@
 }
 
 .book-copies {
-  height: 125px;
+  min-height: 160px;
   background: $app-body;
   border-width: 4px 4px 4px 4px;
   border-bottom-color: #EF7B45;
@@ -175,7 +175,7 @@ font-size:medium;
 }
 
 .show-page-icon-description {
-  color: $app-light-grey;
+  width: 120px;
 }
 
 .show-page-icon {

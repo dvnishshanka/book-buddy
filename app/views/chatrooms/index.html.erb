@@ -1,7 +1,60 @@
-<div class="dashboard-container-chat">
+<%= render "shared/backBar" %>
+<div class="dashboard-container-chat container mt-5">
+  <h3 style="font-weight: bold;">Messages</h3>
 
-<% @book_copys.each do |book| %>
-  <%= link_to book.book.title, chatroom_path(book) %>
+  <% @book_copys.each do |book_copy| %>
+    <div class="d-flex align-items-center">
+
+      <% if current_user.id == book_copy.user.id %>
+        <% book_copy.orders.each do |order| %>
+          <% if order.status == "ACCEPTED" %>
+            <%= link_to user_profile_path(order.user.id) do %>
+              <% if order.user.photo.attached?%>
+                <%= cl_image_tag order.user.photo.key, class:"avatar-bordered-medium me-2 mt-4"%>
+              <% else %>
+                <div class='avatar-bordered-medium d-flex justify-content-center align-items-center me-2' style= "padding-right: 9px; background-color: #75c9b7; text-align: center;" >
+                  <p style="font-size: 2rem text-align: center; text-decoration: none;"><%= render "shared/default_profile_image", user: order.user %></p>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+
+      <% else %>
+
+        <%= link_to user_profile_path(book_copy.user.id) do %>
+            <% if book_copy.user.photo.attached?%>
+              <%= cl_image_tag book_copy.user.photo.key, class:"avatar-bordered-medium me-2 mt-4"%>
+            <% else %>
+              <div class='avatar-bordered-medium d-flex justify-content-center align-items-center me-2' style= "padding-right: 9px; background-color: #75c9b7; text-align: center;" >
+                <p style="font-size: 2rem text-align: center; text-decoration: none;"><%= render "shared/default_profile_image", user: book_copy.user %></p>
+              </div>
+            <% end %>
+          <% end %>
+
+        <% end %>
+
+        <%= link_to chatroom_path(book_copy) do %>
+          <div class="d-flex flex-column justify-content-center">
+            <% if current_user.id == book_copy.user.id %>
+
+              <% book_copy.orders.each do |order| %>
+                <p class="normal-link pb-0 m-0"><%= order.user.display_name || order.user.first_name if order.status == "ACCEPTED"%></p>
+                <p class="m-0"><%= book_copy.book.title %></p>
+              <% end %>
+
+            <% else %>
+              <p class="normal-link pb-0 m-0"><%= book_copy.user.display_name || book_copy.user.first_name %></p>
+              <p class="m-0"><%= book_copy.book.title %></p>
+            <% end %>
+
+
+          </div>
+        <% end %>
+
+
+        </div>
+         <hr style="border-top: 1px solid #383232" class="mt-2 mb-2">
 <% end %>
 
 </div>

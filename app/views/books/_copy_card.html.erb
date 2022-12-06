@@ -1,48 +1,46 @@
 <div class="book-copy-card">
   <% @book.book_copies.each do |book_copy| %>
-      <div class="book-copies container mb-0">
+    <div class="book-copies container mb-0">
 
-        <div class="img-comments pb-2">
-          <%= link_to user_profile_path(book_copy.user.id) do %>
+      <div class="img-comments pb-2 ">
+        <%= link_to user_profile_path(book_copy.user.id) do %>
           <% if book_copy.user.photo.attached?%>
-            <%= cl_image_tag book_copy.user.photo.key, class:"avatar-bordered-medium" %>
+            <%= cl_image_tag book_copy.user.photo.key, class:"avatar-bordered-medium me-2 mt-4"%>
           <% else %>
-            <div class='avatar-bordered-medium d-flex justify-content-center align-items-center' style= "padding-right: 9px; background-color: #75c9b7; text-align: center;" >
+            <div class='avatar-bordered-medium d-flex justify-content-center align-items-center me-2' style= "padding-right: 9px; background-color: #75c9b7; text-align: center;" >
               <p style="font-size: 2rem text-align: center; text-decoration: none;"><%= render "shared/default_profile_image", user: book_copy.user %></p>
             </div>
           <% end %>
+        <% end %>
+
+      <div style="width:100%;">
+        <div class="d-flex justify-content-between m-0" >
+          <%= link_to user_profile_path(book_copy.user.id) do %>
+            <p class="normal-link my-0 ms-0"><%= book_copy.user.display_name %>, <%= book_copy.user.city %> <%= book_copy.user.country %></p>
+             <%= render "shared/rating", avgrating: OrderReview.where(user_id:  book_copy.user_id).average(:rating) || 0 %>
           <% end %>
 
-          <div class="flex-grow-1 justify-content-center">
-            <p class="my-0"><em>"<%= book_copy.comments.capitalize %>"</em></p>
-            <%= link_to user_profile_path(book_copy.user.id) do %>
-              <p class="normal-link my-0"><%= book_copy.user.display_name %>, <%= book_copy.user.city %> <%= book_copy.user.country %></p>
+          <p class="book-category-tag m-0 ms-1" style="font-weight:bold;"><%= book_copy.availability_status %></p>
+      </div>
+
+      <p class="my-0 mt-2 ms-0"><em>"<%= book_copy.comments.capitalize %>"</em></p>
+
+      <div class="d-flex   align-items-center">
+
+        <% if book_copy.user.id != current_user.id %>
+          <div class=" justify-content-between">
+            <%= link_to  new_book_copy_order_path(book_copy),class:"btn btn-success" do   %>
+              <div style="font-size: 12px; font-weight:bold;">
+                <i class="fa-solid fa-cart-shopping"></i> Request
+              </div>
             <% end %>
-
-            <div class="d-flex justify-content-center mt-3">
-            <br>
-              <% if book_copy.user.id != current_user.id %>
-                <div class=" justify-content-between">
-                  <%= link_to  new_book_copy_order_path(book_copy),class:"btn btn-success" do   %>
-                    <div style="font-size: 12px;">
-                      <i class="fa-solid fa-cart-shopping"></i> Request
-                    </div>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
           </div>
+        <% end %>
 
-          <div class= "d-flex flex-column justify-content-between align-items-end" >
-            <p class="book-category-tag m-0"><%= book_copy.availability_status %></p>
-            <div style="font-family:bold;">
-             <i class="fa-solid fa-euro-sign"></i>
-             <span style="font-weight:bold;"><%= book_copy.price %> <%= "/ day" unless book_copy.availability_status == "Sell"  %></span></div>
-            </div>
-          </div>
+        <p class="me-0" style="font-weight:bold;"><i class="fa-solid fa-euro-sign"></i><%= book_copy.price %> <%= "/ day" unless book_copy.availability_status == "Sell"  %></p>
+      </div>
 
-        </div>
+    </div>
 
-
-    <% end %>
+  <% end %>
 </div>
