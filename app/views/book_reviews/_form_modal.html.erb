@@ -12,7 +12,7 @@
             <%= f.button :submit, "Leave a review", class: "btn-primary" %>
           </div>
         <% end %>
-
+      <div>
         <% if @book.book_reviews.blank? %>
               Be the first to leave a review for <%= @book.title %>
         <% else %>
@@ -36,8 +36,11 @@
                                   <i class="fa-regular fa-star" style="color: #b2b1b1; font-size: 10px;"></i>
                                 <% end %>
                           <p class="m-0" style="font-size: 12px;"><%=review.content %></p>
+                        
                         <% end %>
                 <% end %>
+        </div>
+
         </div>
 
 </div>
