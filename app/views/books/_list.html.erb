@@ -4,6 +4,9 @@
 
         <div class= "book-container-card">
           <div class="front">
+          <%# <%= if book.book_reviews.rating >= 4 %>
+          <%# <i class="fa-solid fa-star" style="color: #fa8334; font-size: 10px;"></i> %> 
+
             <%= image_tag book.photo_url, crop: "fill"  %>
           </div>
               <div class="back">
@@ -18,7 +21,7 @@
               <h4 style="font-size: <%= book.title.length >= 14 ? "16px !important" : "24px !important"   %>" ><em>"<%= book.title %>"</em></h4>
             </div>
             <% end %>
-            
+
         </div>
       </div>
   <% end %>
