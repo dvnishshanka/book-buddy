@@ -1,11 +1,27 @@
 // Import Google fonts
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,300;0,400;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khojki&display=swap');
 
 // Define fonts for body and headers
 // $body-font: "Work Sans", "Helvetica", "sans-serif";
-$body-font:'Noto Serif Khojki', serif;
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font:'Roboto', sans-serif;
+$headers-font: 'DM Serif Display', serif;
+
+h1, btn {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+}
+h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+p, a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: lighter;
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
