@@ -4,10 +4,7 @@
 
         <div class= "book-container-card">
           <div class="front">
-          <%# <%= if book.book_reviews.rating >= 4 %>
-          <%# <i class="fa-solid fa-star" style="color: #fa8334; font-size: 10px;"></i> %> 
-
-            <%= image_tag book.photo_url, crop: "fill"  %>
+              <%= image_tag book.photo_url, crop: "fill"  %>
           </div>
               <div class="back">
               <%= link_to book_path(book) do%>
@@ -20,11 +17,15 @@
               <h6><%= book.author %></h6>
               <h4 style="font-size: <%= book.title.length >= 14 ? "16px !important" : "24px !important"   %>" ><em>"<%= book.title %>"</em></h4>
             </div>
-            <% end %>
-
-        </div>
-      </div>
-  <% end %>
+                <div class="d-flex justify-content-center align-items-center">
+                  <% if book.book_reviews != [] && book.book_reviews.average(:rating) >=4 %>
+                    <%= render "shared/rating", avgrating: book.book_reviews.average(:rating) || 0 %>
+                      <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
 
 
 
