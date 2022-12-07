@@ -10,5 +10,6 @@
   <% elsif order.status == "REJECTED"%>
   <p class="dashboard-order-status m-0" style="background-color:red"><strong><i class="fa-solid fa-book"></i> Rejected</strong></p>
     <%= link_to "Re-Accept ✅", accept_order_path(order), data: {turbo_method: :patch, action: "click->realtime#send"},  class: "btn btn-info", style: "font-weight: bold; font-size: 14px; color:black;" %>
+
   <% end %>
 </div>

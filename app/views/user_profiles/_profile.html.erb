@@ -1,4 +1,4 @@
- <h3 style="font-weight: bold;" class="mt-4 mb-2 text-center pt-2"><%= user.display_name || user.first_name %></h3>
+ <h3 style="font-weight: bold; text-transform: capitalize" class="mt-4 mb-2 text-center pt-2"><%= user.display_name || user.first_name %></h3>
 <div class="userProfile-image-center">
 
     <% if user.photo.attached?%>
@@ -10,7 +10,7 @@
     <%end%>
 </div>
 <div class="text-center">
-<%= render "shared/rating", avgrating: OrderReview.where(user_id:  user.id).average(:rating) || 0 %>
+  <%= render "shared/rating", avgrating: OrderReview.where(user_id:  user.id).average(:rating) || 0 %>
 </div>
 <br>
 <div class="ms-3">
