@@ -9,14 +9,14 @@ class OrderReviewsController < ApplicationController
     @order_review = OrderReview.new(order_review_params)
     @order_review.order = set_order
     @order_review.user_id = set_order.book_copy.user_id
-    respond_to do |format|
+    # respond_to do |format|
       if @order_review.save
-        format.html { redirect_to new_book_copy_order_order_review_path(@order_review.order) }
+        redirect_to user_profile_path(@order_review.user_id)
       else
-        format.html { render :new, status: :unprocessable_entity }
+         render :new, status: :unprocessable_entity
       end
-      format.json
-    end
+      # format.json
+    # end
   end
 
   private
