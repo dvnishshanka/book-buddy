@@ -2,14 +2,14 @@
 <div class="container" data-controller="insert-in-list">
 
   <%= render "user_profiles/profile", user: @order_review.order.book_copy.user %>
-  <p>Leave  a comment</p>
+
   <%= render "order_reviews/form", order_review: @order_review, order: @order_review.order %>
 
 
-  <% if @order_reviews !=  nil && @order_reviews.length > 0 %>
+  <%# <% if @order_reviews !=  nil && @order_reviews.length > 0 %> %>
     <% @order_reviews.each do |order_review|%>
       <%= render "user_profiles/user_reviews", order_review: order_review %>
     <% end %>
-  <% end %>
+  <%# <% end %> %>
 
 </div>

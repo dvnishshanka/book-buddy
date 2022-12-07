@@ -1,5 +1,6 @@
-<%= simple_form_for([order.book_copy, order, order_review], data: {insert_in_list_target: "form",
-  action: "submit->insert-in-list#send"}) do |f| %>
+<%= simple_form_for([order.book_copy, order, order_review]
+# , data: {insert_in_list_target: "form", action: "submit->insert-in-list#send"}
+) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
     <%= f.input :rating, :collection => [["1 - Very poor", 1], ["2 - Poor", 2], ["3 - Satisfactory", 3], ["4 - Good", 4], ["5 - Very good ", 5]] %>
