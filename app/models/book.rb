@@ -22,7 +22,7 @@ class Book < ApplicationRecord
       return  "#559CAD"
     when "Sci-fi"
       return  "#197BBD"
-    when "Fiction "
+    when "Fiction"
       return  "#DB8A74"
     when "Poetry"
       return  "#828489"

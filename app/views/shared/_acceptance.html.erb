@@ -1,14 +1,14 @@
 <div  data-controller="realtime" data-realtime-target="body" class="mb-2 pb-2">
   <% if order.status == "CREATED" %>
     <p class="dashboard-order-status m-0" ><strong><i class="fa-solid fa-book-open"></i> Requested</strong></p>
-    <%= link_to "Accept ✅", accept_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"}, class: "normal-link", style: "text-decoration: underline;"   %>
-    <%= link_to "Reject ❌", reject_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"}, class: "normal-link", style: "text-decoration: underline;"  %>
+    <%= link_to "Accept ✅", accept_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"}, class: "btn btn-info", style: "font-weight: bold; font-size: 14px;"   %>
+    <%= link_to "Reject ❌", reject_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"}, class: "btn btn-danger", style: "font-weight: bold; font-size: 14px;  color:black;"   %>
 
   <% elsif order.status == "ACCEPTED"%>
   <p class="dashboard-order-status m-0" style="background-color:lightgreen;"><strong><i class="fa-solid fa-book-open"></i> Accepted</strong></p>
-  <%= link_to "Reject ❌", reject_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"},class: "normal-link", style: "text-decoration: underline;" %>
+  <%= link_to "Reject ❌", reject_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"}, class: "btn btn-danger", style: "font-weight: bold; font-size: 14px;  color:black;" %>
   <% elsif order.status == "REJECTED"%>
   <p class="dashboard-order-status m-0" style="background-color:red"><strong><i class="fa-solid fa-book"></i> Rejected</strong></p>
-    <%= link_to "Re-Accept ✅", accept_order_path(order), data: {turbo_method: :patch, action: "click->realtime#send"}, class: "normal-link", style: "text-decoration: underline;"  %>
+    <%= link_to "Re-Accept ✅", accept_order_path(order), data: {turbo_method: :patch, action: "click->realtime#send"},  class: "btn btn-info", style: "font-weight: bold; font-size: 14px; color:black;" %>
   <% end %>
 </div>

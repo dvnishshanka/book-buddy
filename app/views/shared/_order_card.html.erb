@@ -6,9 +6,16 @@
 
   <div class= "dashboard-order-card-description pb-3">
     <%= link_to book_path(order.book_copy.book_id) do %>
-      <p class="mb-2 dashboard-order-card-title" style = "font-size: 1.25rem;"><strong><%= order.book_copy.book.title %></strong></p>
+      <p class="mb-2 dashboard-order-card-title" style = "font-size: 1.25rem;  font-weight:bold;"><%= order.book_copy.book.title %></p>
     <% end %>
-    <p style = "font-size: 0.85rem;"><i class="fa-regular fa-calendar-xmark"></i>  <%= order.start_date %> to <%= order.end_date %></p>
+    <p style = "font-size: 1.1rem;"><i class="fa-regular fa-calendar-xmark"></i>
+      <% if order.start_date.strftime("%b") == order.end_date.strftime("%b") %>
+        <%= order.start_date.strftime("%-d") %> - <%= order.end_date.strftime("%-d") %> <%= order.end_date.strftime(" %b") %>
+      <% else %>
+        <%= order.start_date.strftime("%-d %b") %> - <%= order.end_date.strftime("%-d %b") %>
+      <% end %>
+
+    </p>
 
     <div class="d-flex align-items-center justify-content-between mt-2">
 
@@ -46,14 +53,14 @@
 
         <div class="d-flex justify-content-between mt-3">
 
-          <%= link_to new_book_copy_order_order_review_path(order.book_copy.id, order.id), class:"btn btn-info ps-1 pe-1 pt-0 pb-0" do %>
-            <p class="btn btn-info p-0 ps-1 pe-1" style= "font-weight: bold;"><i class="fa-regular fa-pen-to-square"></i> Review </p>
+          <%= link_to new_book_copy_order_order_review_path(order.book_copy.id, order.id), class:"btn btn-info me-3" do %>
+            <div class="btn btn-info p-0 d-flex align-items-center" style= "font-weight: bold; font-size: 14px;"><i class="fa-regular fa-pen-to-square pe-1"></i> Review </div>
           <% end %>
 
-          <%= link_to  chatroom_path(order.book_copy),class:"btn btn-info ps-1 pe-1 pt-0 pb-0" do   %>
-            <p  class="btn btn-info p-0 ps-1 pe-1" style= "font-weight: bold;">
-              <i class="fa-regular fa-message"></i> Chat
-            </p>
+          <%= link_to  chatroom_path(order.book_copy), class:"btn btn-info " do   %>
+            <div  class="btn btn-info p-0 d-flex align-items-center" style= "font-weight: bold; font-size: 14px;">
+              <i class="fa-regular fa-message pe-1"></i> Chat
+            </div>
           <% end %>
         </div>
       <% elsif  order.status == "REJECTED"%>
