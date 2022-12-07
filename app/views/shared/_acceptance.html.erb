@@ -1,4 +1,4 @@
-<div  data-controller="realtime" data-realtime-target="body">
+<div  data-controller="realtime" data-realtime-target="body" class="mb-2 pb-2">
   <% if order.status == "CREATED" %>
     <p class="dashboard-order-status" ><strong><i class="fa-solid fa-book-open"></i> Requested</strong></p>
     <%= link_to "Accept ✅", accept_order_path(order), data: {turbo_method: :patch,  action: "click->realtime#send"}, class: "normal-link", style: "text-decoration: none;"   %>

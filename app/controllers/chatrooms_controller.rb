@@ -1,10 +1,11 @@
 class ChatroomsController < ApplicationController
   def index
     @user = current_user # <- You have access through current user.
-    @orders = current_user.orders.select { |order| order.status == "ACCEPTED" }
-    @book_copys = BookCopy.all.each do |booky_copy|
-      @orders.select do |order|
-        booky_copy.id == order.book_copy_id
+    @orders = current_user.orders.select { |order| order.status == "ACCEPTED" } # all accepted bookings of current_user
+    @my_book_orders = []
+    BookCopy.where(user_id: current_user.id).each do |book_copy|
+      book_copy.orders.each do |order|
+        @my_book_orders << order if order.status == "ACCEPTED"
       end
     end
 

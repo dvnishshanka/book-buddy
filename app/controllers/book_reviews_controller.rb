@@ -16,7 +16,7 @@ class BookReviewsController < ApplicationController
     @bookreview.user_id = current_user.id
     respond_to do |format|
       if @bookreview.save
-        format.html { redirect_to new_book_book_review_path(@book, @bookreview) }
+        format.html { redirect_to new_book_book_review_path(@book, @bookreview)}
       else
         format.html { render :new, status: :unprocessable_entity }
       end

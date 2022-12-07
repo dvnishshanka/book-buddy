@@ -23,7 +23,6 @@ puts "Here we go!!!"
 # User.create!(email: "Katya@gmail.com", password: "123456", first_name: "katya", last_name: "Sitko", display_name: "Kat")
 # User.create!(email: "philly@gmail.com", password: "123456", first_name: "Phillip", last_name: "York", display_name: "Philly")
 
-
 def new_book(search, category = nil)
   uri = URI("https://www.googleapis.com/books/v1/volumes?q=#{search}&langRestrict=en&key=AIzaSyB0fBuVdMBemt9qqtw4U9uDwzGUptI-SOk")
   results = URI.open(uri).read
@@ -45,8 +44,8 @@ def new_book(search, category = nil)
         title: book["volumeInfo"]["title"],
         author: book["volumeInfo"]["authors"].nil? ? nil : book["volumeInfo"]["authors"][0],
         description: book["volumeInfo"]["description"],
-        pages: book["volumeInfo"]["pageCount"],
-        year: book["volumeInfo"]["publishedDate"],
+        pages: book["volumeInfo"]["pageCount"].to_i,
+        year: book["volumeInfo"]["publishedDate"].to_i,
         publisher: book["volumeInfo"]["publisher"],
         isbn: book["volumeInfo"]["industryIdentifiers"].nil? ? nil : book["volumeInfo"]["industryIdentifiers"][0]["identifier"], #tenery operater
         category: defined_category,

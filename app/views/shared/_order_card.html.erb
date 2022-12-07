@@ -37,21 +37,21 @@
 
     </div>
 
-<div class="d-flex justify-content-start flex-column">
-    <% if order.status == "CREATED"%>
-    <p class="dashboard-order-status"><strong><i class="fa-solid fa-book-open"></i> Requested</strong></p>
-  <% elsif  order.status == "ACCEPTED"%>
+    <div class="d-flex justify-content-start flex-column">
+      <% if order.status == "CREATED"%>
+        <p class="dashboard-order-status"><strong><i class="fa-solid fa-book-open"></i> Requested</strong></p>
+      <% elsif  order.status == "ACCEPTED"%>
 
-    <p class="dashboard-order-status" style="background-color: lightgreen"><strong><i class="fa-solid fa-book-open"></i> Accepted</strong></p>
+        <p class="dashboard-order-status" style="background-color: lightgreen"><strong><i class="fa-solid fa-book-open"></i> Accepted</strong></p>
 
-     <div class="d-flex justify-content-between mt-3">
+        <div class="d-flex justify-content-between mt-3">
 
-    <%= link_to new_book_copy_order_order_review_path(order.book_copy.id, order.id), class:"btn btn-info ps-1 pe-1 pt-0 pb-0" do %>
-      <p class="btn btn-info p-0" style= "font-weight: bold;"><i class="fa-regular fa-pen-to-square"></i> Leave a review</p>
-    <% end %>
+          <%= link_to new_book_copy_order_order_review_path(order.book_copy.id, order.id), class:"btn btn-info ps-1 pe-1 pt-0 pb-0" do %>
+            <p class="btn btn-info p-0 ps-1 pe-1" style= "font-weight: bold;"><i class="fa-regular fa-pen-to-square"></i> Review </p>
+          <% end %>
 
-     <%= link_to  chatroom_path(order.book_copy),class:"btn btn-info ps-1 pe-1 pt-0 pb-0" do   %>
-            <p  class="btn btn-info p-0" style= "font-weight: bold;">
+          <%= link_to  chatroom_path(order.book_copy),class:"btn btn-info ps-1 pe-1 pt-0 pb-0" do   %>
+            <p  class="btn btn-info p-0 ps-1 pe-1" style= "font-weight: bold;">
               <i class="fa-regular fa-message"></i> Chat
             </p>
           <% end %>
@@ -64,5 +64,7 @@
 </div>
 
 
+    </div>
 
+  </div>
 </div>

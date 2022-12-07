@@ -21,7 +21,7 @@
 
     <div class="mt-2 mb-4">
       <%= link_to new_book_book_review_path(@book, @bookreview), class:"btn btn-info ps-1 pe-1 pt-0 pb-0" do %>
-        <p class="btn btn-info p-0 mb-0" style= "font-weight: bold; opacity: 0.7;"><i class="fa-regular fa-pen-to-square"></i> Leave a review</p>
+        <p class="btn btn-info p-0 mb-1 mt-1 " style= "font-weight: bold; opacity: 0.7;"><i class="fa-regular fa-pen-to-square"></i> Leave a review</p>
       <% end %>
     </div>
   </div>
@@ -82,7 +82,5 @@
       <h5 style="font-weight: bold;">Following people have copies of this book</h5>
         <% end %>
           <%= render "books/copy_card", books: @books %>
-
-
 
 </div>

@@ -171,3 +171,29 @@ padding-left: 10px;
 grid-template-columns: repeat(2, 1fr);
 grid-auto-rows: 220px;
 }
+
+.movie-text {
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: x-large;
+    color: grey;
+
+}
+
+.horror-text {
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: xx-large;
+    color: darkred;
+
+}
+
+.brother {
+
+  font-size: x-large;
+}
+
+p {
+  padding-left: 10px;
+  margin-top: 10px;
+}
