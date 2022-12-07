@@ -46,7 +46,6 @@ class OrdersController < ApplicationController
       format.html { redirect_to dashboard_path }
       format.text { render partial: "shared/acceptance", locals: { order: @order }, formats: [:html] }
     end
-
   end
 
   def reject
