@@ -3,8 +3,8 @@ class PagesController < ApplicationController
 
   def home
     @horrorbooks = Book.where(category: "Horror").sample(6)
-    @irishbooks = Book.all.where(title: ["Modern Classics Nineteen Eighty Four", "Brave New World", "No Longer Human", "Battle Royale"])
-    @moviebooks = Book.all.where(title: ["Stories of Your Life and Others", "The Handmaid's Tale", "The Green Mile", "The Man in the High Castle", "The Great Gatsby", "Call Me by Your Name"])
+    @irishbooks = Book.all.where(title: ["Modern Classics Nineteen Eighty Four", "Brave New World", "No Longer Human", "Battle Royale", "Poster Girl", "The Candy House"])
+    @moviebooks = Book.all.where(title: ["Stories of Your Life and Others", "The Handmaid's Tale", "The Green Mile", "The Man in the High Castle", "The King in Yellow", "Call Me by Your Name"])
     @hash = params
     @hash.key?("category")
     if @hash.key?("category")

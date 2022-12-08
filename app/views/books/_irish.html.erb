@@ -1,4 +1,4 @@
-<p>Is Big Brother <span class="brother">Watching you?</span> <%= image_tag "bigbrother.png", height: 40, width: 40  %></p>
+<p>Is big brother <span class="brother">Watching you?</span> <%= image_tag "bigbrother.png", height: 40, width: 40  %></p>
 <div class="book-container">
   <% @irishbooks.each do |book| %>
 
@@ -8,7 +8,7 @@
       </div>
           <div class="back">
             <%= link_to book_path(book) do%>
-            <div class="ribbon style="background-color:<%= book.ribbon(book.category) %>">
+            <div class="ribbon" style="background-color:<%= book.ribbon(book.category) %>">
               <div class="ribbon-text">
                 <h6 style="font-size: <%= book.category.length >= 14 ? "10px !important" : "14px !important"   %>" ><%= book.category %></h6>
               </div>

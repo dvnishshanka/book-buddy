@@ -1,4 +1,4 @@
-<div class="container" data-insert-in-list-target="items">
+<div class="container" style="padding-top: 50px;" data-insert-in-list-target="items">
         <%= simple_form_for([@book, @bookreview], data: {insert_in_list_target: "form",
         action: "submit->insert-in-list#send"}) do |f| %>
          <%= f.error_notification %>
@@ -16,8 +16,9 @@
         <% if @book.book_reviews.blank? %>
               Be the first to leave a review for <%= @book.title %>
         <% else %>
-         <div class="book-copy-card" data-insert-in-list-target="items">
+         <div class="book-copy-card" style="padding-top: 10px;" data-insert-in-list-target="items">
             <% @book.book_reviews.each do |review| %>
+            <div class="book-reviews" style="padding-top: 10px;">
                 <% if review.user.photo.attached?%>
                   <%= cl_image_tag review.user.photo.key, class:"avatar-bordered-small" %>
                 <% else %>
@@ -36,8 +37,9 @@
                                   <i class="fa-regular fa-star" style="color: #b2b1b1; font-size: 10px;"></i>
                                 <% end %>
                           <p class="m-0" style="font-size: 12px;"><%=review.content %></p>
-                        
+</div>
                         <% end %>
+
                 <% end %>
         </div>
 
