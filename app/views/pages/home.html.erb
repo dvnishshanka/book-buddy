@@ -1,8 +1,9 @@
-<div data-controller="search-books">
+<div data-controller="search-books" class="container" style="margin-top: 130px;">
   <%= render "shared/navbar" %>
 <%= render "books/list", books: @books %>
 
-</div>
 <div class="div"><%= render "books/horror", books: @books %></div>
 <div class="div"><%= render "books/irish", books: @books %></div>
 <div class="div"><%= render "books/movie", books: @books %></div>
+
+</div>

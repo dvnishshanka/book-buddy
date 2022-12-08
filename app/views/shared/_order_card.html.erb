@@ -14,7 +14,6 @@
       <% else %>
         <%= order.start_date.strftime("%-d %b") %> - <%= order.end_date.strftime("%-d %b") %>
       <% end %>
-
     </p>
 
     <div class="d-flex align-items-center justify-content-between mt-2">
@@ -62,16 +61,16 @@
               <i class="fa-regular fa-message pe-1"></i> Chat
             </div>
           <% end %>
-    </div>
-  <% elsif  order.status == "REJECTED"%>
-    <p class="dashboard-order-status" ><strong><i class="fa-solid fa-book"></i> Rejected </strong></p>
-  <% end %>
-
-
-</div>
+        </div>
+      <% elsif  order.status == "REJECTED"%>
+        <p class="dashboard-order-status" ><strong><i class="fa-solid fa-book"></i> Rejected </strong></p>
+      <% end %>
 
 
     </div>
+
 
   </div>
+
+
 </div>
