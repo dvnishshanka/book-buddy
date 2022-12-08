@@ -12,7 +12,7 @@
           <p class="mb-2 dashboard-order-card-title" style = "font-size: 1.25rem; font-weight:bold;"><%= book_copy.book.title %></p>
         <% end %>
       </div>
-      <p style = "font-size: 1rem;"><%= book_copy.availability_status %>    <i class="fa-solid fa-euro-sign"></i>  <%= "#{book_copy.price} /day " if book_copy.availability_status == "Rent" || book_copy.availability_status == "Swap" %></p>
+      <p style = "font-size: 1rem;"><%= book_copy.availability_status %>    <i class="fa-solid fa-euro-sign"></i>  <%= book_copy.availability_status == "Rent" || book_copy.availability_status == "Swap" ? "#{book_copy.price} /day " : "#{book_copy.price} " %></p>
       <% if book_copy.orders.length == 0  %>
         <br>
         <p>You don't have any orders for this book yet.</p>

@@ -106,10 +106,10 @@
   backface-visibility: hidden;
 }
 
-.book-container-card:hover {
-  cursor: pointer;
-  transform: rotateY(180deg);
-}
+// .book-container-card:hover {
+//   cursor: pointer;
+//   transform: rotateY(180deg);
+// }
 
 .back {
   background-color: $app-white;
