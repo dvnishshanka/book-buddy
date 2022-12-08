@@ -13,13 +13,14 @@
         <br>
         <br>
         <%= f.input :price,
-                  placeholder: 'Add the price here',
+                  placeholder: 'Add the € price here',
                   autofocus: true,
                   input_html: { autocomplete: "price" }%>
         <%= f.input :condition,prompt: 'Rate the condition of the book', :collection => [["1 - Very poor",1], ["2 - Poor", 2], ["3 - Satisfactory", 3], ["4 - Good", 4], ["5 - Very good ", 5]] %>
         <%= f.input :comments,
+                  label: "Any special comments",
                   autofocus: true,
-                  placeholder: 'Add any special comments here',
+                  placeholder: 'Add any comments here',
                   input_html: { autocomplete: "comments" }%>
       </div>
       <div class="form-actions">
