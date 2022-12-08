@@ -2,6 +2,8 @@
  <%# <%= image_tag "bluelogo.png" %>
 
         <div class="search">
+        <%# <i class="fa fa-search nav-icon"></i> %>
+
 
           <%= form_with url: root_path, method: :get, html: { data: { search_books_target: "form"}} do |f| %>
 
@@ -14,6 +16,7 @@
                             search_books_target: "input",
                             action: "keyup->search-books#update" }
                           %>
+
         </div>
 
 
