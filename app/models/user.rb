@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :book_reviews, dependent: :destroy
   has_many :order_reviews, dependent: :destroy
+  validates :first_name, :last_name, :country, :city, presence: true
   has_many :messages
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
