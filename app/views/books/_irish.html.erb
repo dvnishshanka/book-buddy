@@ -4,10 +4,12 @@
 
     <div class= "book-container-card">
       <div class="front">
+      <%= link_to book_path(book) do%>
         <%= image_tag book.photo_url, crop: "fill" %>
       </div>
+      <% end %>
           <div class="back">
-            <%= link_to book_path(book) do%>
+
             <div class="ribbon" style="background-color:<%= book.ribbon(book.category) %>">
               <div class="ribbon-text">
                 <h6 style="font-size: <%= book.category.length >= 14 ? "10px !important" : "14px !important"   %>" ><%= book.category %></h6>
@@ -17,7 +19,7 @@
           <h6>- <%= book.author %></h6>
           <h6 style="font-size: <%= book.title.length >= 14 ? "16px !important" : "24px !important"   %>" ><%= book.title %></h6>
         </div>
-        <% end %>
+
 
 
 
