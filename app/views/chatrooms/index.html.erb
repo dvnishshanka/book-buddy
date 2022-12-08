@@ -1,13 +1,15 @@
 <%= render "shared/backBar" %>
 <div class="dashboard-container-chat container mt-5">
-  <h3 style="font-weight: bold;">Messages</h3>
+  <h3 style="font-weight: bold;" class="mb-3">Messages</h3>
 
   <% @orders.each do |order| %>
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center mb-3">
 
       <%= render "chatrooms/message_card", order: order %>
-    </div>
 
+
+    </div>
+ <hr style="border-top: 1px solid #383232" class="mt-2 mb-2">
   <% end %>
 
    <% @my_book_orders.each do |order| %>

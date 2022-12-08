@@ -3,8 +3,8 @@
 
   <%= render "user_profiles/profile", user: @user %>
 
+<% if @order_reviews !=  nil && @order_reviews.length > 0 %>
   <p style="font-weight:bold;">Reviews :</p>
-  <% if @order_reviews !=  nil && @order_reviews.length > 0 %>
     <% @order_reviews.each do |order_review|%>
       <%= render "user_profiles/user_reviews", order_review: order_review  %>
     <% end %>
