@@ -25,10 +25,11 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "city" }%>
-        <%= f.input :country,as: :country,
+        <%= f.input :country, as: :country,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "country" }%>
+                    input_html: { autocomplete: "country" },
+                    priority: [ "Germany" ]%>
         <%= f.input :email,
                     required: true,
                     autofocus: true, placeholder: "bob@gmail.com",

@@ -20,14 +20,20 @@
     <p class="userProfile-field-name">Display Name</p>
     <p><%= user.display_name || user.first_name %></p>
   <% end %>
-  <% if user == current_user %>
+  <% if user == current_user && user.email != nil %>
     <p class="userProfile-field-name">Email</p>
     <p><%= user.email%></p>
   <% end %>
-  <p class="userProfile-field-name">Street</p>
-  <p><%= user.street%></p>
-  <p class="userProfile-field-name">City</p>
-  <p><%= user.city%></p>
-  <p class="userProfile-field-name">Country</p>
-  <p><%= user.country%></p>
+  <% if user.street != nil %>
+    <p class="userProfile-field-name">Street</p>
+    <p><%= user.street%></p>
+  <% end %>
+  <% if user.city != nil %>
+    <p class="userProfile-field-name">City</p>
+    <p><%= user.city%></p>
+  <% end %>
+  <% if user.country != nil %>
+    <p class="userProfile-field-name">Country</p>
+    <p><%= user.country%></p>
+  <% end %>
 </div>
