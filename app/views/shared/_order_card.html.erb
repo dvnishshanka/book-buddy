@@ -56,7 +56,8 @@
             <div class="btn btn-info p-0 d-flex align-items-center" style= "font-weight: bold; font-size: 14px;"><i class="fa-regular fa-pen-to-square pe-1"></i> Review </div>
           <% end %>
 
-          <%= link_to  chatroom_path(order.book_copy), class:"btn btn-info " do   %>
+          <% chatroom = Chatroom.find_by(order_id: order.id)%>
+          <%= link_to  chatroom_path(chatroom.id), class:"btn btn-info " do   %>
             <div  class="btn btn-info p-0 d-flex align-items-center" style= "font-weight: bold; font-size: 14px;">
               <i class="fa-regular fa-message pe-1"></i> Chat
             </div>

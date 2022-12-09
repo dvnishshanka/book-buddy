@@ -39,9 +39,12 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.update(status: "ACCEPTED")
 
-    @chatroom = Chatroom.new(book_copy_id: @order.book_copy_id, name: @order.book_copy.book.title)
+    # Chatroom is unique to one order
+    if Chatroom.find_by(order_id: @order.id).nil?
+      @chatroom = Chatroom.new(order_id: @order.id, name: @order.book_copy.book.title)
+      @chatroom.save
+    end
 
-    @chatroom.save
     respond_to do |format|
       format.html { redirect_to dashboard_path }
       format.text { render partial: "shared/acceptance", locals: { order: @order }, formats: [:html] }

@@ -12,9 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :book_copies, only: %i[index show] do
-    resources :chatroom, only: %i[create]
     resources :orders, only: %i[new create index] do
-
       # member do
       #   patch "accept_order"
       #   patch "reject_order"
@@ -33,6 +31,7 @@ Rails.application.routes.draw do
       patch "accept"
       patch "reject"
     end
+    resources :chatrooms, only: %i[create]
   end
 
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard
