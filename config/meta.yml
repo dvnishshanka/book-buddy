@@ -2,5 +2,5 @@ meta_product_name: "BookBuddy"
 meta_title: "BookBuddy - Sharing books, sharing wisdom!"
 meta_description: "BookBuddy is a platform that brings together book lovers. BookBuddy facilitates book swapping, renting and sale. You don't have to spend more money in buying new books you can simply
 swap books with others. If you have additional books that you need to get rid of you can find the right person through BookBuddy and sell it."
-meta_image: "logo-crop.png" # should exist in `app/assets/images/`
+meta_image: "logo-crop-resized.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
