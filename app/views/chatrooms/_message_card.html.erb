@@ -1,14 +1,12 @@
- <% if current_user.id == order.book_copy.user.id %>
-        <% order.book_copy.orders.each do |order| %>
-          <% if order.status == "ACCEPTED" %>
-            <%= link_to user_profile_path(order.user.id) do %>
-              <% if order.user.photo.attached?%>
-                <%= cl_image_tag order.user.photo.key, class:"avatar-bordered-medium me-2 mt-4"%>
-              <% else %>
-                <div class='avatar-bordered-medium d-flex justify-content-center align-items-center me-2' style= "padding-right: 9px; background-color: #75c9b7; text-align: center;" >
-                  <p style="font-size: 2rem text-align: center; text-decoration: none;"><%= render "shared/default_profile_image", user: order.user %></p>
-                </div>
-              <% end %>
+      <% if current_user.id == order.book_copy.user.id %>
+        <% if order.status == "ACCEPTED" %>
+          <%= link_to user_profile_path(order.user.id) do %>
+            <% if order.user.photo.attached?%>
+              <%= cl_image_tag order.user.photo.key, class:"avatar-bordered-medium "%>
+            <% else %>
+              <div class='avatar-bordered-medium d-flex justify-content-center align-items-center me-2' style= "padding-right: 9px; background-color: #75c9b7; text-align: center;" >
+                <p style="font-size: 2rem text-align: center; text-decoration: none;"><%= render "shared/default_profile_image", user: order.user %></p>
+              </div>
             <% end %>
           <% end %>
         <% end %>
@@ -17,7 +15,7 @@
 
         <%= link_to user_profile_path(order.book_copy.user.id) do %>
             <% if order.book_copy.user.photo.attached?%>
-              <%= cl_image_tag order.book_copy.user.photo.key, class:"avatar-bordered-medium me-2 mt-4"%>
+              <%= cl_image_tag order.book_copy.user.photo.key, class:"avatar-bordered-medium "%>
             <% else %>
               <div class='avatar-bordered-medium d-flex justify-content-center align-items-center me-2' style= "padding-right: 9px; background-color: #75c9b7; text-align: center;" >
                 <p style="font-size: 2rem text-align: center; text-decoration: none;"><%= render "shared/default_profile_image", user: order.book_copy.user %></p>
@@ -26,8 +24,8 @@
           <% end %>
 
         <% end %>
-
-        <%= link_to chatroom_path(order.book_copy) do %>
+        <% chatroom = Chatroom.find_by(order_id: order.id)%>
+        <%= link_to chatroom_path(chatroom.id) do %>
           <div class="d-flex flex-column justify-content-center">
             <% if current_user.id == order.book_copy.user.id %>
 

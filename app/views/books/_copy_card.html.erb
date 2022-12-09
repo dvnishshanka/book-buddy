@@ -1,6 +1,6 @@
 <div class="book-copy-card">
   <% @book.book_copies.each do |book_copy| %>
-    <div class="book-copies container mb-0">
+    <div class="show-book-copies container mb-0">
 
       <div class="img-comments pb-2 ">
         <%= link_to user_profile_path(book_copy.user.id) do %>
@@ -18,34 +18,33 @@
           <%= link_to user_profile_path(book_copy.user.id) do %>
             <p class="normal-link my-0 ms-0"><%= book_copy.user.display_name %>, <%= book_copy.user.city %> <%= book_copy.user.country %></p>
             <div class="ms-3">
-             <%= render "shared/rating", avgrating: OrderReview.where(user_id:  book_copy.user_id).average(:rating) || 0 %>
-             </div>
+              <%= render "shared/rating", avgrating: OrderReview.where(user_id:  book_copy.user_id).average(:rating) || 0 %>
+            </div>
           <% end %>
 
           <p class="book-category-tag m-0 ms-1" style="font-weight:bold;"><%= book_copy.availability_status %></p>
-      </div>
+        </div>
 
-      <% unless book_copy.comments != nil || book_copy.comments == "" %>
-      <p class="my-0 mt-2 ms-0"><em>"<%= book_copy.comments.capitalize %>"</em></p>
-
-      <% end %>
-
-      <div class="d-flex   align-items-center">
-
-        <% if book_copy.user.id != current_user.id %>
-          <div class=" justify-content-between">
-            <%= link_to  new_book_copy_order_path(book_copy),class:"btn btn-success" do   %>
-              <div style="font-size: 12px; font-weight:bold;">
-                <i class="fa-solid fa-cart-shopping"></i> Request
-              </div>
-            <% end %>
-          </div>
+        <% unless book_copy.comments != nil || book_copy.comments == "" %>
+          <p class="my-0 mt-2 ms-0"><em>"<%= book_copy.comments.capitalize %>"</em></p>
         <% end %>
 
-        <p class="me-0" style="font-weight:bold;"><i class="fa-solid fa-euro-sign"></i><%= book_copy.price %> <%= "/ day" unless book_copy.availability_status == "Sell"  %></p>
+        <div class="d-flex   align-items-center">
+
+          <% if book_copy.user.id != current_user.id %>
+            <div class=" justify-content-between">
+              <%= link_to  new_book_copy_order_path(book_copy),class:"btn btn-info" do   %>
+                <div style="font-size: 12px; font-weight:bold;">
+                  <i class="fa-solid fa-cart-shopping"></i> Request
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+
+          <p class="me-0" style="font-weight:bold;"><i class="fa-solid fa-euro-sign"></i><%= book_copy.price %> <%= "/ day" unless book_copy.availability_status == "Sell"  %></p>
+        </div>
+         </div>
       </div>
-
     </div>
-
   <% end %>
 </div>
