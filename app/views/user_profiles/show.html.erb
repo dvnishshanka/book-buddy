@@ -3,11 +3,27 @@
 
   <%= render "user_profiles/profile", user: @user %>
 
-<% if @order_reviews !=  nil && @order_reviews.length > 0 %>
-  <p style="font-weight:bold;">Reviews :</p>
+  <% if @user.book_copies !=  nil &&  @user.book_copies.length > 0 %>
+    <p style="font-weight:bold;">Books :</p>
+    <div class="book-container">
+      <% @user.book_copies.each do |book_copy|%>
+      <div class= "book-container-card">
+          <%= link_to book_path(book_copy.book_id) do%>
+              <%= image_tag book_copy.book.photo_url, crop: "fill"  %>
+          <% end %>
+          </div>
+      <% end %>
+    </div>
+  <% end %>
+
+
+  <% if @order_reviews !=  nil && @order_reviews.length > 0 %>
+    <p style="font-weight:bold;">Reviews :</p>
     <% @order_reviews.each do |order_review|%>
       <%= render "user_profiles/user_reviews", order_review: order_review  %>
     <% end %>
   <% end %>
+
+
 
 </div>
