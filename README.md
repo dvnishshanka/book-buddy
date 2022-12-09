@@ -1,6 +1,6 @@
+![Bookbuddyblueblue](https://user-images.githubusercontent.com/87303817/206811780-583adc52-33eb-41b5-a356-5da332543957.png)
 # Book-Buddy
 ## Sharing books, sharing wisdom
-
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
@@ -44,6 +44,8 @@ Book-Buddy uses a number of open source projects to work properly:
 
 And of course Book-Buddy itself is open source with [Book-Buddy]
  on GitHub [git-repo-url].
+ 
+ ![logo-xs](https://user-images.githubusercontent.com/87303817/206811875-d959f42a-aa2b-40ff-96da-817a26079c74.jpg)
 
 ## Installation
 
