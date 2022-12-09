@@ -24,9 +24,9 @@
             <%= link_to new_book_path (book) do %>
               <%= image_tag "https://books.google.com/books/content?id=#{book['id']}&printsec=frontcover&img=1&zoom=1&source=gbs_api", crop: "fill" %>
               <div class="index-text-container ">
-                <h6 class="mb-1 mt-1" ><strong><%=  book["volumeInfo"]["title"]%></strong></h6>
-                <p class="m-0" style= "font-size: 0.8rem;"><%= book["volumeInfo"]["authors"].nil? ? nil : book["volumeInfo"]["authors"][0] %></p>
-                <p class="m-0" style= "font-size: 0.6rem;"><%=book["volumeInfo"]["industryIdentifiers"].nil? ? nil : "ISBN #{book["volumeInfo"]["industryIdentifiers"][0]["identifier"]}" %></p>
+                <h6 class="mb-1 mt-1 ms-1" ><strong><%=  book["volumeInfo"]["title"]%></strong></h6>
+                <p class="m-0 ms-1 ps-0" style= "font-size: 12px;"><%= book["volumeInfo"]["authors"].nil? ? nil : book["volumeInfo"]["authors"][0] %></p>
+                <p class="m-0 ms-1 ps-0 pb-1" style= "font-size: 12px;"><%=book["volumeInfo"]["industryIdentifiers"].nil? ? nil : "ISBN #{book["volumeInfo"]["industryIdentifiers"][0]["identifier"]}" %></p>
 
               </div>
             <% end%>
@@ -35,11 +35,11 @@
 
             <%= link_to book_path (@database_book) do %>
               <%= image_tag @database_book.photo_url, crop: "fill" %>
-              <div class="container pt-1 mb-0">
+              <div class="container pt-1 mb-0 pb-1">
                 <h6><strong><%=  @database_book.title%></strong></h6>
-                <p><%= @database_book.author%></p>
-                <p>ISBN:<%=@database_book.isbn%></p>
-                <p>Category:<%= @database_book.category%></p>
+                <p class="m-0 ms-1 ps-0" style= "font-size: 0.8rem;"><%= @database_book.author%></p>
+                <p class="m-0 ms-1 ps-0 pb-1" style= "font-size: 0.8rem;">ISBN <%=@database_book.isbn%></p>
+                <%# <p class="m-0 ms-1 ps-0" style= "font-size: 0.8rem;">Category:<%= @database_book.category%></p>
               </div>
             <% end%>
           <% end %>
