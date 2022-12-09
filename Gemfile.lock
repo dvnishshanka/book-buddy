@@ -316,7 +316,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
-  web-console
+  web-console (>= 3.3.0)
   webdrivers
 
 RUBY VERSION

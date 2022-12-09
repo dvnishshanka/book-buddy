@@ -9,7 +9,7 @@ class ChatroomsController < ApplicationController
       end
     end
 
-    @chatroom = Chatroom.where(id: @user)
+    # @chatroom = Chatroom.where(id: @user)
     # @chatroom = Chatroom.where(current_user)
   end
 

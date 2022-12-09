@@ -5,19 +5,19 @@
         <%# <i class="fa fa-search nav-icon"></i> %>
 
 
-          <%= form_with url: root_path, method: :get, html: { data: { search_books_target: "form"}} do |f| %>
+  <%= form_with url: root_path, method: :get, html: { data: { search_books_target: "form"}} do |f| %>
 
-            <%= f.text_field :query,
-                          value: params[:query],
-                          class: "search-bar",
-                          style: "",
-                          placeholder: "Find your next book ....",
-                          data: {
-                            search_books_target: "input",
-                            action: "keyup->search-books#update" }
-                          %>
+    <%= f.text_field :query,
+                  value: params[:query],
+                  class: "search-bar",
+                  style: "",
+                  placeholder: "Find your next book ....",
+                  data: {
+                    search_books_target: "input",
+                    action: "keyup->search-books#update" }
+                  %>
 
-        </div>
+</div>
 
 
   <div class="book-category-container">
