@@ -17,6 +17,10 @@
 
     <div class="d-flex justify-content-center align-items-center">
      <%= render "shared/rating", avgrating: @book.book_reviews.average(:rating) || 0 %>
+      <%= link_to new_book_book_review_path(@book, @bookreview) do %>
+     <div class="ms-2 normal-link" style="text-decoration: underline; font-weight:normal"><%=  " #{@book.book_reviews.count} ratings" if @book.book_reviews.count > 1%> </div>
+      <div class="ms-2 normal-link" style="text-decoration: underline; font-weight:normal;"> <%=  " #{@book.book_reviews.count} rating" if @book.book_reviews.count == 1%> </div>
+      <% end %>
     </div>
 
     <div class="mt-2 mb-4">
