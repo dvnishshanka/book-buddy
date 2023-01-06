@@ -59,10 +59,7 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    # order can be destroyed if pending or rejected.
     @order.destroy
-    # @chatroom = Chatroom.find_by(order_id: @order.id)
-    # @chatroom.destroy unless @chatroom.nil?
     redirect_to dashboard_path, status: :see_other
   end
 

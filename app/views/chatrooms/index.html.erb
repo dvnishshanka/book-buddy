@@ -4,20 +4,16 @@
 
   <% @orders.each do |order| %>
     <div class="d-flex align-items-center mb-3">
-
       <%= render "chatrooms/message_card", order: order %>
-
-
     </div>
- <hr style="border-top: 1px solid #383232" class="mt-2 mb-2">
+    <hr style="border-top: 1px solid #383232" class="mt-2 mb-2">
   <% end %>
 
-   <% @my_book_orders.each do |order| %>
+  <% @my_book_orders.each do |order| %>
     <div class="d-flex align-items-center">
-
       <%= render "chatrooms/message_card", order: order  %>
     </div>
- <hr style="border-top: 1px solid #383232" class="mt-2 mb-2">
+    <hr style="border-top: 1px solid #383232" class="mt-2 mb-2">
   <% end %>
 
 </div>
