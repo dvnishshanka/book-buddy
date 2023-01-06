@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_book_copy, only: %i[new]
-
-    skip_before_action :verify_authenticity_token, :only => [:update, :accept, :reject]
+  before_action :set_order, only: %i[accept reject destroy]
+  skip_before_action :verify_authenticity_token, :only => [:update, :accept, :reject]
 
   def index
     # Scope your query to the dates being shown:
@@ -15,7 +15,6 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    set_book_copy
     set_previous_order_dates
   end
 
@@ -36,7 +35,6 @@ class OrdersController < ApplicationController
   end
 
   def accept
-    @order = Order.find(params[:id])
     @order.update(status: "ACCEPTED")
 
     # Chatroom is unique to one order
@@ -52,7 +50,6 @@ class OrdersController < ApplicationController
   end
 
   def reject
-    @order = Order.find(params[:id])
     @order.update(status: "REJECTED")
 
     respond_to do |format|
@@ -61,7 +58,19 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy
+    # order can be destroyed if pending or rejected.
+    @order.destroy
+    # @chatroom = Chatroom.find_by(order_id: @order.id)
+    # @chatroom.destroy unless @chatroom.nil?
+    redirect_to dashboard_path, status: :see_other
+  end
+
   private
+
+  def set_order
+    @order = Order.find(params[:id])
+  end
 
   def set_book_copy
     @book_copy = BookCopy.find(params[:book_copy_id])

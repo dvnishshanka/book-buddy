@@ -6,3 +6,10 @@
 .normal-link {
   font-weight: bold;
 }
+
+.trash-bin {
+  color: rgb(147, 143, 143);
+  :hover {
+    color: rgb(65, 61, 61) ;
+  }
+}

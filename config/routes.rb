@@ -5,19 +5,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  # get "book_book_reviews/new", to: "book_book_reviews#new"
   resources :books do
     resources :book_reviews
     resources :book_copies, only: %i[new create]
   end
 
-  resources :book_copies, only: %i[index show] do
+  resources :book_copies, only: %i[index show destroy] do
     resources :orders, only: %i[new create index] do
-      # member do
-      #   patch "accept_order"
-      #   patch "reject_order"
-      # end
-
       resources :order_reviews, only: %i[create new]
     end
   end
