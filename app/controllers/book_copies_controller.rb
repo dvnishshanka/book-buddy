@@ -1,5 +1,6 @@
 class BookCopiesController < ApplicationController
   before_action :set_book, only: %i[show new]
+  before_action :set_book_copy, only: %i[destroy]
 
   def index
     @book_copies = BookCopy.all
@@ -7,7 +8,6 @@ class BookCopiesController < ApplicationController
 
   def new
     @book_copy = BookCopy.new
-    set_book
   end
 
   def create
@@ -21,7 +21,16 @@ class BookCopiesController < ApplicationController
     end
   end
 
+  def destroy
+    @book_copy.destroy
+    redirect_to dashboard_path, status: :see_other
+  end
+
   private
+
+  def set_book_copy
+    @book_copy = BookCopy.find(params[:id])
+  end
 
   def set_book
     @book = Book.find(params[:book_id])
