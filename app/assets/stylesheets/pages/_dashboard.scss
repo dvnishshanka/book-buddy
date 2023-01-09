@@ -2,12 +2,18 @@
   margin-bottom: 20px;
   margin-top: 25px;
   display: grid;
-  grid-template-columns: 1fr ;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 1200px) {
   .dashboard-order-container {
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 950px) {
+  .dashboard-order-container {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -18,7 +24,6 @@
   min-height: 130px;
   border-radius: 8px;
   margin-bottom: 10px;
-
 
   .dashboard-book-img {
     height: 100%;

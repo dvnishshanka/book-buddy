@@ -1,10 +1,9 @@
 require 'json'
 require 'open-uri'
-require 'net/http'
-require 'openssl'
-require 'nokogiri'
 
 class BooksController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show] # Guest user should be able to see the books
+
   def new
     @book = Book.new
     @book_review = BookReview.new
@@ -28,7 +27,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @bookreview = BookReview.new  # Add this line
+    @bookreview = BookReview.new
   end
 
   private
