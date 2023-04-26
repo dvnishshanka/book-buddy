@@ -1,9 +1,11 @@
 <% avgrating.to_i.times do |i| %>
   <i class="fa-solid fa-star fa-beat" style="color: #fa8334; font-size: 12px;"></i>
 <% end %>
+
 <% if avgrating % 1 != 0 %>
-<i class="fa-solid fa-star-half-stroke fa-beat" style="color: #fa8334; font-size: 12px;"></i>
+  <i class="fa-solid fa-star-half-stroke fa-beat" style="color: #fa8334; font-size: 12px;"></i>
 <% end %>
+
 <% (5-avgrating).to_i.times do |i| %>
   <i class="fa-regular fa-star" style="color: #b2b1b1; font-size: 12px;"></i>
 <% end %>

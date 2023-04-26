@@ -31,7 +31,7 @@
 
         <div class="d-flex   align-items-center">
 
-          <% if book_copy.user.id != current_user.id %>
+          <% if user_signed_in? == false || book_copy.user.id != current_user.id %>
             <div class=" justify-content-between">
               <%= link_to  new_book_copy_order_path(book_copy),class:"btn btn-info" do   %>
                 <div style="font-size: 12px; font-weight:bold;">
