@@ -11,7 +11,7 @@ Ruby on Rails, PostgreSQL. Versions 9.3, JS-powered HTML5, Stimulus, Turbo-rails
 ## Features
 
 - Search books from GoogleBooks API.
-- Order a Book (Rent, Swapp or Buy).
+- Order a Book (Rent, Swap or Buy).
 - Chat with the owner of the book.
 - Review the experience.
 - Review the condition of the book.
